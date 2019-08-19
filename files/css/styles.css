@@ -1,0 +1,261 @@
+/*----------------------------------------------
+----------------------GENERAL--------------------
+------------------------------------------------*/
+body {
+  background: #FFF;
+  overflow-x: hidden;
+}
+
+*::selection { 
+  background: rgb(0,0,0);
+  color: white;
+}
+
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+p {
+  transition: all 0.4s ease; 
+}
+@font-face {
+  font-family: 'Futura PT Regular';
+  src: url('../fonts/FuturaPT-Regular.woff2') format('woff2'),
+      url('../fonts/FuturaPT-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT Medium';
+  src: url('../fonts/FuturaPT-Medium.woff2') format('woff2'),
+      url('../fonts/FuturaPT-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT Bold';
+  src: url('../fonts/FuturaPT-Bold.woff2') format('woff2'),
+      url('../fonts/FuturaPT-Bold.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('../fonts/ProximaNova-Light.woff2') format('woff2'),
+      url('../fonts/ProximaNova-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova Regular';
+  src: url('../fonts/ProximaNova-Regular.woff2') format('woff2'),
+      url('../fonts/ProximaNova-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.preloader-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: rgba(255,255,255,1);
+  z-index: 150;
+}
+.too-small-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #3b3b3b;
+  z-index: 1000;
+  font-family: 'Proxima Nova Regular';
+  color: white;
+  text-align: center;
+  display: none;
+  transition: all 0.7s ease;
+  animation: fadeIn 0.6s forwards;
+}
+.too-small-message p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 17px;
+}
+
+/*----------------------------------------------
+-------------------MAIN SECTION-----------------
+------------------------------------------------*/
+#particles-js {
+  position: fixed;
+  z-index: 0;
+  height: 100vh;
+  width: 100%;
+}
+.main-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transform: perspective(1px) scale(1.25);
+  transition: opacity .5s ease, transform 3s ease;
+  background-repeat: no-repeat !important;
+  background: url('../img/brendan.jpg');
+  background-position: 0% 30% !important;
+  background-size: cover !important;
+  transition: all 0.8s ease;
+}
+.main, .about {
+  display: block;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1; 
+  background: -moz-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%, rgba(47, 0, 99, 0.5) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(47, 0, 99, 0.5)), color-stop(100%,rgba(0, 75, 75, 0.5))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* W3C */
+  background: linear-gradient(to bottom, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+.main .title-text {
+  margin-left: 50px;
+  position: absolute;
+  top: auto !important;
+  bottom: -50px !important;
+  color: #fff;
+  font-family: 'Futura PT Medium';
+}
+.main .title-text h1 {
+  font-size: 80px;
+}
+.main .title-text h3.smaller {
+  margin-top: -13px;
+  font-size: 25px;
+  font-family: 'Proxima Nova Regular';
+}
+.main .title-text h3 {
+  font-size: 34px;
+  font-family: 'Futura PT Light';
+}
+/*----------------------------------------------
+-------------------ABOUT SECTION-----------------
+------------------------------------------------*/
+
+.about {
+  height: 100%;
+  padding: 40px 80px 80px 80px;
+  background: #fff;
+}
+.about .container {
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.about p {
+  font-size: 20px; 
+  font-family: 'Open Sans', 'sans-serif';
+  text-align: left;
+}
+.about h1 {
+  font-family: 'Futura PT Bold';
+  letter-spacing: 1px;
+  font-size: 35px; 
+  color: #3b3b3b;
+  text-align: center;
+}
+.about .left-container {
+  float: left;
+  width: 45%;
+  height: 100%;
+  margin-right: 5%;
+}
+.about .right-container {
+  float: right;
+  width: 45%;
+  margin-left: 5%;
+}
+.about .right-container .image-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.about .right-container .about-image {
+  display: block;
+  width: 100%;
+  transition: all 0.8s ease;
+  border-radius: 6px;
+  overflow: hidden;
+  transform: scale(1.05);
+}
+.about .right-container picture img {
+  height: 100%;
+  border-radius: 6px;
+}
+.about .right-container .image-container .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 6px;
+  z-index: 2;
+  transform: scale(1.05);
+}
+.about .right-container .image-container .overlay.gradient {
+  opacity: 0.5;
+  background: -moz-linear-gradient(-45deg,  #c5deea 0%, #8abbd7 31%, #066dab 100%);
+  background: -webkit-linear-gradient(-45deg,  #c5deea 0%,#8abbd7 31%,#066dab 100%);
+  background: -o-linear-gradient(-45deg,  #c5deea 0%,#8abbd7 31%,#066dab 100%);
+  background: -ms-linear-gradient(-45deg,  #c5deea 0%,#8abbd7 31%,#066dab 100%);
+  background: linear-gradient(135deg,  #c5deea 0%,#8abbd7 31%,#066dab 100%);
+  transition: all 0.8s ease;
+}
+.highlight {
+  color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.highlight.heart {
+  background: #ca084194;
+}
+.highlight.coffee {
+  background: #2d0000a8;
+}
+.highlight.sunshine {
+  background: #e9bc007a;
+  color: #3b3b3b;
+  white-space: nowrap;
+}
+.highlight.latte {
+  background: #6b430080;
+}
+/*----------------------------------------------
+------------------MEDIA QUERIES-----------------
+------------------------------------------------*/
+@media only screen and (min-width: 2000px){
+
+}
+@media only screen and (max-width: 991px) {
+}
+@media only screen and (max-width: 767px) {
+}
+@media only screen and (max-width: 479px) {
+}
+@media only screen and (max-width: 300px) {
+  .too-small-message {
+    display: block;  
+  }
+}
