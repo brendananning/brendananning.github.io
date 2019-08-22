@@ -545,6 +545,38 @@ Pace.on("done", function(){
       $(".about-image").css("transform", "scale(1.05)");
     },
   );
+  $(".testimonial-item").hover(
+    function() {
+      $(this).find('.testimonial-quote-top').css("top", "-20px");
+      $(this).find('.testimonial-quote-top').css("left", "-50px");
+      $(this).find('.testimonial-quote-bottom').css("bottom", "-20px");
+      $(this).find('.testimonial-quote-bottom').css("right", "-20px");
+      $(this).css("transform", "scale(1.05)");
+      $(this).css("box-shadow", "none");
+    },
+     function() {
+      $(this).find('.testimonial-quote-top').css("top", "-10px");
+      $(this).find('.testimonial-quote-top').css("left", "-40px");
+      $(this).find('.testimonial-quote-bottom').css("bottom", "-10px");
+      $(this).find('.testimonial-quote-bottom').css("right", "-10px");
+      $(this).css("transform", "scale(1)");
+      $(this).css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.75)");
+    },
+  );
+  $(".package-item").hover(
+    function() {
+      $(this).find('.package-icon').css("top", "-50px");
+      $(".package-item").not(this).css("transform", "scale(0.9)");
+      $(".package-item").not(this).css("opacity", "0.5");
+      $(this).css("transform", "scale(1.05)");
+    },
+     function() {
+      $(this).find('.package-icon').css("top", "-20px");
+      $(".package-item").not(this).css("transform", "scale(1)");
+      $(".package-item").not(this).css("opacity", "1");
+      $(this).css("transform", "scale(1)");
+    },
+  );
   if ( $('.pace-progress').attr('data-progress-text') == '100%' ) {
       $('.preloader-wrap').fadeOut(1000);
       $('.ribbon').css("animation", "slide 0.8s forwards");
@@ -603,6 +635,53 @@ Pace.on("done", function(){
   });
 });
 
+// For more check out zachsaucier.com
+var si = document.querySelectorAll(".one"),
+    to = document.querySelectorAll(".two"),
+    te = document.querySelectorAll(".text");
+
+for(var i = 0, j = si.length; i < j; i++) {
+  applyEverything(si[i], to[i], te[i]);
+}
+
+function applyEverything(sides, topbottom, text) {
+  var gparent = sides.parentNode.parentNode;
+  
+  gparent.onmouseenter = function() {
+    sides.style.fill = "#fff";
+    // text.style.color = "white";
+    console.log("over");
+    
+    // Originally these made sense... Then reality happened
+    TweenLite.to(topbottom, .8, {strokeDasharray:"-130 900 -130 900", strokeDashoffset:20, ease:Power2.linear});
+    TweenLite.to(topbottom, .6, {strokeDasharray:"470 300 470 300", strokeDashoffset:470, delay:.3, ease:Power2.linear});
+    
+    TweenLite.to(sides, .8, {strokeDasharray:"-200 1070 -200 1000", strokeDashoffset:640, ease:Power2.linear});
+    TweenLite.to(sides, .6, {strokeDasharray:"300 470 300 470", strokeDashoffset:770, delay:.3, ease:Power2.linear});
+    
+    setTimeout(function() { // Delay fade when leaving hover
+      sides.style.transition = "fill .6s .6s";
+      text.style.transition = "color .6s .6s";
+    }, 10);
+  }  
+  
+  gparent.onmouseleave = function() {
+    sides.style.fill = "transparent";
+    text.style.color = "#515151";
+    console.log("out");
+    setTimeout(function() {
+      sides.style.transition = "fill .6s"; // Reset fade for next hover
+      text.style.transition = "color .6s";
+    }, 10);
+    
+    // Originally these made sense... Then reality happened
+    TweenLite.to(topbottom, .8, {strokeDasharray:"-130 1050 -130 900", strokeDashoffset:20, ease:Power2.linear});
+    TweenLite.to(topbottom, .6, {strokeDasharray:"300 470 300 470", strokeDashoffset:0, delay:.4, ease:Power2.linear});
+    
+    TweenLite.to(sides, .8, {strokeDasharray:"-200 1335 -200 1000", strokeDashoffset:640, ease:Power2.linear});
+    TweenLite.to(sides, .6, {strokeDasharray:"470 300 470 300", strokeDashoffset:470, delay:.4, ease:Power2.linear});
+  }
+}
 
 $( document ).ready(function() {
 
@@ -610,7 +689,9 @@ $( document ).ready(function() {
     $(".main").css("height", $(window).innerHeight());
   }
   $(".bars").removeClass("active");
-  
+  $('.jarallax').jarallax({
+    speed: 0.2
+  });
   // add initial scenes
   addScenes(scenes);
   setMainElements();

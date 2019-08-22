@@ -4,6 +4,7 @@
 body {
   background: #FFF;
   overflow-x: hidden;
+  color: #515151;
 }
 
 *::selection { 
@@ -22,6 +23,13 @@ p {
   transition: all 0.4s ease; 
 }
 @font-face {
+  font-family: 'Futura PT Light';
+  src: url('../fonts/FuturaPT-Light.woff2') format('woff2'),
+      url('../fonts/FuturaPT-Light.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Futura PT Regular';
   src: url('../fonts/FuturaPT-Regular.woff2') format('woff2'),
       url('../fonts/FuturaPT-Regular.woff') format('woff');
@@ -32,14 +40,14 @@ p {
   font-family: 'Futura PT Medium';
   src: url('../fonts/FuturaPT-Medium.woff2') format('woff2'),
       url('../fonts/FuturaPT-Medium.woff') format('woff');
-  font-weight: 500;
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Futura PT Bold';
   src: url('../fonts/FuturaPT-Bold.woff2') format('woff2'),
       url('../fonts/FuturaPT-Bold.woff') format('woff');
-  font-weight: 500;
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {
@@ -87,7 +95,41 @@ p {
   transform: translate(-50%,-50%);
   font-size: 17px;
 }
-
+.jarallax {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 60vh;
+}
+.jarallax .jarallax-img {
+  position: absolute;
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.jarallax .jarallax-img img {
+  width: 100%;
+}
+.jarallax .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: -moz-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%, rgba(47, 0, 99, 0.5) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(47, 0, 99, 0.5)), color-stop(100%,rgba(0, 75, 75, 0.5))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* W3C */
+  background: linear-gradient(to bottom, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
 /*----------------------------------------------
 -------------------MAIN SECTION-----------------
 ------------------------------------------------*/
@@ -140,7 +182,7 @@ p {
 .main .title-text h1 {
   font-size: 80px;
 }
-.main .title-text h3.smaller {
+.main .title-text .smaller {
   margin-top: -13px;
   font-size: 25px;
   font-family: 'Proxima Nova Regular';
@@ -153,23 +195,28 @@ p {
 -------------------ABOUT SECTION-----------------
 ------------------------------------------------*/
 
-.about {
+.block {
   height: 100%;
   padding: 40px 80px 80px 80px;
   background: #fff;
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1; 
 }
-.about .container {
+.block .container {
   display: block;
   max-width: 960px;
   margin: 0 auto;
   margin-top: 40px;
 }
-.about p {
+.block p {
   font-size: 20px; 
-  font-family: 'Open Sans', 'sans-serif';
+  font-family: 'Muli', 'sans-serif';
   text-align: left;
 }
-.about h1 {
+.block h1 {
   font-family: 'Futura PT Bold';
   letter-spacing: 1px;
   font-size: 35px; 
@@ -242,6 +289,191 @@ p {
 .highlight.latte {
   background: #6b430080;
 }
+
+/*----------------------------------------------
+---------------TESTIMONIALS SECTION-------------
+------------------------------------------------*/
+
+.testimonials .container {
+  max-width: 1200px;
+  margin-top: 0;
+}
+.testimonial-item {
+  margin-top: 60px;
+  max-width: 700px;
+  padding: 30px 30px 30px 20px;
+  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
+  border: 1px solid #acacac;
+  display: table;
+  transition: all 0.6s ease;
+}
+.testimonial-container {
+  display: inline-block;
+  width: 100%;
+}
+.testimonial-image {
+  float: left;
+  width: auto;
+  margin-right: 70px;
+  display: inline-block;
+}
+.testimonial-image p {
+  color: #9b9b9b;
+  margin-bottom: 0;
+  font-size: 13px; 
+}
+.testimonial-image p:nth-child(2) {
+  color: #484848;
+  font-size: 18px; 
+  font-weight: bold;
+}
+.testimonial-image picture {
+  display: block;
+  margin-bottom: 10px;
+}
+.testimonial-image picture img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.testimonial-description {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  line-height: 25px;
+  backface-visibility: hidden;
+}
+
+.testimonial-quote-top,
+.testimonial-quote-bottom {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  z-index: -1;
+  opacity: 0.3;
+  transition: all 0.5s ease;
+}
+.testimonial-quote-top {
+  top: -10px;
+  left: -40px;
+}
+.testimonial-quote-bottom {
+  bottom: -10px;
+  right: -10px;
+}
+.testimonial-item.left {
+  float: left;
+}
+.testimonial-item.right {
+  float: right;
+}
+
+/*----------------------------------------------
+-----------------PACKAGES SECTION---------------
+------------------------------------------------*/
+
+.packages .container {
+  margin-top: 70px;
+  max-width: 1080px;
+}
+.svg-wrapper {
+  position: relative;
+  display: block;
+}
+.svg { 
+  box-shadow: inset 0px 0px 0px 3px rgb(255, 255, 255); 
+  background: #eafbff;
+}
+.shape {  
+  stroke-width: 2px;
+  fill: transparent;
+  stroke: #acacac;
+  transition: fill .6s;
+}
+.one { stroke-dasharray: 500 300 500 300; stroke-dashoffset: 500; }
+.two { stroke-dasharray: 300 500 300 500; }
+.text {
+  color: #515151;
+}
+.package-item {
+  max-width: 30%;
+  float: left;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+  min-height: 500px;
+  position: relative;
+  transition: all 0.6s ease;
+}
+.text {
+  font-size: 18px;
+  padding: 15px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  font-family: 'Muli', 'sans-serif';
+  height: 460px;
+}
+.text ul {
+  padding-inline-start: 20px;
+  list-style-type: none;
+}
+.text li {
+  line-height: 22px;
+  margin-bottom: 8px;
+  text-indent: -12px;
+}
+.text ul li:before {
+  content: "-";
+  margin-right: 5px;
+}
+.text dt {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.text dd {
+  margin-top: 35px;
+  text-align: center;
+  font-size: 25px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  bottom: 0;
+}
+.gst {
+  font-size: 9px;
+  color: #808080;
+  margin-left: 5px;
+}
+.package-icon {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 40px;
+  height: 40px;
+  transition: all 0.4s ease;
+}
+.package-icon.heart {
+  background: url('../img/icons/heart.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.package-icon.rings {
+  background: url('../img/icons/rings.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.package-icon.bouquet {
+  background: url('../img/icons/bouquet.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /*----------------------------------------------
 ------------------MEDIA QUERIES-----------------
 ------------------------------------------------*/
