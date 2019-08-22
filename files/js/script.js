@@ -566,21 +566,25 @@ Pace.on("done", function(){
   $(".package-item").hover(
     function() {
       $(this).find('.package-icon').css("top", "-50px");
+      $(this).find('.package-icon').css("transform", "translate(-50%) scale(1.2)");
       $(".package-item").not(this).css("transform", "scale(0.9)");
-      $(".package-item").not(this).css("opacity", "0.5");
+      $(".package-item").not(this).css("opacity", "0.3");
       $(this).css("transform", "scale(1.05)");
+      $(this).css("border", "1px solid #9b9b9b");
     },
      function() {
       $(this).find('.package-icon').css("top", "-20px");
+      $(this).find('.package-icon').css("transform", "translate(-50%) scale(1)");
       $(".package-item").not(this).css("transform", "scale(1)");
       $(".package-item").not(this).css("opacity", "1");
       $(this).css("transform", "scale(1)");
+      $(this).css("border", "1px solid #1e65ae");
     },
   );
   if ( $('.pace-progress').attr('data-progress-text') == '100%' ) {
       $('.preloader-wrap').fadeOut(1000);
-      $('.ribbon').css("animation", "slide 0.8s forwards");
-      // $('.ribbon').css("-webkit-animation", "slide 0.8s forwards");
+      $('.ribbon').css("animation", "slide 0.6s forwards");
+      // $('.ribbon').css("-webkit-animation", "slide 0.6s forwards");
       var counter = 0;
 
       //Only activate once
@@ -607,7 +611,7 @@ Pace.on("done", function(){
         var displayTl = new TimelineLite();
         displayTl
           .fromTo(this, 
-                 0.6,
+                 0.4,
                  {autoAlpha: 0, x: 150},
                  {autoAlpha: 1, ease:Power1.easeOut, x: 0}
                  )
@@ -635,52 +639,38 @@ Pace.on("done", function(){
   });
 });
 
-// For more check out zachsaucier.com
-var si = document.querySelectorAll(".one"),
-    to = document.querySelectorAll(".two"),
-    te = document.querySelectorAll(".text");
+var dateSelect     = $('#wedding-datepicker');
+var dateDepart     = $('#start-date');
+var dateReturn     = $('#end-date');
+var spanDepart     = $('.date-depart');
+var spanReturn     = $('.date-return');
+var spanDateFormat = 'ddd, MMMM D yyyy';
 
-for(var i = 0, j = si.length; i < j; i++) {
-  applyEverything(si[i], to[i], te[i]);
-}
+dateSelect.datepicker({
+  autoclose: true,
+  format: "mm/dd",
+  maxViewMode: 0,
+  startDate: "now"
+}).on('change', function() {
+  var start = $.format.date(dateDepart.datepicker('getDate'), spanDateFormat);
+  var end = $.format.date(dateReturn.datepicker('getDate'), spanDateFormat);
+  spanDepart.text(start);
+  spanReturn.text(end);
+});
 
-function applyEverything(sides, topbottom, text) {
-  var gparent = sides.parentNode.parentNode;
-  
-  gparent.onmouseenter = function() {
-    sides.style.fill = "#fff";
-    // text.style.color = "white";
-    console.log("over");
-    
-    // Originally these made sense... Then reality happened
-    TweenLite.to(topbottom, .8, {strokeDasharray:"-130 900 -130 900", strokeDashoffset:20, ease:Power2.linear});
-    TweenLite.to(topbottom, .6, {strokeDasharray:"470 300 470 300", strokeDashoffset:470, delay:.3, ease:Power2.linear});
-    
-    TweenLite.to(sides, .8, {strokeDasharray:"-200 1070 -200 1000", strokeDashoffset:640, ease:Power2.linear});
-    TweenLite.to(sides, .6, {strokeDasharray:"300 470 300 470", strokeDashoffset:770, delay:.3, ease:Power2.linear});
-    
-    setTimeout(function() { // Delay fade when leaving hover
-      sides.style.transition = "fill .6s .6s";
-      text.style.transition = "color .6s .6s";
-    }, 10);
-  }  
-  
-  gparent.onmouseleave = function() {
-    sides.style.fill = "transparent";
-    text.style.color = "#515151";
-    console.log("out");
-    setTimeout(function() {
-      sides.style.transition = "fill .6s"; // Reset fade for next hover
-      text.style.transition = "color .6s";
-    }, 10);
-    
-    // Originally these made sense... Then reality happened
-    TweenLite.to(topbottom, .8, {strokeDasharray:"-130 1050 -130 900", strokeDashoffset:20, ease:Power2.linear});
-    TweenLite.to(topbottom, .6, {strokeDasharray:"300 470 300 470", strokeDashoffset:0, delay:.4, ease:Power2.linear});
-    
-    TweenLite.to(sides, .8, {strokeDasharray:"-200 1335 -200 1000", strokeDashoffset:640, ease:Power2.linear});
-    TweenLite.to(sides, .6, {strokeDasharray:"470 300 470 300", strokeDashoffset:470, delay:.4, ease:Power2.linear});
-  }
+if (/Mobi/.test(navigator.userAgent)) {
+  // if mobile device, use native pickers
+  $(".date input").attr("type", "date");
+  $(".time input").attr("type", "time");
+} else {
+  // if desktop device, use DateTimePicker
+  $("#timepicker").datetimepicker({
+    format: "LT",
+    icons: {
+      up: "fa fa-chevron-up",
+      down: "fa fa-chevron-down"
+    }
+  });
 }
 
 $( document ).ready(function() {
@@ -692,6 +682,7 @@ $( document ).ready(function() {
   $('.jarallax').jarallax({
     speed: 0.2
   });
+
   // add initial scenes
   addScenes(scenes);
   setMainElements();

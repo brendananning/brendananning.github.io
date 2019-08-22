@@ -375,25 +375,9 @@ p {
 ------------------------------------------------*/
 
 .packages .container {
-  margin-top: 70px;
+  margin-top: 100px;
   max-width: 1080px;
 }
-.svg-wrapper {
-  position: relative;
-  display: block;
-}
-.svg { 
-  box-shadow: inset 0px 0px 0px 3px rgb(255, 255, 255); 
-  background: #eafbff;
-}
-.shape {  
-  stroke-width: 2px;
-  fill: transparent;
-  stroke: #acacac;
-  transition: fill .6s;
-}
-.one { stroke-dasharray: 500 300 500 300; stroke-dashoffset: 500; }
-.two { stroke-dasharray: 300 500 300 500; }
 .text {
   color: #515151;
 }
@@ -405,6 +389,9 @@ p {
   min-height: 500px;
   position: relative;
   transition: all 0.6s ease;
+  min-width: 300px;
+  border: 1px solid #1e65ae;
+  backface-visibility: hidden;
 }
 .text {
   font-size: 18px;
@@ -453,7 +440,7 @@ p {
   position: absolute;
   top: -20px;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%) scale(1);
   width: 40px;
   height: 40px;
   transition: all 0.4s ease;
@@ -474,6 +461,253 @@ p {
   background-repeat: no-repeat;
 }
 
+/*----------------------------------------------
+------------------CONTACT SECTION---------------
+------------------------------------------------*/
+
+.contact h3 {
+  font-size: 20px;
+  font-family: 'Futura PT Light';
+  text-align: center;
+}
+.contact .container form div {
+  padding-right: 35px;
+}
+.form-input {
+  border-radius: 0px;
+  font-size: 16px;
+  background-color: unset;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #acacac;
+  border: none;
+  border-bottom: 2px solid #1e65ae;
+  margin-bottom: 10px;
+}
+.form-input-container > p {
+  margin-bottom: 10px;
+}
+.form-name {
+  margin-bottom: 20px;
+}
+.btn-submit {
+  margin-top: 20px;
+  margin-left: 38%;
+  width: 120px; 
+  height: 40px;
+}
+input {
+  font-family: 'Muli', sans-serif;
+  font-size: 1em;
+  height: 50px;
+  padding: 0px 50px 0px 15px;
+  outline: none;
+  color: #ffffff;
+  border-bottom: none;
+  transition: all 0.2s ease-in-out;
+}
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+  color: #9b9b9b;
+  width: 110%;
+  font-size: 16px;
+}
+form {
+  width: 500px;
+  margin: 0 auto;
+}
+form .col-md-4,
+form .col-md-8,
+form .col-md-12 {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+form .col-md-12 textarea {
+  height: 100px;
+  margin-bottom: 30px;
+  transition: all 0.2s ease-in-out;
+}
+#wedding-datepicker input {
+  display: block;
+  width: auto;
+  font-family: 'Muli', sans-serif;
+  text-align: left;
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #1e65ae;
+  border-radius: 0;
+  transition: border-color 0.2s ease-out;
+}
+#wedding-datepicker input:first-child, #wedding-datepicker input:last-child {
+  border-radius: 0;
+}
+#wedding-datepicker .date-text {
+  position: absolute;
+  bottom: 6px;
+  left: 12px;
+  font-family: 'Muli', sans-serif;
+  margin: auto;
+  color: #555 !important;
+}
+.input-group.time {
+  padding-right: 0 !important;
+}
+.input-group.time .form-control {
+  width: 70px;
+}
+.time-label {
+  display: inline-block;
+}
+.input-group-append {
+  float: left;
+  width: 25px;
+  height: 100%;
+}
+.datepicker.dropdown-menu {
+  padding: 0;
+  background-clip: border-box;
+  border: none;
+  border-radius: 0;
+  animation: popup 0.2s ease-out forwards;
+}
+.datepicker.dropdown-menu table {
+  background-color: #1b7983;
+}
+.datepicker.dropdown-menu table thead {
+  background-color: #1b7983;
+}
+.datepicker.dropdown-menu table thead tr {
+  border-top: 0;
+}
+.datepicker.dropdown-menu table tbody {
+  background-color: white;
+}
+.datepicker.dropdown-menu table tr {
+  border-top: 1px solid #ededed;
+}
+.datepicker.dropdown-menu table tr td, .datepicker.dropdown-menu table tr th {
+  width: auto;
+  height: 24px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 0;
+  transition: background-color 0.6s ease-out;
+}
+@media screen and (min-width: 400px) {
+  .datepicker.dropdown-menu table tr td, .datepicker.dropdown-menu table tr th {
+    padding: 12px;
+  }
+}
+.datepicker.dropdown-menu table tr td:hover, .datepicker.dropdown-menu table tr th:hover, .datepicker.dropdown-menu table tr td.active:hover, .datepicker.dropdown-menu table tr th.active:hover, .datepicker.dropdown-menu table tr td:active:hover, .datepicker.dropdown-menu table tr th:active:hover {
+  border-color: #ededed;
+  border-radius: 0;
+  transition: background-color 0.2s ease-out;
+}
+.datepicker.dropdown-menu table tr td.focused, .datepicker.dropdown-menu table tr th.focused, .datepicker.dropdown-menu table tr td.selected, .datepicker.dropdown-menu table tr th.selected {
+  background-color: #24a0ad;
+  border-color: #ededed;
+  border-radius: 0;
+}
+.datepicker.dropdown-menu table tr td.active, .datepicker.dropdown-menu table tr th.active, .datepicker.dropdown-menu table tr td.active:focus, .datepicker.dropdown-menu table tr th.active:focus, .datepicker.dropdown-menu table tr td.active.active:hover, .datepicker.dropdown-menu table tr th.active.active:hover, .datepicker.dropdown-menu table tr td:active:focus, .datepicker.dropdown-menu table tr th:active:focus, .datepicker.dropdown-menu table tr td.highlighted, .datepicker.dropdown-menu table tr th.highlighted {
+  background-color: #1b7983;
+  border-color: #ededed;
+}
+.datepicker.dropdown-menu table tr th.datepicker-switch {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background-color: inherit;
+  border-radius: 0;
+}
+.datepicker.dropdown-menu table tr th.prev, .datepicker.dropdown-menu table tr th.next {
+  color: #fff;
+  background-color: #17656e;
+  border-radius: 0;
+}
+.datepicker.dropdown-menu table tr th.dow {
+  padding: 2px 12px;
+  font-size: 12px;
+  line-height: 2;
+  color: #fff;
+  background-color: #19717a;
+  border-top: 1px solid #196d76;
+  border-radius: 0;
+}
+.datepicker.dropdown-menu table tr td.day {
+  width: 24px;
+  border-right: 1px solid #ededed;
+}
+.datepicker.dropdown-menu table tr td.day:last-child {
+  border-right-width: 0;
+}
+.datepicker.dropdown-menu table tr td.range {
+  background-color: #eee;
+}
+.datepicker.dropdown-menu .new, .datepicker.dropdown-menu .old, .datepicker.dropdown-menu .disabled, .datepicker.dropdown-menu .disabled:hover {
+  color: #ccc;
+}
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+.fontawesome-calendar {
+  position: absolute;
+  top: 26px;
+  right: 0;
+  font-size: 24px;
+  z-index: -99;
+}
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  border: 1px solid #34495e;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+  min-width: 300px;
+  max-width: 100%;
+  width: auto;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:before, .bootstrap-datetimepicker-widget.dropdown-menu.bottom:after {
+  display: none;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu table td, .bootstrap-datetimepicker-widget.dropdown-menu table th {
+  border-radius: 0;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu table td.old, .bootstrap-datetimepicker-widget.dropdown-menu table td.new {
+  color: #bbb;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu table td.today:before {
+  border-bottom-color: #0095ff;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu table td.active, .bootstrap-datetimepicker-widget.dropdown-menu table td.active:hover, .bootstrap-datetimepicker-widget.dropdown-menu table td span.active {
+  background-color: #0095ff;
+  text-shadow: none;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu table td.active.today:before, .bootstrap-datetimepicker-widget.dropdown-menu table td.active:hover.today:before, .bootstrap-datetimepicker-widget.dropdown-menu table td span.active.today:before {
+  border-bottom-color: #fff;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu table th {
+  height: 40px;
+  padding: 0;
+  width: 40px;
+}
 /*----------------------------------------------
 ------------------MEDIA QUERIES-----------------
 ------------------------------------------------*/
