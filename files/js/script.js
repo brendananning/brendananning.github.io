@@ -641,9 +641,7 @@ Pace.on("done", function(){
 
 var dateSelect     = $('#wedding-datepicker');
 var dateDepart     = $('#start-date');
-var dateReturn     = $('#end-date');
 var spanDepart     = $('.date-depart');
-var spanReturn     = $('.date-return');
 var spanDateFormat = 'ddd, MMMM D yyyy';
 
 dateSelect.datepicker({
@@ -653,16 +651,17 @@ dateSelect.datepicker({
   startDate: "now"
 }).on('change', function() {
   var start = $.format.date(dateDepart.datepicker('getDate'), spanDateFormat);
-  var end = $.format.date(dateReturn.datepicker('getDate'), spanDateFormat);
   spanDepart.text(start);
-  spanReturn.text(end);
 });
+
+var weddingTime = $('#wedding-time');
 
 if (/Mobi/.test(navigator.userAgent)) {
   // if mobile device, use native pickers
   $(".date input").attr("type", "date");
   $(".time input").attr("type", "time");
-} else {
+} 
+else {
   // if desktop device, use DateTimePicker
   $("#timepicker").datetimepicker({
     format: "LT",
@@ -670,6 +669,10 @@ if (/Mobi/.test(navigator.userAgent)) {
       up: "fa fa-chevron-up",
       down: "fa fa-chevron-down"
     }
+  })
+  .on("change",function(e){
+    var date = e.date;//e.date is a moment object
+    $("time-label").html(date.format("HH:mm:ss"));
   });
 }
 
