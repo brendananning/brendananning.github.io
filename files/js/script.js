@@ -670,11 +670,12 @@ else {
       down: "fa fa-chevron-down"
     }
   })
-  .on("change",function(e){
-    var date = e.date;//e.date is a moment object
-    $("time-label").html(date.format("HH:mm:ss"));
-  });
 }
+$(document).click(function() {
+  console.log($("#wedding-time").val());
+  $(".time-label").html($("#wedding-time").val());
+});
+
 
 $( document ).ready(function() {
 

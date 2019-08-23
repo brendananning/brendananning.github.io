@@ -561,18 +561,30 @@ form .col-md-12 textarea {
 .input-group.time .form-control {
   width: 70px;
 }
+#wedding-time {
+  width: 0px;
+  min-width: 0px;
+  padding: 0;
+  opacity: 0;
+}
 .time-label {
+  position: relative;
   display: inline-block;
   float: left;
   font-family: 'Muli', sans-serif;
   text-align: left;
   border-bottom: 2px solid #1e65ae;
   height: 35px;
+  width: 210px;
   padding: 9px 9px 0 12px;
 }
 .input-group-append {
-  float: left;
-  width: 25px;
+  position: absolute;
+  left: 0px;
+  top: 0;
+  opacity: 0;
+  top: -35px;
+  width: 210px;
   height: 100%;
 }
 .datepicker.dropdown-menu {
