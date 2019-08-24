@@ -378,9 +378,6 @@ p {
   margin-top: 100px;
   max-width: 1080px;
 }
-.text {
-  color: #515151;
-}
 .package-item {
   max-width: 30%;
   float: left;
@@ -398,6 +395,7 @@ p {
   padding: 15px;
   top: 0;
   left: 0;
+  color: #515151;
   position: absolute;
   font-family: 'Muli', 'sans-serif';
   height: 460px;
@@ -444,6 +442,7 @@ p {
   width: 40px;
   height: 40px;
   transition: all 0.4s ease;
+  backface-visibility: hidden;
 }
 .package-icon.heart {
   background: url('../img/icons/heart.png');
@@ -460,7 +459,15 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+.package-select {
+  position: absolute;
+  width: 100%;
+  bottom: -1px;
+  transition: all 0.4s ease;
+  border-bottom: 1px solid #1e65ae;
+  z-index: -1;
+  backface-visibility: hidden;
+}
 /*----------------------------------------------
 ------------------CONTACT SECTION---------------
 ------------------------------------------------*/
@@ -474,7 +481,8 @@ p {
   padding-right: 35px;
 }
 .form-input {
-  border-radius: 0px;
+  border-top-left-radius: 6px; 
+  border-top-right-radius: 6px; 
   font-size: 16px;
   background-color: unset;
   width: 100%;
@@ -486,7 +494,7 @@ p {
   border-bottom: 2px solid #1e65ae;
   margin-bottom: 10px;
 }
-.form-input-container > p {
+.form-input-container p {
   margin-bottom: 10px;
 }
 .form-name {
@@ -498,7 +506,7 @@ p {
   width: 120px; 
   height: 40px;
 }
-input {
+textarea, input {
   font-family: 'Muli', sans-serif;
   font-size: 1em;
   height: 50px;
@@ -511,10 +519,14 @@ input {
 input:hover,
 textarea:hover,
 input:focus,
-textarea:focus {
-  color: #9b9b9b;
-  width: 110%;
-  font-size: 16px;
+textarea:focus,
+#wedding-datepicker input:hover,
+#wedding-datepicker input:focus,
+#time-label:hover,
+#time-label:focus {
+  color: #acacac;
+  background: #1e65ae33;
+  /*font-size: 16px;*/
 }
 form {
   width: 500px;
@@ -537,7 +549,7 @@ form .col-md-12 textarea {
   width: 215px;
   font-family: 'Muli', sans-serif;
   text-align: left;
-  color: transparent;
+  color: transparent !important;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #1e65ae;

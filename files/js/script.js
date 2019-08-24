@@ -567,6 +567,7 @@ Pace.on("done", function(){
     function() {
       $(this).find('.package-icon').css("top", "-50px");
       $(this).find('.package-icon').css("transform", "translate(-50%) scale(1.2)");
+      $(this).find('.package-select').css("bottom", "-20px");
       $(".package-item").not(this).css("transform", "scale(0.9)");
       $(".package-item").not(this).css("opacity", "0.3");
       $(this).css("transform", "scale(1.05)");
@@ -575,6 +576,7 @@ Pace.on("done", function(){
      function() {
       $(this).find('.package-icon').css("top", "-20px");
       $(this).find('.package-icon').css("transform", "translate(-50%) scale(1)");
+      $(this).find('.package-select').css("bottom", "-1px");
       $(".package-item").not(this).css("transform", "scale(1)");
       $(".package-item").not(this).css("opacity", "1");
       $(this).css("transform", "scale(1)");
@@ -670,6 +672,7 @@ else {
       down: "fa fa-chevron-down"
     }
   })
+  $("#timepicker").data('datepicker').inline = true;  
 }
 $(document).click(function() {
   console.log($("#wedding-time").val());
