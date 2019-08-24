@@ -672,7 +672,6 @@ else {
       down: "fa fa-chevron-down"
     }
   })
-  $("#timepicker").data('datepicker').inline = true;  
 }
 $(document).click(function() {
   console.log($("#wedding-time").val());
