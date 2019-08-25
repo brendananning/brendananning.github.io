@@ -1166,6 +1166,9 @@ form .col-md-12 textarea {
 ------------------MEDIA QUERIES-----------------
 ------------------------------------------------*/
 @media only screen and (min-width: 2000px){
+  
+} 
+@media only screen and (min-width: 1280px){
   .jarallax .jarallax-img img {
     width: 100%;
     height: auto;
