@@ -322,6 +322,9 @@ p {
   display: table;
   transition: all 0.6s ease;
 }
+.testimonial-item:hover {
+  cursor: default;
+}
 .testimonial-container {
   display: inline-block;
   width: 100%;
@@ -390,12 +393,42 @@ p {
 .testimonials .container #scene-2 {
   position: absolute;
   top: 30%;
-  left: -80px;
+  left: -90px;
 }
 .testimonials .container #scene-3 {
   position: absolute;
   bottom: 33%;
-  right: -50px;
+  right: -70px;
+}
+.underline-anim {
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+.underline-anim:after,
+.underline-anim:before { 
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 0px;
+  height: 5px;
+  margin: 5px 0 0;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.6s;
+  opacity: 0;
+}
+.underline-anim:after {
+  left: 0;
+  background-color: #d34eb4;
+}
+.underline-anim.underline-before:before {
+  width: 100%;
+  opacity: 1;
+}
+.underline-anim.underline-after:after {
+  width: 100%;
+  opacity: 1;
 }
 /*----------------------------------------------
 -----------------PACKAGES SECTION---------------
@@ -488,7 +521,7 @@ p {
   height: 50px;
   left: 0px;
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: opacity 0.6s ease, top 0.4s ease, left 0.4s ease;
   z-index: -1;
   backface-visibility: hidden;
 }
@@ -1335,6 +1368,9 @@ form .col-md-12 textarea {
   .jarallax {
     height: 50vh;
   }
+  .jarallax .jarallax-img img {
+    height: auto;
+  }
   .jarallax.one .jarallax-img img {
     margin-left: -120px;
   }
@@ -1378,6 +1414,37 @@ form .col-md-12 textarea {
     display: block;
     margin: 0 auto;
     margin-bottom: 10px
+  }
+  .pattern.two {
+    width: 35px;
+  }
+  .testimonials .container #scene-2 {
+    left: -3px;
+  }
+  .pattern.three {
+    width: 45px;
+  }
+  .testimonials .container #scene-3 {
+    right: -5px;
+  }
+  .pattern.four {
+    width: 45px;
+  }
+  .contact .container #scene-4 {
+    right: -15px;
+  }
+  .packages .container {
+    margin-bottom: 10px; 
+  }
+  .half-width .time-label {
+    width: 147px;
+  }
+  .half-width #wedding-datepicker input {
+    width: 147px;
+    margin-top: 1px;
+  }
+  .contact .container {
+    padding-left: 15px;
   }
 }
 @media only screen and (max-width: 300px) {

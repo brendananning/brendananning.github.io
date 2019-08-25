@@ -61,15 +61,19 @@ function hoverEffects() {
         $(this).find('.testimonial-quote-bottom').css("bottom", "-20px");
         $(this).find('.testimonial-quote-bottom').css("right", "-20px");
       }
+      $(this).find('.underline-anim').addClass("underline-before");
+      $(this).find('.underline-anim').addClass("underline-after");
       $(this).css("transform", "scale(1.05)");
     },
-     function() {
+    function() {
       if($(window).width() > 479) {
          $(this).find('.testimonial-quote-top').css("top", "-10px");
         $(this).find('.testimonial-quote-top').css("left", "-40px");
         $(this).find('.testimonial-quote-bottom').css("bottom", "-10px");
         $(this).find('.testimonial-quote-bottom').css("right", "-10px");
       }
+      $(this).find('.underline-anim').removeClass("underline-before");
+      $(this).find('.underline-anim').removeClass("underline-after");
       $(this).css("transform", "scale(1)");
     },
   );
@@ -561,6 +565,28 @@ $(document).click(function() {
   }
 });
 
+var UID = {
+  _current: 0,
+  getNew: function(){
+    this._current++;
+    return this._current;
+  }
+};
+
+HTMLElement.prototype.pseudoStyle = function(element,prop,value){
+  var _this = this;
+  var _sheetId = "pseudoStyles";
+  var _head = document.head || document.getElementsByTagName('head')[0];
+  var _sheet = document.getElementById(_sheetId) || document.createElement('style');
+  _sheet.id = _sheetId;
+  var className = "pseudoStyle" + UID.getNew();
+  
+  _this.className +=  " "+className; 
+  
+  _sheet.innerHTML += " ."+className+":"+element+"{"+prop+":"+value+"}";
+  _head.appendChild(_sheet);
+  return this;
+};
 
 $(document).ready(function() {
   $('.jarallax').jarallax({
