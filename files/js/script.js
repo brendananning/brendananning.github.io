@@ -26,7 +26,7 @@ function applyEffects(element){
   element.css("height", "240px");
   element.css("left", "-8px");
   element.css("top", "-18px");
-  element.css("box-shadow", "-1px 3px 26px 0px rgba(0,0,0,0.75)");
+  element.css("box-shadow", "-1px 3px 26px 0px rgba(0,0,0,0.44)");
 
   //Trigger the number fade in on element hover
   element.prev().prev().css("top", "-11px");
@@ -75,11 +75,13 @@ function hoverEffects() {
   );
   $(".package-item").hover(
     function() {
+      $(this).find('.package-icon').css("opacity", "1");
       if($(window).width() < 991) {
-        if($(window).width() < 479) {
+        if($(window).width() < 767) {
           $(this).find('.package-icon').css("top", "-50px");
         }
         else {
+          $(this).find('.package-icon').css("top", "140px");
           $(this).find('.package-icon').css("left", "-55px");
         }
       }
@@ -92,8 +94,9 @@ function hoverEffects() {
       $(this).css("transform", "scale(1.05)");
     },
      function() {
+      $(this).find('.package-icon').css("opacity", "0");
       if($(window).width() < 991) {
-        if($(window).width() < 479) {
+        if($(window).width() < 767) {
           $(this).find('.package-icon').css("top", "0px");
         }
         else {
@@ -110,7 +113,6 @@ function hoverEffects() {
     },
   );
 }
-
 function particleJSHoverEffects(){
   //Modify particles JS colours on hover
   $('#particles-js')
@@ -136,7 +138,7 @@ function addWhiteNav(){
   $(".navbar-nav li a").css("color", "black");
   $(".navbar-default").css("padding-top", "0");
   $(".navbar-default").css("background-color", "rgba(255,255,255,0.9)");
-  $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.75)");
+  $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
   $(".navbar-collapse").css("background-color", "rgba(255,255,255,0.9)");
   $(".bars .line").css("stroke", "#3b3b3b");
   $(".logo-img").attr("src", "./files/img/logo.png");
@@ -144,7 +146,7 @@ function addWhiteNav(){
 function addWhiteNavDesktop(){
   $(".navbar-default").css("padding-top", "0");
   $(".navbar-default").css("background-color", "#fff");
-  $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.75)");
+  $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
   $(".navbar-nav li a").css("color", "black");
   $(".navbar-collapse").css("background-color", "none");
   $(".logo-img").attr("src", "./files/img/logo.png");
@@ -240,7 +242,24 @@ function createGoTopArrow(){
 
 //Reset the elements that require resizing
 function setMainElements(){
-
+  $('.testimonial-quote-top').removeAttr("style");
+  $('.testimonial-quote-bottom').removeAttr("style");
+  $('.package-icon').removeAttr("style");
+  if($(window).width() < 991) {
+    $(".main").css("height", $(window).innerHeight());
+  }
+  if($(window).width() < 479) {
+    $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
+  }
+  else {
+    $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
+  }
+  var scene = document.getElementById('scene');
+  var scene2 = document.getElementById('scene-2');
+  var scene3 = document.getElementById('scene-3');
+  var parallaxInstance = new Parallax(scene);
+  var parallaxInstance2 = new Parallax(scene2);
+  var parallaxInstance3 = new Parallax(scene3);
 }
 
 $(window).resize(function () { 
@@ -337,7 +356,7 @@ function bindVelocity(){
         $(target).velocity("scroll", { duration: 1000, offset: -52.5 });
       }
       else {
-        $(target).velocity("scroll", 1000);
+        $(target).velocity("scroll", { duration: 1000, offset: -52.5 });
       }
   });
 }
@@ -514,17 +533,7 @@ $(document).click(function() {
 });
 
 
-$( document ).ready(function() {
-
-  if($(window).width() < 991) {
-    $(".main").css("height", $(window).innerHeight());
-  }
-  if($(window).width() < 479) {
-    $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
-  }
-  else {
-    $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
-  }
+$(document).ready(function() {
   $('.jarallax').jarallax({
     speed: 0.2
   });

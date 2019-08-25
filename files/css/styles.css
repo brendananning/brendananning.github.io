@@ -112,7 +112,7 @@ p {
   z-index: -1;
 }
 .jarallax .jarallax-img img {
-  width: 100%;
+  width: auto;
 }
 .jarallax .overlay {
   position: absolute;
@@ -172,10 +172,10 @@ p {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 .main .title-text {
-  margin-left: 31px;
+  left: 85px;
   position: absolute;
   top: auto !important;
-  bottom: 22px !important;
+  bottom: 63px !important;
   color: #fff;
   font-family: 'Futura PT Medium';
 }
@@ -206,6 +206,7 @@ p {
   z-index: 1; 
 }
 .block .container {
+  position: relative;
   display: block;
   max-width: 960px;
   margin: 0 auto;
@@ -289,7 +290,15 @@ p {
 .highlight.latte {
   background: #6b430080;
 }
-
+.pattern.one {
+  width: 130px;
+}
+.about .container #scene {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate(-50%);
+}
 /*----------------------------------------------
 ---------------TESTIMONIALS SECTION-------------
 ------------------------------------------------*/
@@ -302,9 +311,9 @@ p {
   margin-top: 60px;
   max-width: 700px;
   padding: 30px 30px 30px 20px;
-  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   border-radius: 6px;
   display: table;
   transition: all 0.6s ease;
@@ -345,7 +354,6 @@ p {
   line-height: 25px;
   backface-visibility: hidden;
 }
-
 .testimonial-quote-top,
 .testimonial-quote-bottom {
   position: absolute;
@@ -369,7 +377,22 @@ p {
 .testimonial-item.right {
   float: right;
 }
-
+.pattern.two {
+  width: 100px;
+}
+.pattern.three {
+  width: 70px;
+}
+.testimonials .container #scene-2 {
+  position: absolute;
+  top: 30%;
+  left: -80px;
+}
+.testimonials .container #scene-3 {
+  position: absolute;
+  bottom: 33%;
+  right: -50px;
+}
 /*----------------------------------------------
 -----------------PACKAGES SECTION---------------
 ------------------------------------------------*/
@@ -387,9 +410,9 @@ p {
   transition: all 0.6s ease;
   border-radius: 6px;
   max-width: 600px;
-  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   margin: 0 auto;
   margin-bottom: 40px;
 }
@@ -460,6 +483,7 @@ p {
   width: 50px;
   height: 50px;
   left: 0px;
+  opacity: 0;
   transition: all 0.4s ease;
   z-index: -1;
   backface-visibility: hidden;
@@ -491,7 +515,7 @@ p {
   display: inline-block;
   text-decoration: none;
   background-color: #ffc5d1;
-  transition: all ease .3s;
+  transition: all 0.6s ease;
   border-radius: 50%;
   padding: 15px;
   border: 6px solid #fff;
@@ -526,12 +550,12 @@ p {
   padding-bottom: 50px;
   border-radius: 6px;
   max-width: 600px;
-  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  padding-left: 40px;
 }
-.contact .container form div 
-{
+.contact .container form div {
   padding-right: 35px;
 }
 .form-input {
@@ -545,7 +569,7 @@ p {
   font-size: 14px;
   color: #acacac;
   border: none;
-  border-bottom: 2px solid #1e65ae;
+  border-bottom: 1px solid #1e65ae;
   margin-bottom: 10px;
 }
 .form-input-container p {
@@ -592,6 +616,7 @@ form .col-md-8,
 form .col-md-12 {
   padding-right: 5px;
   padding-left: 5px;
+  margin-top: 10px;
 }
 form .col-md-12 textarea {
   height: 100px;
@@ -601,13 +626,13 @@ form .col-md-12 textarea {
 }
 #wedding-datepicker input {
   display: block;
-  width: 215px;
+  width: 294px;
   font-family: 'Muli', sans-serif;
   text-align: left;
   color: transparent !important;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid #1e65ae;
+  border-bottom: 1px solid #1e65ae;
   border-radius: 0;
   transition: border-color 0.2s ease-out;
 }
@@ -642,9 +667,9 @@ form .col-md-12 textarea {
   float: left;
   font-family: 'Muli', sans-serif;
   text-align: left;
-  border-bottom: 2px solid #1e65ae;
+  border-bottom: 1px solid #1e65ae;
   height: 35px;
-  width: 210px;
+  width: 127px;
   padding: 9px 9px 0 12px;
 }
 .input-group-append {
@@ -665,6 +690,7 @@ form .col-md-12 textarea {
   margin: 15px;
 }
 .datepicker.dropdown-menu {
+  font-family: 'Muli', sans-serif;
   padding: 0;
   background-clip: border-box;
   border: none;
@@ -727,6 +753,7 @@ form .col-md-12 textarea {
   color: #fff;
   background-color: #17656e;
   border-radius: 0;
+  padding-left: 20px;
 }
 .datepicker.dropdown-menu table tr th.dow {
   padding: 2px 12px;
@@ -910,17 +937,46 @@ form .col-md-12 textarea {
 .navbar-nav li {
   display: inline-block;
 }
+.navbar-right {
+  right: 300px;;
+  margin-top: -35px;
+  position: absolute;
+  float: none;
+}
+.contact-icon {
+  width: 15px;
+  height: 15px;
+}
+.contact-icon {
+  margin-right: 15px;
+}
+.contact-icon-footer {
+  margin: 0px;
+}
+.phone {
+  width: 12px;
+  height: 12px;
+}
+.email {
+  height: 17px;
+  width: 17px;
+}
+.facebook {
+  height: 18px;
+  width: 18px;
+}
 .logo-img {
   position: absolute;
   z-index: 0;
   padding-top: 2px;
-  right: 25px;
+  right: 85px;
   width: 180px;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
 }
 .navbar-collapse {
-  padding-left: 25px;
+  padding-left: 75px;
+  max-width: 1080px;
 }
 .navbar-default .container .navbar-header .logo-img {
   top: 90px;
@@ -1037,7 +1093,7 @@ form .col-md-12 textarea {
   content: "";
   height: 2px;
   left: 0;
-  transition: 0.75s;
+  transition: 0.44s;
   width: 30px;
 }
 .hamburger-slim:before {
@@ -1063,8 +1119,10 @@ form .col-md-12 textarea {
 ------------------MEDIA QUERIES-----------------
 ------------------------------------------------*/
 @media only screen and (min-width: 2000px){
-
-}
+  .jarallax .jarallax-img img {
+    width: 100%;
+  }
+} 
 @media only screen and (max-width: 991px) {
   .about .left-container {
     width: 100%;
@@ -1118,6 +1176,50 @@ form .col-md-12 textarea {
   }
   .logo-img {
     right: 17px;  
+  }
+  .package-header {
+    width: 100%;
+    height: 100px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: scale(1.005);
+    float: none;
+    margin-left: 0;
+  }
+  .heart-btn {
+    border: 4px solid #fff;
+    left: unset;
+    right: 20px;
+    top: 73px;
+  }
+  .text {
+    left: -10px;
+    margin-top: 20px;
+  }
+  .package-item {
+    height: 500px;
+    margin-bottom: 50px;
+  }
+  .package-icon {
+    top: 0;
+    left: 50% !important;
+    transform: translate(-50%) !important;
+  }
+  .packages h1 {
+    margin-bottom: 80px;
+  }
+  .packages .container {
+    margin-bottom: -30px;
+  }
+  .package-header.seqld {
+    background-image: linear-gradient(45deg, #fccb90 0%, #d57eeb 100%);
+  }
+  .package-header.destination {
+    background-image: linear-gradient(to right, #5ee7df 0%, #b490ca 100%);
+  }
+  .package-header.sydmelb {
+    background-image: linear-gradient(to right, #8451c2 0%, #30cfd0 100%);
   }
 }
 @media only screen and (max-width: 479px) {
@@ -1186,40 +1288,8 @@ form .col-md-12 textarea {
     margin-top: -300px;
     margin-left: -600px;
   }
-  .package-header {
-    width: 100%;
-    height: 100px;
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    transform: scale(1.005);
-    float: none;
-    margin-left: 0;
-  }
-  .heart-btn {
-    border: 4px solid #fff;
-    left: unset;
-    right: 20px;
-    top: 73px;
-  }
-  .text {
-    left: -10px;
-    margin-top: 20px;
-  }
   .package-item {
     height: 510px;
-    margin-bottom: 80px;
-  }
-  .package-icon {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-  }
-  .packages h1 {
-    margin-bottom: 80px;
-  }
-  .packages .container {
-    margin-bottom: -30px;
   }
   .block h1 {
     font-size: 32px; 
@@ -1244,15 +1314,6 @@ form .col-md-12 textarea {
   }
   form .col-md-12 textarea {
     margin-top: 15px;
-  }
-  .package-header.seqld {
-    background-image: linear-gradient(45deg, #fccb90 0%, #d57eeb 100%);
-  }
-  .package-header.destination {
-    background-image: linear-gradient(to right, #5ee7df 0%, #b490ca 100%);
-  }
-  .package-header.sydmelb {
-    background-image: linear-gradient(to right, #8451c2 0%, #30cfd0 100%);
   }
   .testimonial-info {
     width: fit-content;

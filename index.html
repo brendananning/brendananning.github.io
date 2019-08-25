@@ -67,11 +67,16 @@
 			<ul class="nav navbar-nav navbar-left">
 				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#home">Home</a></li>
 				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#about">About</a></li>
-				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#portfolio">Portfolio</a></li>
-				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#skills">Skills</a></li>
-				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#experience">Experience</a></li>
+				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#testimonials">Testimonials</a></li>
+				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#packages">Packages</a></li>
 				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#contact">Contact</a></li>
 			</ul>
+		</div>
+		<div class="navbar-right">
+			<a href="tel:0400000000"><img class="contact-icon phone" src="./files/img/icons/phone.png" alt="Phone"></a>
+			<a href="mailto:hello@brendananning.com"><img class="contact-icon email" src="./files/img/icons/email.png" alt="Email"></a>
+			<a href="https://www.instagram.com/brendananning/" target="_blank"><img class="contact-icon" src="./files/img/icons/instagram.png" alt="Instagram"></a>
+			<a href="https://www.mixcloud.com/DJ_AARONMAYBUS/" target="_blank"><img class="contact-icon facebook" src="./files/img/icons/fb.png" alt="Facebook"></a>
 		</div>
 	</nav>
 	<section class="main" id="home">
@@ -84,7 +89,7 @@
 	</section>
 	<section class="main-background">
 	</section>
-	<section class="about block">
+	<section class="about block" id="about">
 		<h1>
 			Renowned Speaker, Life Coach, Marriage Celebrant.
 		</h1>
@@ -111,6 +116,11 @@
 					</picture>
 				</div>
 			</div>
+			<div id="scene" data-jarallax-element="-140">
+			  <div data-depth="1.5">
+			  	<img class="pattern one" src="./files/img/icons/pattern_one.png">
+			  </div>
+			</div>
 		</div>
 	</section>
 	<section class="jarallax one">
@@ -121,7 +131,7 @@
 	    <div class="overlay">
 		</div>
 	</section>
-	<section class="testimonials block">
+	<section class="testimonials block" id="testimonials">
 		<h1>
 			My service speaks for itself.
 		</h1>
@@ -173,7 +183,7 @@
 					<div class="testimonial-image">
 						<picture>
 							<source srcset="./files/img/testimonial_three.jpg">
-							<img src="./files/img/testimonial_one.jpg" alt="Testimonial Image">
+							<img src="./files/img/testimonial_three.jpg" alt="Testimonial Image">
 						</picture>
 						<div class="testimonial-info">
 							<p>Brenna and Ryza</p>
@@ -189,6 +199,16 @@
 					</div>
 				</div>
 			</div>
+			<div id="scene-2" data-jarallax-element="-140">
+			  <div data-depth="1.0">
+			  	<img class="pattern two" src="./files/img/icons/pattern_two.png">
+			  </div>
+			</div>
+			<div id="scene-3" data-jarallax-element="-40">
+			  <div data-depth="0.7">
+			  	<img class="pattern three" src="./files/img/icons/pattern_three.png">
+			  </div>
+			</div>
 		</div>
 	</section>
 	<section class="jarallax two">
@@ -199,12 +219,12 @@
 	    <div class="overlay">
 		</div>
 	</section>
-	<section class="packages block">
+	<section class="packages block" id="packages">
 		<h1>
 			Three simple packages to suit your needs.
 		</h1>
 		<div class="container">
-		    <div class="package-item">
+		    <div class="package-item one">
 		    	<div class="package-header seqld">
 				</div>
 				<dl class="text">
@@ -228,7 +248,7 @@
 				<div class="package-icon cake">
 				</div>
 			</div>
-			<div class="package-item">
+			<div class="package-item two">
 				<div class="package-header destination">
 				</div>
 				<dl class="text">
@@ -252,7 +272,7 @@
 				<div class="package-icon rings">
 				</div>
 			</div>
-			<div class="package-item">
+			<div class="package-item three">
 				<div class="package-header sydmelb">
 				</div>
 				<dl class="text">
@@ -286,7 +306,7 @@
 	    <div class="overlay">
 		</div>
 	</section>
-	<section class="contact block">
+	<section class="contact block"  id="contact">
 		<h1>
 			Like what you see?
 		</h1>
@@ -317,15 +337,7 @@
 						oninvalid="setCustomValidity('Please enter a valid number.')"
 						onchange="try{setCustomValidity('')}catch(e){}" required placeholder="Phone Number">
 					</div>
-					<div class="col-md-6">
-						 <div class="input-daterange input-group" id="wedding-datepicker">
-					        <div class="form-item">
-					        	<input class="form-control" type="text" id="start-date" name="start" data-date-format="DD, MM d" />
-					        	<span class="date-text date-depart">Wedding Date</span>
-					        </div>
-					    </div>
-					</div>
-					<div class="col-md-6">
+					<div class="col-md-4">
 						<span class="time-label">Wedding Time</span>
 	                    <div class="input-group time" id="timepicker">
 	                    	<input id="wedding-time" class="form-control" />
@@ -335,6 +347,14 @@
 		                    	</span>
 	                   		</span>
 	                   	</div>
+					</div>
+					<div class="col-md-8">
+						 <div class="input-daterange input-group" id="wedding-datepicker">
+					        <div class="form-item">
+					        	<input class="form-control" type="text" id="start-date" name="start" data-date-format="DD, MM d" />
+					        	<span class="date-text date-depart">Wedding Date</span>
+					        </div>
+					    </div>
 					</div>
 					<div class="col-md-12">
 						<textarea cols="40" rows="5" type="text" class="form-input" id="message" name="message" pattern="{10,1000}" 
@@ -362,6 +382,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js" integrity="sha256-8VU/+18Z5eyYrv12HuV6lH74T2PFmP1ggKi+JkwYDHE=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.11.0/jarallax.min.js" integrity="sha256-bNL7abArAf9qApPjGFQ8apa/1S8fbdVdgNzrS9j3pcg=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js" integrity="sha256-1HqoI76JGKA17K0C0s9K8L/iy8PAC43KVLt1hRD/Ojc=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.11.0/jarallax-element.min.js" integrity="sha256-c/q0mvJWUZY4x+wwcEi2EA9OpNf580croHQ/XjD0xB8=" crossorigin="anonymous"></script>
 	<script src="./files/js/stylus.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
