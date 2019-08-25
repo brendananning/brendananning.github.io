@@ -527,13 +527,13 @@ p {
 }
 .heart-btn:hover{
   cursor: pointer;
-  background: #ffc5d1;
+  background: #b095cb;
 }
 .heart-btn img { 
   width: 17px;
   margin: 0 auto;
   display: block;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 /*----------------------------------------------
@@ -602,7 +602,7 @@ textarea:focus,
 #wedding-datepicker input:focus,
 #time-label:hover,
 #time-label:focus {
-  color: #acacac;
+  color: #494949;
   background: #1e65ae33;
   /*font-size: 16px;*/
 }
@@ -889,7 +889,14 @@ form .col-md-12 textarea {
   opacity: 1;
   transform: scale(1,1);
 }
-
+.pattern.four {
+  width: 100px;
+}
+.contact .container #scene-4 {
+  position: absolute;
+  top: 10%;
+  right: -80px;
+}
 /*----------------------------------------------
 ------------------NAVBAR STYLES-----------------
 ------------------------------------------------*/
@@ -1066,6 +1073,9 @@ form .col-md-12 textarea {
 .navbar-default .navbar-form {
   border: none; 
 }
+.navbar-collapse.collapsing {
+  margin-top: 17px;
+}
 .navbar-collapse.in {
   overflow: hidden;
 }
@@ -1139,8 +1149,18 @@ form .col-md-12 textarea {
   .jarallax {
     height: 40vh;
   }
+  .contact .container #scene-4 {
+    right: -58px;
+  }
+  .testimonials .container #scene-2 {
+    left: -69px;
+  }
+  .jarallax.one .jarallax-img img {
+    margin-left: -120px;
+  }
   .jarallax .jarallax-img img {
     width: auto;
+    margin-left: -394px;
   }
   .package-item {
     height: 340px;
@@ -1159,17 +1179,49 @@ form .col-md-12 textarea {
   .contact .container {
     margin-bottom: 20px;
   }
+  .main-background {
+    background-position: 50% 0% !important;
+  }
+  .navbar-right {
+    display: none !important;
+  }
+  form .col-md-12 textarea {
+    margin-top: 0px;
+  }
+  .half-width {
+    width: 50%;
+    float: left;
+  }
+  .half-width .time-label {
+    width: 210px;
+  }
+  .half-width #wedding-datepicker input {
+    margin-top: 0px;
+    width: 210px;
+  }
+  .main .title-text h1 {
+    font-size: 70px;
+  }
+  .main .title-text h3 {
+    font-size: 28px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .navbar-collapse.in {
     margin-top: 17px;
-    border-top: 1px solid #1e65ae;
+  }
+  .navbar-collapse {
+   padding-left: 0; 
   }
   .navbar-nav {
-    text-align: center;
+    text-align: left;
     float: none;
     padding-top: 10px;
+    padding-left: 10px;
     margin: 0 auto;
+  }
+  .navbar-default .navbar-nav li a {
+    font-size: 18px;
   }
   .navbar-default .navbar-nav > li, .navbar-default .navbar-nav > li > a {
     margin-bottom: 10px;
@@ -1235,6 +1287,7 @@ form .col-md-12 textarea {
   }
   .main .title-text {
     bottom: 83px !important;
+    left: 22px;
   }
   .block {
     padding: 5px;

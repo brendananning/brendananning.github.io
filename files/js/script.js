@@ -142,6 +142,7 @@ function addWhiteNav(){
   $(".navbar-collapse").css("background-color", "rgba(255,255,255,0.9)");
   $(".bars .line").css("stroke", "#3b3b3b");
   $(".logo-img").attr("src", "./files/img/logo.png");
+  $(".navbar-right").css("display", "none");
 }
 function addWhiteNavDesktop(){
   $(".navbar-default").css("padding-top", "0");
@@ -150,6 +151,11 @@ function addWhiteNavDesktop(){
   $(".navbar-nav li a").css("color", "black");
   $(".navbar-collapse").css("background-color", "none");
   $(".logo-img").attr("src", "./files/img/logo.png");
+  $(".navbar-right").css("display", "block");
+  $(".contact-icon.phone").attr("src", "./files/img/icons/phone.png");
+  $(".contact-icon.email").attr("src", "./files/img/icons/email.png");
+  $(".contact-icon.insta").attr("src", "./files/img/icons/instagram.png");
+  $(".contact-icon.facebook").attr("src", "./files/img/icons/fb.png");
 }
 function addTransparentNav(){
   //Make navbar transparent if scroll position is on main section
@@ -159,6 +165,11 @@ function addTransparentNav(){
   $(".navbar-nav li a").css("color", "white");
   $(".navbar-collapse").css("background-color", "none");
   $(".logo-img").attr("src", "./files/img/logo_white.png");
+  $(".navbar-right").css("display", "block");
+  $(".contact-icon.phone").attr("src", "./files/img/icons/phone_white.png");
+  $(".contact-icon.email").attr("src", "./files/img/icons/email_white.png");
+  $(".contact-icon.insta").attr("src", "./files/img/icons/instagram_white.png");
+  $(".contact-icon.facebook").attr("src", "./files/img/icons/fb_white.png");
 }
 function animateNavbar(){
   //If on mobile
@@ -257,9 +268,21 @@ function setMainElements(){
   var scene = document.getElementById('scene');
   var scene2 = document.getElementById('scene-2');
   var scene3 = document.getElementById('scene-3');
+  var scene4 = document.getElementById('scene-4');
   var parallaxInstance = new Parallax(scene);
   var parallaxInstance2 = new Parallax(scene2);
   var parallaxInstance3 = new Parallax(scene3);
+  var parallaxInstance4 = new Parallax(scene4);
+  
+  // if desktop device, use DateTimePicker
+  $("#timepicker").datetimepicker({
+    format: "LT",
+    // debug:true,
+    icons: {
+      up: "fa fa-chevron-up",
+      down: "fa fa-chevron-down"
+    }
+  })
 }
 
 $(window).resize(function () { 
@@ -350,6 +373,27 @@ function bindVelocity(){
             document.getElementById('bars').classList.toggle('active');
           }
         }
+      }
+      if(target == "#package-one-contact") {
+        $("#message").val("Hello, I'd like to book the South East Queensland package.");    
+        target = "#contact";  
+        setTimeout(function(){
+          $( "#message" ).focus();
+        }, 1200);  
+      }
+      if(target == "#package-two-contact") {
+        $("#message").val("Hello, I'd like to book the Destination package.");    
+        target = "#contact";    
+        setTimeout(function(){
+          $( "#message" ).focus();
+        }, 1200);  
+      }
+      if(target == "#package-three-contact") {
+        $("#message").val("Hello, I'd like to book the Sydney/Melbourne package.");    
+        target = "#contact";    
+        setTimeout(function(){
+          $( "#message" ).focus();
+        }, 1200);  
       }
       // scroll to each target
       if($(window).width() < 767){
@@ -510,25 +554,8 @@ dateSelect.datepicker({
 
 var weddingTime = $('#wedding-time');
 
-if (/Mobi/.test(navigator.userAgent)) {
-  // if mobile device, use native pickers
-  $(".date input").attr("type", "date");
-  $(".time input").attr("type", "time");
-} 
-else {
-  // if desktop device, use DateTimePicker
-  $("#timepicker").datetimepicker({
-    format: "LT",
-    // debug:true,
-    icons: {
-      up: "fa fa-chevron-up",
-      down: "fa fa-chevron-down"
-    }
-  })
-}
 
-$(document).click(function() {
-  console.log($("#wedding-time").val());
+$(".time-label").click(function() {
   $(".time-label").html($("#wedding-time").val());
 });
 
