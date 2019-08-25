@@ -1005,11 +1005,11 @@ form .col-md-12 textarea {
   font-weight: 200;
   color: #e7e7e7;
 }
-.navbar-default .navbar-nav li a:hover {
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
   -webkit-transition: all 0.4s;
    -moz-transition: all 0.4s;
   transition: all 0.4s;
-  color: rgb(255, 149, 1) !important; 
+  color: #1e65ae !important; 
 }
 .navbar-default .navbar-nav .active a:focus {
   color: inherit;
