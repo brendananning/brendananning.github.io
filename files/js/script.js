@@ -55,30 +55,54 @@ function hoverEffects() {
   );
   $(".testimonial-item").hover(
     function() {
-      $(this).find('.testimonial-quote-top').css("top", "-20px");
-      $(this).find('.testimonial-quote-top').css("left", "-50px");
-      $(this).find('.testimonial-quote-bottom').css("bottom", "-20px");
-      $(this).find('.testimonial-quote-bottom').css("right", "-20px");
+      if($(window).width() > 479) {
+        $(this).find('.testimonial-quote-top').css("top", "-20px");
+        $(this).find('.testimonial-quote-top').css("left", "-50px");
+        $(this).find('.testimonial-quote-bottom').css("bottom", "-20px");
+        $(this).find('.testimonial-quote-bottom').css("right", "-20px");
+      }
       $(this).css("transform", "scale(1.05)");
     },
      function() {
-      $(this).find('.testimonial-quote-top').css("top", "-10px");
-      $(this).find('.testimonial-quote-top').css("left", "-40px");
-      $(this).find('.testimonial-quote-bottom').css("bottom", "-10px");
-      $(this).find('.testimonial-quote-bottom').css("right", "-10px");
+      if($(window).width() > 479) {
+         $(this).find('.testimonial-quote-top').css("top", "-10px");
+        $(this).find('.testimonial-quote-top').css("left", "-40px");
+        $(this).find('.testimonial-quote-bottom').css("bottom", "-10px");
+        $(this).find('.testimonial-quote-bottom').css("right", "-10px");
+      }
       $(this).css("transform", "scale(1)");
     },
   );
   $(".package-item").hover(
     function() {
-      $(this).find('.package-icon').css("left", "-70px");
+      if($(window).width() < 991) {
+        if($(window).width() < 479) {
+          $(this).find('.package-icon').css("top", "-50px");
+        }
+        else {
+          $(this).find('.package-icon').css("left", "-55px");
+        }
+      }
+      else {
+        $(this).find('.package-icon').css("left", "-70px");
+      }
       $(this).find('.package-select').css("bottom", "-20px");
       $(".package-item").not(this).css("transform", "scale(0.9)");
       $(".package-item").not(this).css("opacity", "0.3");
       $(this).css("transform", "scale(1.05)");
     },
      function() {
-      $(this).find('.package-icon').css("left", "0px");
+      if($(window).width() < 991) {
+        if($(window).width() < 479) {
+          $(this).find('.package-icon').css("top", "0px");
+        }
+        else {
+          $(this).find('.package-icon').css("left", "0px");
+        }
+      }
+      else {
+        $(this).find('.package-icon').css("left", "0px");
+      }
       $(this).find('.package-select').css("bottom", "-1px");
       $(".package-item").not(this).css("transform", "scale(1)");
       $(".package-item").not(this).css("opacity", "1");
@@ -408,7 +432,6 @@ Pace.on("done", function(){
         }
       });
 
-      $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
       setTimeout( function(){
         $(".navbar-default").css("opacity", "1");
         $(".main-background").css("opacity", "1");
@@ -454,7 +477,7 @@ Pace.on("done", function(){
 var dateSelect     = $('#wedding-datepicker');
 var dateDepart     = $('#start-date');
 var spanDepart     = $('.date-depart');
-var spanDateFormat = 'ddd, MMMM D yyyy';
+var spanDateFormat = 'MMMM D yyyy';
 
 dateSelect.datepicker({
   autoclose: true,
@@ -496,7 +519,12 @@ $( document ).ready(function() {
   if($(window).width() < 991) {
     $(".main").css("height", $(window).innerHeight());
   }
-  $(".bars").removeClass("active");
+  if($(window).width() < 479) {
+    $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
+  }
+  else {
+    $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
+  }
   $('.jarallax').jarallax({
     speed: 0.2
   });

@@ -324,7 +324,7 @@ p {
   margin-bottom: 0;
   font-size: 13px; 
 }
-.testimonial-image p:nth-child(2) {
+.testimonial-image p:nth-child(1) {
   color: #484848;
   font-size: 17px; 
   font-weight: bold;
@@ -456,7 +456,7 @@ p {
 }
 .package-icon {
   position: absolute;
-  top: 130px;
+  top: 140px;
   width: 50px;
   height: 50px;
   left: 0px;
@@ -522,8 +522,8 @@ p {
   text-align: center;
 }
 .contact .container {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   border-radius: 6px;
   max-width: 600px;
   -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.75);
@@ -967,8 +967,18 @@ form .col-md-12 textarea {
   height: 50px;
 }
 .navbar-toggle {
-  margin-top: 17px;
+  position: relative;
   float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  /* margin-right: 15px; */
+  /* margin-bottom: 8px; */
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  float: left;
+  margin-left: 10px;
 }
 .navbar-default .navbar-toggle,
 .navbar-default-home .navbar-toggle {
@@ -1013,6 +1023,42 @@ form .col-md-12 textarea {
 .opaque {
   opacity: 1 !important;
 }
+.hamburger-slim {
+  background: transparent;
+  /* margin: 60px auto 40px; */
+  position: absolute;
+  top: 6px;
+  height: 20px;
+  width: 30px;
+}
+.hamburger-slim:before, .hamburger-slim:after {
+  background: #3b3b3b;
+  backface-visibility: hidden;
+  content: "";
+  height: 2px;
+  left: 0;
+  transition: 0.75s;
+  width: 30px;
+}
+.hamburger-slim:before {
+  box-shadow: #3b3b3b 0 9px 0 0;
+  position: absolute;
+  top: 0;
+}
+.hamburger-slim:after {
+  position: absolute;
+  top: calc(100% - 2px);
+}
+.hamburger-slim:hover:before {
+  box-shadow: transparent 0 0 0 0;
+  top: 50%;
+  transform: rotate(225deg);
+}
+.hamburger-slim:hover:after {
+  top: 50%;
+  transform: rotate(315deg);
+}
+
 /*----------------------------------------------
 ------------------MEDIA QUERIES-----------------
 ------------------------------------------------*/
@@ -1020,10 +1066,200 @@ form .col-md-12 textarea {
 
 }
 @media only screen and (max-width: 991px) {
+  .about .left-container {
+    width: 100%;
+  }
+  .about .right-container {
+    width: 100%;
+  }
+  .about .right-container .image-container {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .jarallax {
+    height: 40vh;
+  }
+  .jarallax .jarallax-img img {
+    width: auto;
+  }
+  .package-item {
+    height: 340px;
+  }
+  .package-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .block {
+    padding: 40px 80px 40px 80px;
+  }
+  .col-md-6 {
+    width: 50%;
+    float: left;
+  }
+  .contact .container {
+    margin-bottom: 20px;
+  }
 }
 @media only screen and (max-width: 767px) {
+  .navbar-collapse.in {
+    margin-top: 17px;
+    border-top: 1px solid #1e65ae;
+  }
+  .navbar-nav {
+    text-align: center;
+    float: none;
+    padding-top: 10px;
+    margin: 0 auto;
+  }
+  .navbar-default .navbar-nav > li, .navbar-default .navbar-nav > li > a {
+    margin-bottom: 10px;
+  }
+  .logo-img {
+    right: 17px;  
+  }
 }
 @media only screen and (max-width: 479px) {
+  .main .title-text h1 {
+    font-size: 45px;
+  }
+  .main .title-text .smaller {
+    margin-top: -8px;
+    font-size: 20px;
+  }
+  .main .title-text h3 {
+    font-size: 28px;
+  }
+  .main .title-text {
+    bottom: 83px !important;
+  }
+  .block {
+    padding: 5px;
+  }
+  .block h1 {
+    padding: 10px 20px 0 20px;
+  }
+  .about .right-container .image-container {
+    margin-bottom: 40px;
+  }
+  .testimonial-image {
+    float: none;
+    width: 100%;
+    margin-right: 0px;
+    display: inline-block;
+    text-align: center;
+  }
+  .testimonial-description {
+    display: block;
+    margin-top: 40px;
+    width: 100%;
+  }
+  .testimonial-quote-top {
+    top: -30px;
+    left: 0;
+    width: 20px;
+  }
+  .testimonial-quote-bottom {
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+  }
+  .testimonial-item {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  .testimonials .container {
+    margin-bottom: 30px;
+  }
+  .jarallax {
+    height: 50vh;
+  }
+  .jarallax.one .jarallax-img img {
+    margin-left: -120px;
+  }
+  .jarallax.two .jarallax-img img {
+    margin-top: -300px;
+    margin-left: -600px;
+  }
+  .jarallax.three .jarallax-img img {
+    margin-top: -300px;
+    margin-left: -600px;
+  }
+  .package-header {
+    width: 100%;
+    height: 100px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: scale(1.005);
+    float: none;
+    margin-left: 0;
+  }
+  .heart-btn {
+    border: 4px solid #fff;
+    left: unset;
+    right: 20px;
+    top: 73px;
+  }
+  .text {
+    left: -10px;
+    margin-top: 20px;
+  }
+  .package-item {
+    height: 510px;
+    margin-bottom: 80px;
+  }
+  .package-icon {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .packages h1 {
+    margin-bottom: 80px;
+  }
+  .packages .container {
+    margin-bottom: -30px;
+  }
+  .block h1 {
+    font-size: 32px; 
+  }
+  .contact {
+    padding: 0 15px;
+  }
+  .contact .container form div {
+    padding-right: 5px;
+  }
+  form {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  #wedding-datepicker input {
+    display: block;
+    width: 100%;
+  }
+  .time-label {
+    width: 98%;
+  }
+  form .col-md-12 textarea {
+    margin-top: 15px;
+  }
+  .package-header.seqld {
+    background-image: linear-gradient(45deg, #fccb90 0%, #d57eeb 100%);
+  }
+  .package-header.destination {
+    background-image: linear-gradient(to right, #5ee7df 0%, #b490ca 100%);
+  }
+  .package-header.sydmelb {
+    background-image: linear-gradient(to right, #8451c2 0%, #30cfd0 100%);
+  }
+  .testimonial-info {
+    width: fit-content;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px
+  }
 }
 @media only screen and (max-width: 300px) {
   .too-small-message {
