@@ -41,124 +41,50 @@ function resetEffects(element){
 }
 
 function hoverEffects() {
-  $(".aml").parent().hover(
+  $(".image-container").hover(
     function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Melbourne Asset Management").animate({'opacity': 1}, 200);
-      });
-      applyEffects($(this).find('.backdrop'));
+      $(".gradient").css("opacity", "0");
+      $(".gradient").css("transform", "scale(1.1)");
+      $(".about-image").css("transform", "scale(1.1)");
     },
-    function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Portfolio").animate({'opacity': 1}, 200);
-      });
-      resetEffects($(this).find('.backdrop'));
-    }
-  );
-  $(".tla").parent().hover(
-    function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Government and Defence Logistics Management").animate({'opacity': 1}, 200);
-      });
-      applyEffects($(this).find('.backdrop'));
+     function() {
+      $(".gradient").css("opacity", "0.2");
+      $(".gradient").css("transform", "scale(1.05)");
+      $(".about-image").css("transform", "scale(1.05)");
     },
-    function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Portfolio").animate({'opacity': 1}, 200);
-      });
-      resetEffects($(this).find('.backdrop'));
-    }
   );
-  $(".qutrunning").parent().hover(
+  $(".testimonial-item").hover(
     function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Running Club of QUT").animate({'opacity': 1}, 200);
-      });
-      applyEffects($(this).find('.backdrop'));
+      $(this).find('.testimonial-quote-top').css("top", "-20px");
+      $(this).find('.testimonial-quote-top').css("left", "-50px");
+      $(this).find('.testimonial-quote-bottom').css("bottom", "-20px");
+      $(this).find('.testimonial-quote-bottom').css("right", "-20px");
+      $(this).css("transform", "scale(1.05)");
     },
-    function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Portfolio").animate({'opacity': 1}, 200);
-      });
-      resetEffects($(this).find('.backdrop'));
-    }
-  );
-  $(".quteb").parent().hover(
-    function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Exchange Club of QUT").animate({'opacity': 1}, 200);
-      });
-      applyEffects($(this).find('.backdrop'));
+     function() {
+      $(this).find('.testimonial-quote-top').css("top", "-10px");
+      $(this).find('.testimonial-quote-top').css("left", "-40px");
+      $(this).find('.testimonial-quote-bottom').css("bottom", "-10px");
+      $(this).find('.testimonial-quote-bottom').css("right", "-10px");
+      $(this).css("transform", "scale(1)");
     },
-    function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Portfolio").animate({'opacity': 1}, 200);
-      });
-      resetEffects($(this).find('.backdrop'));
-    }
   );
-  $(".daryl").parent().hover(
+  $(".package-item").hover(
     function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Brisbane Entertainer").animate({'opacity': 1}, 200);
-      });
-      applyEffects($(this).find('.backdrop'));
+      $(this).find('.package-icon').css("left", "-70px");
+      $(this).find('.package-select').css("bottom", "-20px");
+      $(".package-item").not(this).css("transform", "scale(0.9)");
+      $(".package-item").not(this).css("opacity", "0.3");
+      $(this).css("transform", "scale(1.05)");
     },
-    function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Portfolio").animate({'opacity': 1}, 200);
-      });
-      resetEffects($(this).find('.backdrop'));
-    }
-  );
-  $(".aaron").parent().hover(
-    function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Brisbane Entertainer and DJ").animate({'opacity': 1}, 200);
-      });
-      applyEffects($(this).find('.backdrop'));
+     function() {
+      $(this).find('.package-icon').css("left", "0px");
+      $(this).find('.package-select').css("bottom", "-1px");
+      $(".package-item").not(this).css("transform", "scale(1)");
+      $(".package-item").not(this).css("opacity", "1");
+      $(this).css("transform", "scale(1)");
     },
-    function() {
-      $(".portfolio-title").stop().animate({'opacity': 0}, 200, function(){
-        $(".portfolio-title").text("Portfolio").animate({'opacity': 1}, 200);
-      });
-      resetEffects($(this).find('.backdrop'));
-    }
   );
-  $(".food-interact").hover(
-    function() {
-      $(".food-background").addClass("active");
-    },
-    function() {
-      $(".food-background").removeClass("active");
-    }
-  );
-  $(".skill-item").click(function() {
-    var thisElement = $(this);
-    thisElement.css("opacity", "0");
-    setTimeout( function(){
-      $('skills').find("skill-item").css('opacity', '0');
-      thisElement.css("opacity", "1");
-    }, 1000);
-  });
-  $(".experience-item").click(function() {
-    var thisElement = $(this);
-    thisElement.css("opacity", "0");
-    setTimeout( function(){
-      $('experience').find("experience-item").css('opacity', '0');
-      thisElement.css("opacity", "1");
-    }, 1000);
-  });
-  // //Make skill item disappear on hover for 800ms
-  // $('.skill-item')
-  //   .mouseover(function() {
-  //     $(this).css("opacity", "0");
-  //   })
-  //   .mouseout(function() {
-  //     setTimeout( function(){
-  //       $(this).css("opacity", "1");
-  //     }, 3200);
-  //   });
 }
 
 function particleJSHoverEffects(){
@@ -184,41 +110,38 @@ function particleJSHoverEffects(){
 
 function addWhiteNav(){
   $(".navbar-nav li a").css("color", "black");
+  $(".navbar-default").css("padding-top", "0");
   $(".navbar-default").css("background-color", "rgba(255,255,255,0.9)");
+  $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.75)");
   $(".navbar-collapse").css("background-color", "rgba(255,255,255,0.9)");
-  $(".navbar-default").css("border-top", "none");
   $(".bars .line").css("stroke", "#3b3b3b");
+  $(".logo-img").attr("src", "./files/img/logo.png");
+}
+function addWhiteNavDesktop(){
+  $(".navbar-default").css("padding-top", "0");
+  $(".navbar-default").css("background-color", "#fff");
+  $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.75)");
+  $(".navbar-nav li a").css("color", "black");
+  $(".navbar-collapse").css("background-color", "none");
+  $(".logo-img").attr("src", "./files/img/logo.png");
 }
 function addTransparentNav(){
   //Make navbar transparent if scroll position is on main section
-  $(".navbar-nav li a").css("color", "white");
+  $(".navbar-default").css("padding-top", "20px");
   $(".navbar-default").css("background-color", "transparent");
-  $(".navbar-default").css("border-top", "none");
-  $(".navbar-collapse").css("background-color", "none");
-}
-function addWhiteNavDesktop(){
-  $(".navbar-nav li a").css("color", "black");
-  $(".navbar-default").css("background-color", "#fff");
-  $(".navbar-default").css("border-top", "none");
-  $(".navbar-collapse").css("background-color", "none");
-}
-function addDarkNavDesktop(){
+  $(".navbar-default").css("box-shadow", "none");
   $(".navbar-nav li a").css("color", "white");
-  $(".navbar-default").css("background-color", "rgb(30, 25, 44)");
-  $(".navbar-default").css("border-top", "none");
   $(".navbar-collapse").css("background-color", "none");
+  $(".logo-img").attr("src", "./files/img/logo_white.png");
 }
-
 function animateNavbar(){
   //If on mobile
   if($(window).width() < 767){
     $(".navbar-default").addClass("opaque");
-    $(".navbar-nav").removeClass("fade-last");
     addWhiteNav();
   }
   //If on desktop
   else {
-    $(".navbar-nav").addClass("fade-last");
     //Scroll position is in About section
     if($(document).scrollTop() > 1) {
       addWhiteNavDesktop();
@@ -227,22 +150,6 @@ function animateNavbar(){
     else {
       //Make navbar transparent if scroll position is on main section
       addTransparentNav();
-    }
-    //Scroll position is in Portfolio section
-    if($(document).scrollTop() > (($(".about").outerHeight()) + 10)) {
-      addDarkNavDesktop();
-    }
-    //Scroll position is in Skills section
-    if($(document).scrollTop() > (($(".about").outerHeight() + $(".portfolio").outerHeight())  + 10)) {
-      addWhiteNavDesktop();     
-    }
-    //Scroll position is in Experience section
-    if($(document).scrollTop() > (($(".about").outerHeight() + $(".portfolio").outerHeight() + $(".skills").outerHeight())  + 10)) {
-      addDarkNavDesktop();
-    }
-    //Scroll position is in Experience section
-    if($(document).scrollTop() > (($(".about").outerHeight() + $(".portfolio").outerHeight() + $(".skills").outerHeight() + $(".experience").outerHeight())  + 10)) {
-      addWhiteNavDesktop();
     }
   }
 }
@@ -310,70 +217,6 @@ function createGoTopArrow(){
 //Reset the elements that require resizing
 function setMainElements(){
 
-  //Reset all styles on navbar if on desktop width
-  if($(window).width() > 767) {
-    $(".navbar-default").removeAttr("style");
-    $(".navbar-nav li a").removeAttr("style");
-    $(".navbar-collapse").removeAttr("style");
-    $(".ribbon").css("animation", "none");
-    $(".navbar-collapse .navbar-nav").removeClass("transparent");
-  }
-
-  var delay = 1200;
-
-  //Check if the page has only loaded once, if yes then set elements after 1000 ms
-  if(!firstTime){
-    //If page has already loaded and this is new execution, set delay as 400 ms
-    delay = 250;
-  }
-  //Debounce the height change function for the portfolio items and navbar animations
-  setTimeout(function(){
-    animateNavbar();
-    $(".ribbon").css("top", "50%");
-    $(".main").css("height", $(window).innerHeight());
-
-    if($(window).width() < 991) {
-      $(".title-text").css("top", "53%");
-      $(".title-text").css("transform", "translate(0%, -53%");
-    }
-    else {
-      $(".title-text").css("top", "49%");
-      $(".title-text").css("transform", "translate(0%, -49%");
-    }
-    if($(window).width() < 767) {
-      if($(window).height() > 450) {
-        $(".title-text").css("top", "54%");
-      }
-      //For VERY long phones in landscape 
-      else if($(window).height() < 300) {
-        $(".title-text").css("top", "52%");
-      }
-      else {
-        $(".title-text").css("top", "58%");
-        $(".title-text").css("transform", "translate(0%, -58%");
-      }
-      //If not first time this function is executed, apply styles 
-      if(!firstTime){
-        $(".navbar-collapse .navbar-nav").removeClass("opaque");
-        $(".navbar-collapse .navbar-nav").addClass("transparent");
-      }
-    }
-    if($(window).width() < 479){
-      $(".title-text").css("top", "52%");
-      $(".title-text").css("transform", "translate(0%, -52%");
-    }
-    else{
-      if(!firstTime){
-        $(".navbar-collapse .navbar-nav").addClass("opaque");
-        $(".navbar-collapse .navbar-nav").removeClass("transparent");
-      }
-    }
-    //Set firstTime as false after first execution of function
-    firstTime = false;
-  }, delay);
-  setTimeout(function(){
-    $(".navbar-default").css("z-index", "103");
-  }, delay);
 }
 
 $(window).resize(function () { 
@@ -383,62 +226,62 @@ $(window).resize(function () {
 });
 
 function createScrollRevealEffects(){
-  var slideInConfig = {
-    origin: 'right',
-    duration: 700,
-    distance: '400px',
-    viewOffset: {
-      bottom: 250
-    },
-    //If effect has already occured, remove styles applied by scrollReveal
-    //to allow for hover transform effects to still occur
-    afterReveal: function() {
-      setTimeout(function(){
-        $('.portfolio-image').removeAttr("style");
-        //Reset the height again after removal
-        hoverEffects();
-      }, 1000);
-    }
-  }
-  var fadeInConfig = {
-    duration: 700,
-    origin: 'right',
-    distance: '400px',
-    viewOffset: {
-      top: 250
-    },
-    afterReveal: function() {
-      setTimeout(function(){
-        $('.skill-item').removeAttr("style");
-        $('.portfolio-item').removeAttr("style");
-        hoverEffects();
-      }, 300);
-    }
-  }
-  window.sr = ScrollReveal();
+  // var slideInConfig = {
+  //   origin: 'right',
+  //   duration: 700,
+  //   distance: '400px',
+  //   viewOffset: {
+  //     bottom: 250
+  //   },
+  //   //If effect has already occured, remove styles applied by scrollReveal
+  //   //to allow for hover transform effects to still occur
+  //   afterReveal: function() {
+  //     setTimeout(function(){
+  //       $('.portfolio-image').removeAttr("style");
+  //       //Reset the height again after removal
+  //       hoverEffects();
+  //     }, 1000);
+  //   }
+  // }
+  // var fadeInConfig = {
+  //   duration: 700,
+  //   origin: 'right',
+  //   distance: '400px',
+  //   viewOffset: {
+  //     top: 250
+  //   },
+  //   afterReveal: function() {
+  //     setTimeout(function(){
+  //       $('.skill-item').removeAttr("style");
+  //       $('.portfolio-item').removeAttr("style");
+  //       hoverEffects();
+  //     }, 300);
+  //   }
+  // }
+  // window.sr = ScrollReveal();
 
-  sr.reveal('.portfolio-item', slideInConfig);
-  sr.reveal('.skill-item', fadeInConfig);
+  // sr.reveal('.portfolio-item', slideInConfig);
+  // sr.reveal('.skill-item', fadeInConfig);
 
-  sr.reveal($('.portfolio-image.aml').parent(),  { delay: 400  });
-  sr.reveal($('.portfolio-image.tla').parent(),  { delay: 500  });
-  sr.reveal($('.portfolio-image.qutrunning').parent(),  { delay: 600 });
-  sr.reveal($('.portfolio-image.quteb').parent(),  { delay: 700 });
-  sr.reveal($('.portfolio-image.daryl').parent(),  { delay: 800 });
-  sr.reveal($('.portfolio-image.aaron').parent(),  { delay: 900 });
+  // sr.reveal($('.portfolio-image.aml').parent(),  { delay: 400  });
+  // sr.reveal($('.portfolio-image.tla').parent(),  { delay: 500  });
+  // sr.reveal($('.portfolio-image.qutrunning').parent(),  { delay: 600 });
+  // sr.reveal($('.portfolio-image.quteb').parent(),  { delay: 700 });
+  // sr.reveal($('.portfolio-image.daryl').parent(),  { delay: 800 });
+  // sr.reveal($('.portfolio-image.aaron').parent(),  { delay: 900 });
 
-  sr.reveal('.skill-item.one',  { delay: 400  });
-  sr.reveal('.skill-item.two',  { delay: 450  });
-  sr.reveal('.skill-item.three',  { delay: 500 });
-  sr.reveal('.skill-item.four',  { delay: 650 });
-  sr.reveal('.skill-item.five',  { delay: 700 });
-  sr.reveal('.skill-item.six',  { delay: 750 });
-  sr.reveal('.skill-item.seven',  { delay: 800 });
-  sr.reveal('.skill-item.eight',  { delay: 850 });
-  sr.reveal('.skill-item.nine',  { delay: 900 });
-  sr.reveal('.skill-item.ten',  { delay: 950 });
-  sr.reveal('.skill-item.eleven',  { delay: 1000 });
-  sr.reveal('.skill-item.twelve',  { delay: 1050 });
+  // sr.reveal('.skill-item.one',  { delay: 400  });
+  // sr.reveal('.skill-item.two',  { delay: 450  });
+  // sr.reveal('.skill-item.three',  { delay: 500 });
+  // sr.reveal('.skill-item.four',  { delay: 650 });
+  // sr.reveal('.skill-item.five',  { delay: 700 });
+  // sr.reveal('.skill-item.six',  { delay: 750 });
+  // sr.reveal('.skill-item.seven',  { delay: 800 });
+  // sr.reveal('.skill-item.eight',  { delay: 850 });
+  // sr.reveal('.skill-item.nine',  { delay: 900 });
+  // sr.reveal('.skill-item.ten',  { delay: 950 });
+  // sr.reveal('.skill-item.eleven',  { delay: 1000 });
+  // sr.reveal('.skill-item.twelve',  { delay: 1050 });
 }
 
 function bindVelocity(){
@@ -533,56 +376,22 @@ resizeTimeout = setTimeout(function() {
 
 Pace.restart();
 Pace.on("done", function(){
-  $(".image-container").hover(
-    function() {
-      $(".gradient").css("opacity", "0");
-      $(".gradient").css("transform", "scale(1.1)");
-      $(".about-image").css("transform", "scale(1.1)");
-    },
-     function() {
-      $(".gradient").css("opacity", "0.5");
-      $(".gradient").css("transform", "scale(1.05)");
-      $(".about-image").css("transform", "scale(1.05)");
-    },
-  );
-  $(".testimonial-item").hover(
-    function() {
-      $(this).find('.testimonial-quote-top').css("top", "-20px");
-      $(this).find('.testimonial-quote-top').css("left", "-50px");
-      $(this).find('.testimonial-quote-bottom').css("bottom", "-20px");
-      $(this).find('.testimonial-quote-bottom').css("right", "-20px");
-      $(this).css("transform", "scale(1.05)");
-      $(this).css("box-shadow", "none");
-    },
-     function() {
-      $(this).find('.testimonial-quote-top').css("top", "-10px");
-      $(this).find('.testimonial-quote-top').css("left", "-40px");
-      $(this).find('.testimonial-quote-bottom').css("bottom", "-10px");
-      $(this).find('.testimonial-quote-bottom').css("right", "-10px");
-      $(this).css("transform", "scale(1)");
-      $(this).css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.75)");
-    },
-  );
-  $(".package-item").hover(
-    function() {
-      $(this).find('.package-icon').css("top", "-50px");
-      $(this).find('.package-icon').css("transform", "translate(-50%) scale(1.2)");
-      $(this).find('.package-select').css("bottom", "-20px");
-      $(".package-item").not(this).css("transform", "scale(0.9)");
-      $(".package-item").not(this).css("opacity", "0.3");
-      $(this).css("transform", "scale(1.05)");
-      $(this).css("border", "1px solid #9b9b9b");
-    },
-     function() {
-      $(this).find('.package-icon').css("top", "-20px");
-      $(this).find('.package-icon').css("transform", "translate(-50%) scale(1)");
-      $(this).find('.package-select').css("bottom", "-1px");
-      $(".package-item").not(this).css("transform", "scale(1)");
-      $(".package-item").not(this).css("opacity", "1");
-      $(this).css("transform", "scale(1)");
-      $(this).css("border", "1px solid #1e65ae");
-    },
-  );
+  $(function() {  
+  $('.btn-animated')
+    .on('mouseenter', function(e) {
+      var parentOffset = $(this).offset(),
+          relX = e.pageX - parentOffset.left,
+          relY = e.pageY - parentOffset.top;
+      $(this).find('span').css({top:relY, left:relX})
+    })
+    .on('mouseout', function(e) {
+      var parentOffset = $(this).offset(),
+          relX = e.pageX - parentOffset.left,
+          relY = e.pageY - parentOffset.top;
+      $(this).find('span').css({top:relY, left:relX})
+    });
+});
+  // $(".package-header").css("width", ($(".package-item").width() + 1) + "px");
   if ( $('.pace-progress').attr('data-progress-text') == '100%' ) {
       $('.preloader-wrap').fadeOut(1000);
       $('.ribbon').css("animation", "slide 0.6s forwards");
@@ -601,6 +410,7 @@ Pace.on("done", function(){
 
       $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
       setTimeout( function(){
+        $(".navbar-default").css("opacity", "1");
         $(".main-background").css("opacity", "1");
         $(".main-background").css("transform", "perspective(1px) scale(1.0)");
       }, 700);
@@ -667,12 +477,14 @@ else {
   // if desktop device, use DateTimePicker
   $("#timepicker").datetimepicker({
     format: "LT",
+    // debug:true,
     icons: {
       up: "fa fa-chevron-up",
       down: "fa fa-chevron-down"
     }
   })
 }
+
 $(document).click(function() {
   console.log($("#wedding-time").val());
   $(".time-label").html($("#wedding-time").val());
@@ -689,12 +501,12 @@ $( document ).ready(function() {
     speed: 0.2
   });
 
+  animateNavbar();
   // add initial scenes
   addScenes(scenes);
   setMainElements();
   hoverEffects();
   createGoTopArrow();
-  animateNavbar();
   particleJSHoverEffects();
   createScrollRevealEffects();
   bindVelocity();
@@ -703,24 +515,6 @@ $( document ).ready(function() {
     animateNavbar();   
     preventScrollOnMenuOpen();
   });
-
-  //Ensure that the arrow-down and navbar elements have an opacity of 1 at all times
-  //following the fade in animation
-  setTimeout(function(){
-    $(".navbar-collapse .navbar-nav").removeClass("transparent");
-    if($(window).width() < 767){
-      $(".navbar-default").addClass("opaque");
-      $(".navbar-collapse .navbar-nav").removeClass("opaque");
-      $(".navbar-collapse .navbar-nav").addClass("transparent");
-    }
-    else{
-      $(".navbar-default").addClass("opaque");
-      $(".navbar-collapse .navbar-nav").addClass("opaque");
-      $(".navbar-collapse .navbar-nav").removeClass("transparent");
-    }
-    $(".navbar-brand").addClass("opaque");
-    $(".arrow-down").addClass("opaque");
-  }, 6000);
 
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());

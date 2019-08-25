@@ -27,9 +27,8 @@
     </script>
 
 	<!-- Stylesheets -->
-    <link href="https://fonts.googleapis.com/css?family=Muli:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
 
 	<!-- Latest compiled and minified CSS -->
@@ -56,7 +55,7 @@
 	<div class="too-small-message">
 		<p>Please resize your browser.</p>
 	</div>
-<!-- 	<nav class="navbar navbar-default">		
+	<nav class="navbar navbar-default">		
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle x collapsed" data-toggle="collapse" data-target="#navbar-collapse-x">
 				<div class="trigger">
@@ -67,6 +66,7 @@
 				    </svg>
 				  </div>
 			</button>
+			<a id="go-home" href="#banner" class="navbar-left"><img class="logo-img" src="./files/img/logo_white.png"></a>
 		</div>
 		<div class="collapse navbar-collapse" id="navbar-collapse-x">
 			<ul class="nav navbar-nav navbar-left">
@@ -78,7 +78,7 @@
 				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#contact">Contact</a></li>
 			</ul>
 		</div>
-	</nav> -->
+	</nav>
 	<section class="main" id="home">
 		<div class="title-text">
 			<h1 class="fade">Brendan Anning</h1>
@@ -204,8 +204,13 @@
 		</h1>
 		<div class="container">
 		    <div class="package-item">
+		    	<div class="package-header seqld">
+				</div>
 				<dl class="text">
 					<dt>South East Queensland</dt>
+					<dd>
+						$1200.00<span class="gst">incl. GST</span>
+					</dd>
 					<ul>
 						<li>All legal paperwork and marriage registration</li>
 						<li>An A+ ceremony</li>
@@ -215,18 +220,21 @@
 						<li>Backed by the best celebrant service in the country</li>
 						<li>Includes all travel expenses ranging from Byron Bay, Noosa and Toowoomba</li>
 					</ul>
-					<dd>
-						$1210.00<span class="gst">incl. GST</span>
-					</dd>
 				</dl>
-				<div class="package-icon heart">
-				</div>
-				<div class="package-select">
+				<a class="heart-btn" href="#">
+					<img src="./files/img/icons/heart.png" alt="heart-icon">
+				</a>
+				<div class="package-icon cake">
 				</div>
 			</div>
 			<div class="package-item">
+				<div class="package-header destination">
+				</div>
 				<dl class="text">
 					<dt>Destination</dt>
+					<dd>
+						$1200.00<span class="gst">incl. GST</span>
+					</dd>
 					<ul>
 						<li>All legal paperwork and marriage registration</li>
 						<li>An A+ ceremony</li>
@@ -236,18 +244,21 @@
 						<li>Backed by the best celebrant service in the country</li>
 						<li>Travel expenses TBA</li>
 					</ul>
-					<dd>
-						$1210.00<span class="gst">incl. GST</span>
-					</dd>
 				</dl>
+				<a class="heart-btn" href="#">
+					<img src="./files/img/icons/heart.png" alt="heart-icon">
+				</a>
 				<div class="package-icon rings">
-				</div>
-				<div class="package-select">
 				</div>
 			</div>
 			<div class="package-item">
+				<div class="package-header sydmelb">
+				</div>
 				<dl class="text">
 					<dt>Sydney & Melbourne</dt>
+					<dd>
+						$1800.00<span class="gst">incl. GST</span>
+					</dd>
 					<ul>
 						<li>All legal paperwork and marriage registration</li>
 						<li>An A+ ceremony</li>
@@ -257,14 +268,12 @@
 						<li>Backed by the best celebrant service in the country</li>
 						<li>Includes all travel expenses</li>
 					</ul>
-					<dd>
-						$1810.00<span class="gst">incl. GST</span>
-					</dd>
 				</dl>
 				<div class="package-icon bouquet">
 				</div>
-				<div class="package-select">
-				</div>
+				<a class="heart-btn" href="#">
+					<img src="./files/img/icons/heart.png" alt="heart-icon">
+				</a>
 			</div>
 		</div>
 	</section>
@@ -284,7 +293,7 @@
 			Let me know when and where you need me.
 		</h3>
 		<div class="container">
-		    <form action="https://formspree.io/aaronmaybus@gmail.com" method="POST">
+		    <form action="https://formspree.io/" method="POST">
 					<div class="col-md-4">
 						<input type="text" class="form-input" id="name" name="first_name" pattern="[a-zA-Z]+" 
 						oninvalid="setCustomValidity('Please enter a valid name.')"
@@ -331,7 +340,11 @@
 						oninvalid="setCustomValidity('Please enter a valid message.')"
 						onchange="try{setCustomValidity('')}catch(e){}" required placeholder="Your message"></textarea>
 					</div>
-				  	<input type="submit" class="btn-animated btn-purple" value="SEND">
+				  	<div class="box">
+					  <div class="btn-animated">
+					    <span>SEND</span>
+					  </div>
+					</div>
 				</form>
 		</div>
 	</section>
