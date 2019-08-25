@@ -273,7 +273,7 @@ function setMainElements(){
   var parallaxInstance2 = new Parallax(scene2);
   var parallaxInstance3 = new Parallax(scene3);
   var parallaxInstance4 = new Parallax(scene4);
-  
+
   // if desktop device, use DateTimePicker
   $("#timepicker").datetimepicker({
     format: "LT",
@@ -555,8 +555,10 @@ dateSelect.datepicker({
 var weddingTime = $('#wedding-time');
 
 
-$(".time-label").click(function() {
-  $(".time-label").html($("#wedding-time").val());
+$(document).click(function() {
+  if($("#wedding-time").val() != "" || $("#wedding-time").val() != " "){
+    $(".time-label").html($("#wedding-time").val());
+  }
 });
 
 
