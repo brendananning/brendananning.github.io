@@ -83,7 +83,7 @@
 		<div class="title-text">
 			<h1 class="fade">Brendan Anning</h1>
 			<h3 class="fade smaller">/ˈbrɛndəń anňɪŋǵ/ (noun)</h1>	
-			<h3 class="fade">Someone who helps make the best day of your life, better.</h3> 
+			<h3 class="fade last">Someone who helps make the best day of your life better.</h3> 
 		</div>
 		<div id="particles-js"></div>
 	</section>
@@ -246,7 +246,7 @@
 					<a class="heart-btn" href="#">
 						<img src="./files/img/icons/heart.png" alt="heart-icon">
 					</a>
-					<div class="package-icon cake">
+					<div class="package-icon rings">
 					</div>
 				</div>
 			</a>
@@ -272,7 +272,7 @@
 					<a class="heart-btn" href="#">
 						<img src="./files/img/icons/heart.png" alt="heart-icon">
 					</a>
-					<div class="package-icon rings">
+					<div class="package-icon bouquet">
 					</div>
 				</div>
 			</a>
@@ -295,7 +295,7 @@
 							<li>Includes all travel expenses</li>
 						</ul>
 					</dl>
-					<div class="package-icon bouquet">
+					<div class="package-icon confetti">
 					</div>
 					<a class="heart-btn" href="#">
 						<img src="./files/img/icons/heart.png" alt="heart-icon">
@@ -312,7 +312,7 @@
 	    <div class="overlay">
 		</div>
 	</section>
-	<section class="contact block"  id="contact">
+	<section class="contact block" id="contact">
 		<h1>
 			Like what you see?
 		</h1>
@@ -320,58 +320,61 @@
 			Let me know when and where you need me.
 		</h3>
 		<div class="container">
-		    <form action="https://formspree.io/" method="POST">
+		    <form action="https://formspree.io/timothyjones.1@outlook.com" method="POST">
 				<div class="col-md-4">
-					<input type="text" class="form-input" id="name" name="first_name" pattern="[a-zA-Z]+" 
+					<input type="text" class="form-input" id="name" name="Name" pattern="[a-zA-Z]+" 
 					oninvalid="setCustomValidity('Please enter a valid name.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
-					required placeholder="Name">
+					required>
+					<label>Name</label>
 				</div>
 				<div class="col-md-8">
-					<input type="email" class="form-input" id="email" name="_replyto" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+					<input type="email" class="form-input" id="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
 					oninvalid="setCustomValidity('Please enter a valid email address.')"
-					onchange="try{setCustomValidity('')}catch(e){}" required placeholder="Email">
+					onchange="try{setCustomValidity('')}catch(e){}" required>
+					<label>Email</label>
 				</div>
 				<div class="col-md-8">
-					<input type="text" class="form-input" id="subject" name="subject" pattern="[a-zA-Z]+{4,50}" 
+					<input type="text" class="form-input" id="subject" name="Subject" pattern="[a-zA-Z]+{4,50}" 
 					oninvalid="setCustomValidity('Please enter a valid location.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
-					required placeholder="Wedding Location">
+					required>
+					<label>Wedding Location</label>
 				</div>
 				<div class="col-md-4">
-					<input type="text" class="form-input" id="phone_no" name="phone_no" pattern="[0-9]{8,10}" 
+					<input type="text" class="form-input" id="phone_no" name="Phone" pattern="[0-9]{8,10}" 
 					oninvalid="setCustomValidity('Please enter a valid number.')"
-					onchange="try{setCustomValidity('')}catch(e){}" required placeholder="Phone Number">
+					onchange="try{setCustomValidity('')}catch(e){}" required>
+					<label>Phone No.</label>
 				</div>
 				<div class="col-md-4 half-width">
-					<span class="time-label">Wedding Time</span>
+					<span class="time-label"></span>
                     <div class="input-group time" id="timepicker">
-                    	<input id="wedding-time" class="form-control" />
+                    	<input id="wedding-time" name="WeddingTime" class="form-control" />
                     	<span class="input-group-append input-group-addon">
 	                    	<span class="input-group-text">
 	                    		<i class="fa fa-clock"></i>
 	                    	</span>
                    		</span>
                    	</div>
+					<label>Wedding Time</label>
 				</div>
-				<div class="col-md-8 half-width">
-					 <div class="input-daterange input-group" id="wedding-datepicker">
+				<div class="col-md-8 picker">
+					 <div class="input-daterange input-group"  name="WeddingDate" id="wedding-datepicker">
 				        <div class="form-item">
-				        	<input class="form-control" type="text" id="start-date" name="start" data-date-format="DD, MM d" />
-				        	<span class="date-text date-depart">Wedding Date</span>
+				        	<input class="form-control" type="text" id="start-date" name="start" data-date-format="DD, MM d" required/>
+				        	<span class="date-text date-depart"></span>
 				        </div>
 				    </div>
+					<label>Wedding Date</label>
 				</div>
 				<div class="col-md-12">
-					<textarea cols="40" rows="5" type="text" class="form-input" id="message" name="message" pattern="{10,1000}" 
+					<textarea cols="40" rows="5" type="text" class="form-input" id="message" name="Message" pattern="{10,1000}" 
 					oninvalid="setCustomValidity('Please enter a valid message.')"
-					onchange="try{setCustomValidity('')}catch(e){}" required placeholder="Your Message"></textarea>
+					onchange="try{setCustomValidity('')}catch(e){}" required></textarea>
+					<label>Your Message</label>
 				</div>
-			  	<div class="box">
-				  <div class="btn-animated">
-				    <span>SEND</span>
-				  </div>
-				</div>
+			    <input class="btn-animated" type="submit" value="SEND">
 			</form>
 			<div id="scene-4" data-jarallax-element="-200">
 			  <div data-depth="1.0">

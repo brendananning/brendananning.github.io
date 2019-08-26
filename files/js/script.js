@@ -141,9 +141,9 @@ function particleJSHoverEffects(){
 function addWhiteNav(){
   $(".navbar-nav li a").css("color", "black");
   $(".navbar-default").css("padding-top", "0");
-  $(".navbar-default").css("background-color", "rgba(255,255,255,0.9)");
+  $(".navbar-default").css("background-color", "rgba(255,255,255,1)");
   $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
-  $(".navbar-collapse").css("background-color", "rgba(255,255,255,0.9)");
+  $(".navbar-collapse").css("background-color", "rgba(255,255,255,1)");
   $(".bars .line").css("stroke", "#3b3b3b");
   $(".logo-img").attr("src", "./files/img/logo.png");
   $(".navbar-right").css("display", "none");
@@ -259,9 +259,13 @@ function createGoTopArrow(){
 function setMainElements(){
   $('.testimonial-quote-top').removeAttr("style");
   $('.testimonial-quote-bottom').removeAttr("style");
+  $('.time-label').removeAttr("style");
+  $('#wedding-datepicker input').removeAttr("style");
   $('.package-icon').removeAttr("style");
   if($(window).width() < 991) {
     $(".main").css("height", $(window).innerHeight());
+    $(".time-label").css("width", $("#name").outerWidth() + "px");
+    $("#wedding-datepicker input").css("width", $("#name").outerWidth() + "px");
   }
   if($(window).width() < 479) {
     $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
@@ -292,6 +296,7 @@ function setMainElements(){
 $(window).resize(function () { 
   // console.log('RESIZED'); 
   $(".bars").removeClass("active");
+  $(".navbar-collapse").removeAttr("style");
   setMainElements();
 });
 
@@ -363,20 +368,9 @@ function bindVelocity(){
       // set target to anchor's "href" attribute
       var target = $(this).attr('href');
 
-      if(target == "#home" || target == "#about" || target == "#portfolio" 
-        || target == "#skills" || target == "#experience" || 
-        target == "#contact" || target == "#about2") {
-
-        //If arrow up or arrow down pressed, convert ID to actual ID instead of toggling menu bar active class
-        if(target == "#about2"){
-          target = "#about";
-        }
-        else {
-          if($(window).width() < 767){
-            $('.navbar-collapse.in').collapse('hide');
-            document.getElementById('bars').classList.toggle('active');
-          }
-        }
+     
+      if($(window).width() < 767){
+        $('.navbar-collapse.in').collapse('hide');
       }
       if(target == "#package-one-contact") {
         $("#message").val("Hello, I'd like to book the South East Queensland package.");    

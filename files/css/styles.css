@@ -195,6 +195,12 @@ p {
   font-size: 34px;
   font-family: 'Futura PT Light';
 }
+.fade.last {
+  transition: all 0.2s ease;
+  background: white;
+  color: black;
+  padding: 0 5px 0 5px;
+}
 /*----------------------------------------------
 -------------------ABOUT SECTION-----------------
 ------------------------------------------------*/
@@ -320,7 +326,7 @@ p {
   box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   border-radius: 6px;
   display: table;
-  transition: all 0.6s ease;
+  transition: all 0.7s ease;
 }
 .testimonial-item:hover {
   cursor: default;
@@ -525,8 +531,8 @@ p {
   z-index: -1;
   backface-visibility: hidden;
 }
-.package-icon.cake {
-  background: url('../img/icons/cake.png');
+.package-icon.confetti {
+  background: url('../img/icons/confetti.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -596,15 +602,13 @@ p {
   padding-right: 35px;
 }
 .form-input {
-  border-top-left-radius: 6px; 
-  border-top-right-radius: 6px; 
   font-size: 16px;
   background-color: unset;
   width: 100%;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
-  color: #acacac;
+  color: #555;
   border: none;
   border-bottom: 1px solid #1e65ae;
   margin-bottom: 10px;
@@ -646,6 +650,7 @@ textarea:focus,
 form {
   width: 500px;
   margin: 0 auto;
+  transition: all 0.5s ease; 
 }
 form .col-md-4,
 form .col-md-6,
@@ -653,7 +658,8 @@ form .col-md-8,
 form .col-md-12 {
   padding-right: 5px;
   padding-left: 5px;
-  margin-top: 10px;
+  margin-bottom: 20px;
+  position: relative;
 }
 form .col-md-12 textarea {
   height: 100px;
@@ -678,13 +684,12 @@ form .col-md-12 textarea {
 }
 #wedding-datepicker .date-text {
   position: absolute;
-  bottom: 6px;
   left: 12px;
   font-family: 'Muli', sans-serif;
   margin: auto;
   color: #555 !important;
-  border-top-left-radius: 6px; 
-  border-top-right-radius: 6px; 
+  z-index: 5;
+  bottom: -28px;
 }
 .input-group.time {
   padding-right: 0 !important;
@@ -725,6 +730,29 @@ form .col-md-12 textarea {
 .timepicker-hours .table-condensed,
 .timepicker-minutes .table-condensed {
   margin: 15px;
+}
+label {
+  position: absolute;
+  top: -18px;
+  left: 7px;
+  font-size: 12px;
+  color: #555;
+  font-family: 'Muli', sans-serif;
+}
+.col-md-12 label {
+  top: -35px;
+}
+.picker { 
+  margin-top: 0px;
+}
+.picker label {
+  background: white;
+  width: 100%;
+  padding-bottom: 3px;
+  z-index: 0;
+}
+.picker #wedding-datepicker .form-item {
+  transform: scale(1.005);
 }
 .datepicker.dropdown-menu {
   font-family: 'Muli', sans-serif;
@@ -881,15 +909,16 @@ form .col-md-12 textarea {
   width: 100px;
   cursor: pointer;
   transition: all 0.5s;
-  position: relative;
   background: #1e65ae;
   font-size: 16px;
   font-family: 'Muli', sans-serif;
-  padding-right: 0 !important; 
   border-radius: 6px;
-}
-.btn-animated span {
-  text-align: center;
+  position: absolute;
+  bottom: 30px;
+  padding: 0;
+  left: 50%;
+  transform: translate(-50%);
+  border: 0;
 }
 .btn-animated::before {
   content: '';
@@ -1042,7 +1071,7 @@ form .col-md-12 textarea {
   font-weight: 200;
   color: #e7e7e7;
 }
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+.navbar-default .navbar-nav>li>a:hover {
   -webkit-transition: all 0.4s;
    -moz-transition: all 0.4s;
   transition: all 0.4s;
@@ -1197,7 +1226,7 @@ form .col-md-12 textarea {
     left: -69px;
   }
   .jarallax.one .jarallax-img img {
-    margin-left: -120px;
+    margin-left: -412px;
   }
   .jarallax .jarallax-img img {
     width: auto;
@@ -1229,22 +1258,35 @@ form .col-md-12 textarea {
   form .col-md-12 textarea {
     margin-top: 0px;
   }
-  .half-width {
-    width: 50%;
-    float: left;
-  }
-  .half-width .time-label {
-    width: 210px;
-  }
-  .half-width #wedding-datepicker input {
+  .picker #wedding-datepicker input {
     margin-top: 0px;
-    width: 210px;
+  }
+  .main .title-text {
+    left: 50px;
+    position: absolute;
+    top: auto !important;
+    bottom: 35px !important;
   }
   .main .title-text h1 {
     font-size: 70px;
   }
   .main .title-text h3 {
     font-size: 28px;
+  }
+  form .col-md-4,
+  form .col-md-6,
+  form .col-md-8,
+  form .col-md-12 {
+    margin-bottom: 30px;
+  }
+  .picker {
+    margin-top: -25px;
+  }
+  .col-md-12 {
+    margin-top: 50px;
+  }
+  form {
+    padding-top: 20px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -1287,8 +1329,8 @@ form .col-md-12 textarea {
     top: 73px;
   }
   .text {
-    left: -10px;
     margin-top: 20px;
+    left: -3px;
   }
   .package-item {
     height: 500px;
@@ -1314,6 +1356,15 @@ form .col-md-12 textarea {
   .package-header.sydmelb {
     background-image: linear-gradient(to right, #8451c2 0%, #30cfd0 100%);
   }
+  form .col-md-12 textarea {
+    height: 200px;
+  }
+  .pattern.one {
+    width: 90px;
+  }
+  .about .container #scene {
+    right: -11px;
+  }
 }
 @media only screen and (max-width: 479px) {
   .main .title-text h1 {
@@ -1331,7 +1382,7 @@ form .col-md-12 textarea {
     left: 22px;
   }
   .block {
-    padding: 5px;
+    padding: 15px;
   }
   .block h1 {
     padding: 10px 20px 0 20px;
@@ -1375,24 +1426,25 @@ form .col-md-12 textarea {
     height: auto;
   }
   .jarallax.one .jarallax-img img {
-    margin-left: -120px;
+    margin-left: -300px;
   }
   .jarallax.two .jarallax-img img {
-    margin-top: -300px;
-    margin-left: -600px;
+    margin-left: -232px;
+    height: 100%;
+    width: auto;
   }
   .jarallax.three .jarallax-img img {
-    margin-top: -300px;
-    margin-left: -600px;
+    margin-top: 50px;
+    margin-left: -350px;
   }
   .package-item {
     height: 510px;
   }
   .block h1 {
-    font-size: 32px; 
+    font-size: 24px; 
   }
   .contact {
-    padding: 0 15px;
+    padding: 0 30px;
   }
   .contact .container form div {
     padding-right: 5px;
@@ -1439,17 +1491,25 @@ form .col-md-12 textarea {
   .packages .container {
     margin-bottom: 10px; 
   }
-  .half-width .time-label {
-    width: 147px;
-  }
-  .half-width #wedding-datepicker input {
-    width: 147px;
-    margin-top: 1px;
-  }
   .contact .container {
     padding-left: 15px;
   }
-}
+  .about .right-container picture img {
+    height: auto !important;
+  }
+  .main .title-text {
+    width: 300px;
+  }
+  .jarallax .jarallax-img img {
+    height: 100% !important;
+    width: auto !important;
+  }
+  form .col-md-4,
+  form .col-md-6,
+  form .col-md-8,
+  form .col-md-12 {
+    margin-bottom: 30px;
+  }
 @media only screen and (max-width: 300px) {
   .too-small-message {
     display: block;  
