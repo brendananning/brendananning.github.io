@@ -150,6 +150,7 @@ function addWhiteNav(){
 }
 function addWhiteNavDesktop(){
   $(".navbar-default").css("padding-top", "0");
+  $(".navbar-default").css("height", "50px");
   $(".navbar-default").css("background-color", "#fff");
   $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
   $(".navbar-nav li a").css("color", "black");
@@ -164,6 +165,7 @@ function addWhiteNavDesktop(){
 function addTransparentNav(){
   //Make navbar transparent if scroll position is on main section
   $(".navbar-default").css("padding-top", "20px");
+  $(".navbar-default").css("height", "80px");
   $(".navbar-default").css("background-color", "transparent");
   $(".navbar-default").css("box-shadow", "none");
   $(".navbar-nav li a").css("color", "white");
@@ -516,10 +518,10 @@ Pace.on("done", function(){
                  {opacity: 1},
                   0.5
                  )
-          .staggerTo(this.getElementsByClassName("fade"), 
-                  2,
+          .staggerTo(this.getElementsByClassName(".last"), 
+                  3,
                  {opacity: 1},
-                  0.5
+                  2
                  )
           //build a scene
           var contentScene = new ScrollMagic.Scene({
@@ -558,29 +560,6 @@ $(document).click(function() {
     $(".time-label").html($("#wedding-time").val());
   }
 });
-
-var UID = {
-  _current: 0,
-  getNew: function(){
-    this._current++;
-    return this._current;
-  }
-};
-
-HTMLElement.prototype.pseudoStyle = function(element,prop,value){
-  var _this = this;
-  var _sheetId = "pseudoStyles";
-  var _head = document.head || document.getElementsByTagName('head')[0];
-  var _sheet = document.getElementById(_sheetId) || document.createElement('style');
-  _sheet.id = _sheetId;
-  var className = "pseudoStyle" + UID.getNew();
-  
-  _this.className +=  " "+className; 
-  
-  _sheet.innerHTML += " ."+className+":"+element+"{"+prop+":"+value+"}";
-  _head.appendChild(_sheet);
-  return this;
-};
 
 $(document).ready(function() {
   $('.jarallax').jarallax({

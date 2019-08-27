@@ -116,7 +116,9 @@ p {
   height: 100vh;
 }
 .jarallax.three .jarallax-img img {
-  margin-top: 48px;
+  margin-left: -200px;
+  width: auto;
+  height: 100vh;
 }
 .jarallax .overlay {
   position: absolute;
@@ -125,13 +127,13 @@ p {
   width: 100%;
   height: 100vh;
   z-index: -1;
-  background: -moz-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%, rgba(47, 0, 99, 0.5) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(47, 0, 99, 0.5)), color-stop(100%,rgba(0, 75, 75, 0.5))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* W3C */
-  background: linear-gradient(to bottom, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%);
+  background: -moz-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%, rgba(0, 15, 90, 0.5) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 15, 90, 0.5)), color-stop(100%,rgba(92, 92, 92, 0.5))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* W3C */
+  background: linear-gradient(to bottom, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 /*----------------------------------------------
@@ -142,13 +144,12 @@ p {
   z-index: -1;
   height: 100vh;
   width: 100%;
-  background: -moz-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%, rgba(47, 0, 99, 0.5) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(47, 0, 99, 0.5)), color-stop(100%,rgba(0, 75, 75, 0.5))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%); /* W3C */
-  background: linear-gradient(to bottom, rgba(0, 75, 75, 0.5) 0%,rgba(47, 0, 99, 0.5) 100%);
+  background: -moz-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%, rgba(0, 15, 90, 0.5) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 15, 90, 0.5)), color-stop(100%,rgba(92, 92, 92, 0.5))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* IE10+ */
+  background: linear-gradient(to top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 .main-background {
@@ -199,7 +200,7 @@ p {
   transition: all 0.2s ease;
   background: white;
   color: black;
-  padding: 0 5px 0 5px;
+  padding: 0 5px 2px 5px;
 }
 /*----------------------------------------------
 -------------------ABOUT SECTION-----------------
@@ -273,7 +274,7 @@ p {
   transform: scale(1.05);
 }
 .about .right-container .image-container .overlay.gradient {
-  opacity: 0.2;
+  opacity: 0.5;
   background: -moz-linear-gradient(-45deg,  #c5deea 0%, #8abbd7 31%, #066dab 100%);
   background: -webkit-linear-gradient(-45deg,  #c5deea 0%,#8abbd7 31%,#066dab 100%);
   background: -o-linear-gradient(-45deg,  #c5deea 0%,#8abbd7 31%,#066dab 100%);
@@ -282,7 +283,8 @@ p {
   transition: all 0.8s ease;
 }
 .highlight {
-  color: white;
+  background: none !important;
+  color: inherit !important;
   padding-left: 3px;
   padding-right: 3px;
 }
@@ -506,6 +508,7 @@ p {
   margin-top: 12px;
   font-weight: 700;
   padding-left: 25px;
+  color: black;
 }
 .text dd {
   text-align: left;
@@ -610,8 +613,15 @@ p {
   font-size: 14px;
   color: #555;
   border: none;
-  border-bottom: 1px solid #1e65ae;
+  border-radius: 6px;
+  border: 1px solid #1e65ae70;
   margin-bottom: 10px;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 .form-input-container p {
   margin-bottom: 10px;
@@ -628,12 +638,13 @@ p {
 textarea, input {
   font-family: 'Muli', sans-serif;
   font-size: 1em;
-  height: 50px;
-  padding: 0px 50px 0px 15px;
+  height: 60px;
+  padding: 5px 50px 0px 15px;
   outline: none;
   color: #ffffff;
   border-bottom: none;
   transition: all 0.2s ease-in-out;
+  resize: none;
 }
 input:hover,
 textarea:hover,
@@ -644,7 +655,7 @@ textarea:focus,
 #time-label:hover,
 #time-label:focus {
   color: #494949;
-  background: #1e65ae33;
+  /*background: #1e65ae33;*/
   /*font-size: 16px;*/
 }
 form {
@@ -658,7 +669,7 @@ form .col-md-8,
 form .col-md-12 {
   padding-right: 5px;
   padding-left: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   position: relative;
 }
 form .col-md-12 textarea {
@@ -675,8 +686,8 @@ form .col-md-12 textarea {
   color: transparent !important;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #1e65ae;
-  border-radius: 0;
+  border: 1px solid #1e65ae70;
+  border-radius: 6px !important;
   transition: border-color 0.2s ease-out;
 }
 #wedding-datepicker input:first-child, #wedding-datepicker input:last-child {
@@ -709,9 +720,10 @@ form .col-md-12 textarea {
   float: left;
   font-family: 'Muli', sans-serif;
   text-align: left;
-  border-bottom: 1px solid #1e65ae;
+  border: 1px solid #1e65ae70;
   height: 35px;
   width: 127px;
+  border-radius: 6px;
   padding: 9px 9px 0 12px;
 }
 .input-group-append {
@@ -733,22 +745,23 @@ form .col-md-12 textarea {
 }
 label {
   position: absolute;
-  top: -18px;
-  left: 7px;
-  font-size: 12px;
+  top: -7px;
+  left: 13px;
+  font-size: 11px;
   color: #555;
+  background: white;
+  padding: 0 5px 0 5px;
   font-family: 'Muli', sans-serif;
 }
 .col-md-12 label {
-  top: -35px;
+  top: -23px;
 }
 .picker { 
   margin-top: 0px;
 }
 .picker label {
   background: white;
-  width: 100%;
-  padding-bottom: 3px;
+  padding: 0 5px 3px 5px;
   z-index: 0;
 }
 .picker #wedding-datepicker .form-item {
@@ -963,6 +976,77 @@ label {
   top: 10%;
   right: -80px;
 }
+/*----------------------------------------------
+------------------FOOTER STYLES-----------------
+------------------------------------------------*/
+footer {
+  background: #e7e7e7;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  font-family: 'Muli', 'sans-serif';
+}
+.contact-links {
+  display: block;
+  width: fit-content;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 30px 10px 0px 0px; 
+}
+.social-item {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 45px;
+  padding: 9px 10px;
+  border: 1px solid #1e65ae;
+  margin: 10px 5px 20px 5px;
+}
+.social-item img {
+  float: left;
+  width: 20px;
+  margin-right: 20px;
+  height: auto;
+}
+.social-item p {
+  float: left; 
+  color: #3b3b3b;
+  font-size: 12px;
+  margin-bottom: 0px
+}
+.copyright {
+  position: relative;
+  padding-top: 18px;
+  width: 100%;
+  color: #3b3b3b;
+  font-size: 10px;
+  height: 50px;
+  text-align: center;
+}
+.gradient-box {
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  border: 5px;
+  background: #fff;
+  background-clip: padding-box; /* !importanté */
+  border: solid 5px transparent; /* !importanté */
+  border-radius: 10px;
+}
+.gradient-box:before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  z-index: -1;
+  transform: scale(1.06, 1.28);
+  border-radius: 6px;
+  background-image: linear-gradient(to left, #5ee7df 0%, #b490ca 100%);
+}
+
 /*----------------------------------------------
 ------------------NAVBAR STYLES-----------------
 ------------------------------------------------*/
@@ -1195,7 +1279,11 @@ label {
 ------------------MEDIA QUERIES-----------------
 ------------------------------------------------*/
 @media only screen and (min-width: 2000px){
-  
+  .jarallax.three .jarallax-img img {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+  }
 } 
 @media only screen and (min-width: 1280px){
   .jarallax .jarallax-img img {
@@ -1365,6 +1453,17 @@ label {
   .about .container #scene {
     right: -11px;
   }
+  form {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .social-item {
+    display: block;
+    width: 190px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
 }
 @media only screen and (max-width: 479px) {
   .main .title-text h1 {
@@ -1448,11 +1547,6 @@ label {
   }
   .contact .container form div {
     padding-right: 5px;
-  }
-  form {
-    width: auto;
-    display: block;
-    margin: 0 auto;
   }
   #wedding-datepicker input {
     display: block;
