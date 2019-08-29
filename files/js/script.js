@@ -293,6 +293,24 @@ function setMainElements(){
       down: "fa fa-chevron-down"
     }
   })
+  if($(window).width() < 991) {
+    $('.jarallax').jarallax({
+      speed: 1.2
+    });
+  }
+  else {
+    $('.jarallax').jarallax({
+      speed: 0.2
+    });
+  } 
+  if($(window).width() < $(window).height() ) {
+    $(".jarallax-img img").css("width", "auto");
+    $(".jarallax-img img").css("height", "100vh");
+  }
+  else {
+    $(".jarallax-img img").css("width", "100%");
+    $(".jarallax-img img").css("height", "auto");
+  }
 }
 
 $(window).resize(function () { 

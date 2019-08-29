@@ -116,15 +116,15 @@ p {
   height: 100vh;
 }
 .jarallax.three .jarallax-img img {
-  margin-left: -200px;
   width: auto;
   height: 100vh;
 }
 .jarallax .overlay {
-  display: none;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -1;
   width: 100%;
   height: 100vh;
   background: -moz-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%, rgba(0, 15, 90, 0.5) 100%); /* FF3.6+ */
@@ -508,7 +508,7 @@ p {
   margin-top: 12px;
   font-weight: 700;
   padding-left: 25px;
-  color: black;
+  color: #515151;
 }
 .text dd {
   text-align: left;
@@ -980,7 +980,7 @@ label {
 ------------------FOOTER STYLES-----------------
 ------------------------------------------------*/
 footer {
-  background: #e7e7e7;
+  background: #e9e9e9;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -992,59 +992,34 @@ footer {
   width: fit-content;
   overflow: hidden;
   margin: 0 auto;
-  padding: 30px 10px 0px 0px; 
+  padding-top: 10px;
 }
 .social-item {
   position: relative;
   display: inline-block;
-  width: 150px;
-  height: 45px;
-  padding: 9px 10px;
-  border: 1px solid #1e65ae;
-  margin: 10px 5px 20px 5px;
+  width: fit-content;
+  height: 100%;
+  padding: 20px 30px 20px 30px;
 }
 .social-item img {
   float: left;
   width: 20px;
-  margin-right: 20px;
   height: auto;
-}
-.social-item p {
-  float: left; 
-  color: #3b3b3b;
-  font-size: 12px;
-  margin-bottom: 0px
 }
 .copyright {
   position: relative;
   padding-top: 18px;
   width: 100%;
-  color: #3b3b3b;
+  color: #fff;
+  background-color: #1e65ae;
   font-size: 10px;
   height: 50px;
   text-align: center;
 }
-.gradient-box {
-  align-items: center;
-  position: relative;
-  box-sizing: border-box;
-  border: 5px;
-  background: #fff;
-  background-clip: padding-box; /* !importanté */
-  border: solid 5px transparent; /* !importanté */
-  border-radius: 10px;
-}
-.gradient-box:before {
-  content: '';
-  position: absolute;
-  top: 0; 
-  right: 0; 
-  bottom: 0; 
-  left: 0;
-  z-index: -1;
-  transform: scale(1.06, 1.28);
-  border-radius: 6px;
-  background-image: linear-gradient(to left, #5ee7df 0%, #b490ca 100%);
+.copyright a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: white;
 }
 
 /*----------------------------------------------
