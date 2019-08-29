@@ -303,7 +303,7 @@ function setMainElements(){
       speed: 0.2
     });
   } 
-  if($(window).width() < $(window).height() ) {
+  if($(window).width() < $(window).height() * 1.4) {
     $(".jarallax-img img").css("width", "auto");
     $(".jarallax-img img").css("height", "100vh");
   }
@@ -319,65 +319,6 @@ $(window).resize(function () {
   $(".navbar-collapse").removeAttr("style");
   setMainElements();
 });
-
-function createScrollRevealEffects(){
-  // var slideInConfig = {
-  //   origin: 'right',
-  //   duration: 700,
-  //   distance: '400px',
-  //   viewOffset: {
-  //     bottom: 250
-  //   },
-  //   //If effect has already occured, remove styles applied by scrollReveal
-  //   //to allow for hover transform effects to still occur
-  //   afterReveal: function() {
-  //     setTimeout(function(){
-  //       $('.portfolio-image').removeAttr("style");
-  //       //Reset the height again after removal
-  //       hoverEffects();
-  //     }, 1000);
-  //   }
-  // }
-  // var fadeInConfig = {
-  //   duration: 700,
-  //   origin: 'right',
-  //   distance: '400px',
-  //   viewOffset: {
-  //     top: 250
-  //   },
-  //   afterReveal: function() {
-  //     setTimeout(function(){
-  //       $('.skill-item').removeAttr("style");
-  //       $('.portfolio-item').removeAttr("style");
-  //       hoverEffects();
-  //     }, 300);
-  //   }
-  // }
-  // window.sr = ScrollReveal();
-
-  // sr.reveal('.portfolio-item', slideInConfig);
-  // sr.reveal('.skill-item', fadeInConfig);
-
-  // sr.reveal($('.portfolio-image.aml').parent(),  { delay: 400  });
-  // sr.reveal($('.portfolio-image.tla').parent(),  { delay: 500  });
-  // sr.reveal($('.portfolio-image.qutrunning').parent(),  { delay: 600 });
-  // sr.reveal($('.portfolio-image.quteb').parent(),  { delay: 700 });
-  // sr.reveal($('.portfolio-image.daryl').parent(),  { delay: 800 });
-  // sr.reveal($('.portfolio-image.aaron').parent(),  { delay: 900 });
-
-  // sr.reveal('.skill-item.one',  { delay: 400  });
-  // sr.reveal('.skill-item.two',  { delay: 450  });
-  // sr.reveal('.skill-item.three',  { delay: 500 });
-  // sr.reveal('.skill-item.four',  { delay: 650 });
-  // sr.reveal('.skill-item.five',  { delay: 700 });
-  // sr.reveal('.skill-item.six',  { delay: 750 });
-  // sr.reveal('.skill-item.seven',  { delay: 800 });
-  // sr.reveal('.skill-item.eight',  { delay: 850 });
-  // sr.reveal('.skill-item.nine',  { delay: 900 });
-  // sr.reveal('.skill-item.ten',  { delay: 950 });
-  // sr.reveal('.skill-item.eleven',  { delay: 1000 });
-  // sr.reveal('.skill-item.twelve',  { delay: 1050 });
-}
 
 function bindVelocity(){
   // bind click event to all internal page anchors
@@ -578,6 +519,50 @@ $(document).click(function() {
     $(".time-label").html($("#wedding-time").val());
   }
 });
+var checkViewportTestimonialsHeader = {
+  opacity: 1,
+  afterReveal: function() {
+      $(".testimonial-item.one").css("opacity", "1");
+      $(".testimonial-item.one").css("transform", "scale(1)");
+      setTimeout(function(){
+        $(".testimonial-item.two").css("opacity", "1");
+        $(".testimonial-item.two").css("transform", "scale(1)");
+      },400);
+      setTimeout(function(){
+        $(".testimonial-item.three").css("opacity", "1");
+        $(".testimonial-item.three").css("transform", "scale(1)");
+      },800);
+  }
+};
+var checkViewportPackagesHeader = {
+  opacity: 1,
+  afterReveal: function() {
+    $(".package-item.one").css("opacity", "1");
+    $(".package-item.one").css("bottom", "0px");
+    $(".package-item.one").css("transform", "scale(1)");
+    setTimeout(function(){
+      $(".package-item.two").css("opacity", "1");
+      $(".package-item.two").css("bottom", "0px");
+      $(".package-item.two").css("transform", "scale(1)");
+    },300);
+    setTimeout(function(){
+      $(".package-item.three").css("opacity", "1");
+      $(".package-item.three").css("bottom", "0px");
+      $(".package-item.three").css("transform", "scale(1)");
+    },600);
+}
+};
+var checkViewportContactHeader = {
+  opacity: 1,
+  afterReveal: function() {
+    $(".underline").css("width", "320px");
+  }
+};
+function initialiseScrollReveal() {
+  ScrollReveal().reveal(".testimonials h1", checkViewportTestimonialsHeader);
+  ScrollReveal().reveal(".packages h1", checkViewportPackagesHeader);
+  ScrollReveal().reveal(".contact h1", checkViewportContactHeader);
+}
 
 $(document).ready(function() {
   jarallax(document.querySelectorAll('.jarallax'));
@@ -589,9 +574,8 @@ $(document).ready(function() {
   hoverEffects();
   createGoTopArrow();
   particleJSHoverEffects();
-  createScrollRevealEffects();
   bindVelocity();
-
+  initialiseScrollReveal();
   $(window).scroll(function() { 
     animateNavbar();   
     preventScrollOnMenuOpen();

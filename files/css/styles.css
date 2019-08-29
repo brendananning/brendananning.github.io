@@ -328,7 +328,9 @@ p {
   box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   border-radius: 6px;
   display: table;
-  transition: all 0.7s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s ease;
 }
 .testimonial-item:hover {
   cursor: default;
@@ -452,7 +454,7 @@ p {
   margin-right: 1.5%;
   height: 320px;
   position: relative;
-  transition: all 0.6s ease;
+  transition: all 0.8s ease;
   border-radius: 6px;
   max-width: 600px;
   -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
@@ -460,6 +462,9 @@ p {
   box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   margin: 0 auto;
   margin-bottom: 40px;
+  opacity: 0;
+  transform: scale(0.8);
+  bottom: -100px;
 }
 .package-header {
   width: 120px;
@@ -590,6 +595,16 @@ p {
   font-size: 20px;
   font-family: 'Futura PT Light';
   text-align: center;
+  position: relative;
+}
+.contact .underline {
+  width: 0px;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%);
+  border-bottom: 1px solid #1e65ae;
+  transition: all 1.3s ease-in-out; 
 }
 .contact .container {
   padding-top: 50px;
@@ -993,6 +1008,7 @@ footer {
   overflow: hidden;
   margin: 0 auto;
   padding-top: 10px;
+  padding-bottom: 5px;
 }
 .social-item {
   position: relative;
