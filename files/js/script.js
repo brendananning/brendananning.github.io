@@ -562,9 +562,7 @@ $(document).click(function() {
 });
 
 $(document).ready(function() {
-  $('.jarallax').jarallax({
-    speed: 0.2
-  });
+  jarallax(document.querySelectorAll('.jarallax'));
 
   animateNavbar();
   // add initial scenes
