@@ -33,13 +33,6 @@ function applyEffects(element){
   element.prev().prev().css("opacity", "1");
 }
 
-function resetEffects(element){
-  element.removeAttr("style");
-
-  //For the number
-  element.prev().prev().removeAttr("style");
-}
-
 function hoverEffects() {
   $(".image-container").hover(
     function() {
@@ -80,18 +73,7 @@ function hoverEffects() {
   $(".package-item").hover(
     function() {
       $(this).find('.package-icon').css("opacity", "1");
-      if($(window).width() < 991) {
-        if($(window).width() < 767) {
-          $(this).find('.package-icon').css("top", "-50px");
-        }
-        else {
-          $(this).find('.package-icon').css("top", "140px");
-          $(this).find('.package-icon').css("left", "-55px");
-        }
-      }
-      else {
-        $(this).find('.package-icon').css("left", "-70px");
-      }
+      $(this).find('.package-icon').css("top", "-60px");
       $(this).find('.package-select').css("bottom", "-20px");
       $(".package-item").not(this).css("transform", "scale(0.9)");
       $(".package-item").not(this).css("opacity", "0.3");
@@ -99,20 +81,28 @@ function hoverEffects() {
     },
      function() {
       $(this).find('.package-icon').css("opacity", "0");
-      if($(window).width() < 991) {
-        if($(window).width() < 767) {
-          $(this).find('.package-icon').css("top", "0px");
-        }
-        else {
-          $(this).find('.package-icon').css("left", "0px");
-        }
-      }
-      else {
-        $(this).find('.package-icon').css("left", "0px");
-      }
+      $(this).find('.package-icon').css("top", "0px");
       $(this).find('.package-select').css("bottom", "-1px");
       $(".package-item").not(this).css("transform", "scale(1)");
       $(".package-item").not(this).css("opacity", "1");
+      $(this).css("transform", "scale(1)");
+    },
+  );
+  $(".social-item").hover(
+    function() {
+      $(this).find('.details').css("opacity", "1");
+      $(this).find('.details').css("bottom", "-3px");
+      $(this).find('.img').css("transform", "scale(0.95)");
+      $(this).css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
+      $(this).css("background", "#fff");
+      $(this).css("transform", "scale(1.05)");
+    },
+    function() {
+      $(this).find('.details').css("opacity", "0");
+      $(this).find('.details').css("bottom", "-50px");
+      $(this).find('.img').css("transform", "scale(1)");
+      $(this).css("box-shadow", "none");
+      $(this).css("background", "none");
       $(this).css("transform", "scale(1)");
     },
   );
@@ -263,11 +253,18 @@ function setMainElements(){
   $('.testimonial-quote-bottom').removeAttr("style");
   $('.time-label').removeAttr("style");
   $('#wedding-datepicker input').removeAttr("style");
-  $('.package-icon').removeAttr("style");
+  $(".main").removeAttr("style");
+  $(".navbar-default").removeAttr("style");
+  $(".navbar-collapse").removeAttr("style");
+
+  animateNavbar();
+  // setTimeout( function(){
+  //   $(".better-text").css("opacity", "1");
+  // }, 3500);
   if($(window).width() < 991) {
     $(".main").css("height", $(window).innerHeight());
-    $(".time-label").css("width", $("#name").outerWidth() + "px");
-    $("#wedding-datepicker input").css("width", $("#name").outerWidth() + "px");
+    // $(".time-label").css("width", $("#name").outerWidth() + "px");
+    $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
   }
   if($(window).width() < 479) {
     $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
@@ -311,12 +308,33 @@ function setMainElements(){
     $(".jarallax-img img").css("width", "100%");
     $(".jarallax-img img").css("height", "auto");
   }
+  // $(document).click(function(){
+  //   if ($(".bootstrap-datetimepicker-widget").length) {
+  //     $(".contact .container").css("background", "#1e65ae50");
+  //     $(".time-label").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
+  //     $(".time-label").css("background", "#fff");
+  //   }
+  //   else {
+  //     $(".contact .container").css("background", "white");
+  //     $(".time-label").css("box-shadow", "none");
+  //     $(".time-label").css("background", "none");
+  //   }
+  // });
+  // $(document).click(function(){
+  //   if ($(".datepicker-dropdown").length) {
+  //     $(".contact .container").css("background", "#1e65ae50");
+  //     $("#wedding-datepicker input").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
+  //     $("#wedding-datepicker input").css("background", "#fff");
+  //   }
+  //   else {
+  //     $(".contact .container").css("background", "white");
+  //     $("#wedding-datepicker input").css("box-shadow", "none");
+  //     $("#wedding-datepicker input").css("background", "none");
+  //   }
+  // });
 }
 
 $(window).resize(function () { 
-  // console.log('RESIZED'); 
-  $(".bars").removeClass("active");
-  $(".navbar-collapse").removeAttr("style");
   setMainElements();
 });
 
@@ -458,41 +476,39 @@ Pace.on("done", function(){
         $(".navbar-default").css("opacity", "1");
         $(".main-background").css("opacity", "1");
         $(".main-background").css("transform", "perspective(1px) scale(1.0)");
-      }, 700);
 
+      }, 700);
+      
       // Make sure that the header animation doesn't start until page load finishes
       setTimeout(function(){
-        $(".title-text").each(function(index){
-        
         //create a timeline
         var displayTl = new TimelineLite();
         displayTl
-          .fromTo(this, 
+          .fromTo($(".title-text"), 
                  0.4,
                  {autoAlpha: 0, x: 150},
                  {autoAlpha: 1, ease:Power1.easeOut, x: 0}
                  )
-          .staggerTo(this.getElementsByClassName("fade"), 
-                  2,
+          .staggerTo($(".title-text").children(), 
+                  1,
                  {opacity: 1},
                   0.5
                  )
-          .staggerTo(this.getElementsByClassName(".last"), 
-                  3,
+          .staggerTo($(".better-text"), 
+                  1,
                  {opacity: 1},
-                  2
+                  1
                  )
           //build a scene
           var contentScene = new ScrollMagic.Scene({
-              triggerElement: ".panel"
+              triggerElement: ".main-section"
           })
           .setTween(displayTl)
           .addTo(controller);        
-        });
       }, 900);
   } 
   $(window).scroll(function(){
-    $(".title-text").css("opacity", 1 - $(window).scrollTop() / 500);
+    $(".title-text").css("opacity", 1 - $(window).scrollTop() / 600);
   });
 });
 
@@ -519,7 +535,7 @@ $(document).click(function() {
     $(".time-label").html($("#wedding-time").val());
   }
 });
-var checkViewportTestimonialsHeader = {
+var checkViewportTestimonialsHeaderFirst = {
   opacity: 1,
   afterReveal: function() {
       $(".testimonial-item.one").css("opacity", "1");
@@ -527,40 +543,70 @@ var checkViewportTestimonialsHeader = {
       setTimeout(function(){
         $(".testimonial-item.two").css("opacity", "1");
         $(".testimonial-item.two").css("transform", "scale(1)");
-      },400);
+      },500);
       setTimeout(function(){
         $(".testimonial-item.three").css("opacity", "1");
         $(".testimonial-item.three").css("transform", "scale(1)");
-      },800);
+      },1000);
   }
 };
-var checkViewportPackagesHeader = {
+var checkViewportTestimonialsHeaderSecond = {
   opacity: 1,
   afterReveal: function() {
+      $(".testimonial-item.three").css("opacity", "1");
+      $(".testimonial-item.three").css("transform", "scale(1)");
+      setTimeout(function(){
+        $(".testimonial-item.two").css("opacity", "1");
+        $(".testimonial-item.two").css("transform", "scale(1)");
+      },500);
+      setTimeout(function(){
+        $(".testimonial-item.one").css("opacity", "1");
+        $(".testimonial-item.one").css("transform", "scale(1)");
+      },1000);
+  }
+};
+var checkViewportPackagesHeaderFirst = {
+  opacity: 1,
+  afterReveal: function() {
+    //Combine this into a function later
     $(".package-item.one").css("opacity", "1");
-    $(".package-item.one").css("bottom", "0px");
     $(".package-item.one").css("transform", "scale(1)");
     setTimeout(function(){
       $(".package-item.two").css("opacity", "1");
-      $(".package-item.two").css("bottom", "0px");
       $(".package-item.two").css("transform", "scale(1)");
-    },300);
+    },400);
     setTimeout(function(){
       $(".package-item.three").css("opacity", "1");
-      $(".package-item.three").css("bottom", "0px");
       $(".package-item.three").css("transform", "scale(1)");
-    },600);
-}
+    },800);
+  }
+};
+var checkViewportPackagesHeaderSecond = {
+  opacity: 1,
+  afterReveal: function() {
+    $(".package-item.one").css("opacity", "1");
+    $(".package-item.one").css("transform", "scale(1)");
+    setTimeout(function(){
+      $(".package-item.two").css("opacity", "1");
+      $(".package-item.two").css("transform", "scale(1)");
+    },400);
+    setTimeout(function(){
+      $(".package-item.three").css("opacity", "1");
+      $(".package-item.three").css("transform", "scale(1)");
+    },800);
+  }
 };
 var checkViewportContactHeader = {
   opacity: 1,
   afterReveal: function() {
-    $(".underline").css("width", "320px");
+    $(".underline").css("width", $(".contact h3").width() - 20 + "px");
   }
 };
 function initialiseScrollReveal() {
-  ScrollReveal().reveal(".testimonials h1", checkViewportTestimonialsHeader);
-  ScrollReveal().reveal(".packages h1", checkViewportPackagesHeader);
+  ScrollReveal().reveal(".testimonials .first", checkViewportTestimonialsHeaderFirst);
+  ScrollReveal().reveal(".testimonials .second", checkViewportTestimonialsHeaderSecond);
+  ScrollReveal().reveal(".packages .first", checkViewportPackagesHeaderFirst);
+  ScrollReveal().reveal(".packages .second", checkViewportPackagesHeaderSecond);
   ScrollReveal().reveal(".contact h1", checkViewportContactHeader);
 }
 

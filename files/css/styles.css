@@ -183,6 +183,7 @@ p {
   bottom: 63px !important;
   color: #fff;
   font-family: 'Futura PT Medium';
+  overflow: hidden;
 }
 .main .title-text h1 {
   font-size: 80px;
@@ -194,13 +195,28 @@ p {
 }
 .main .title-text h3 {
   font-size: 34px;
+  position: relative;
   font-family: 'Futura PT Light';
 }
-.fade.last {
-  transition: all 0.2s ease;
+.fade.last,
+.fade.last .better-text {
   background: white;
   color: black;
-  padding: 0 5px 2px 5px;
+  padding-left: 5px;
+  /*opacity: 1 !important;*/
+  transition: all 0.6s linear;
+}
+.better-text {
+  font-weight: bold;
+  bottom: 0;
+  background: #b3deff !important;
+  color: #3b3b3b !important;
+  opacity: 0;
+  font-size: 34px;
+  font-family: 'Futura PT Light';
+  padding: 0 5px 2px 5px !important;
+  display: inline-block;
+  margin-left: 5px;
 }
 /*----------------------------------------------
 -------------------ABOUT SECTION-----------------
@@ -215,6 +231,8 @@ p {
   width: 100%;
   overflow: hidden;
   z-index: 1; 
+  border-top: 2px solid #1e65ae70;
+  border-bottom: 2px solid #1e65ae70;
 }
 .block .container {
   position: relative;
@@ -262,6 +280,7 @@ p {
 .about .right-container picture img {
   height: 100%;
   border-radius: 6px;
+  transition: all 0.5s ease;
 }
 .about .right-container .image-container .overlay {
   position: absolute;
@@ -306,6 +325,7 @@ p {
   width: 130px;
 }
 .about .container #scene {
+  z-index: 3;
   position: absolute;
   top: 50%;
   right: 20px;
@@ -430,7 +450,7 @@ p {
 }
 .underline-anim:after {
   left: 0;
-  background-color: #d34eb4;
+  background-image: linear-gradient(to left, #d34eb4 0%, #bf2e66 100%);
 }
 .underline-anim.underline-before:before {
   width: 100%;
@@ -440,49 +460,55 @@ p {
   width: 100%;
   opacity: 1;
 }
+.second {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
 /*----------------------------------------------
 -----------------PACKAGES SECTION---------------
 ------------------------------------------------*/
 
 .packages .container {
-  margin-top: 50px;
+  margin-top: 100px;
   max-width: 1080px;
+}
+.packages .second {
+  height: 1px;
+  display: inline-block;
 }
 .package-item {
   display: block;
   margin-left: 1.5%;
   margin-right: 1.5%;
-  height: 320px;
+  height: 500px;
   position: relative;
   transition: all 0.8s ease;
   border-radius: 6px;
-  max-width: 600px;
+  min-width: 300px;
+  width: 30%;
   -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
-  margin: 0 auto;
   margin-bottom: 40px;
   opacity: 0;
   transform: scale(0.8);
-  bottom: -100px;
-}
-.package-header {
-  width: 120px;
-  height: 100%;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-  transform: scale(1.005);
-  margin-left: -1px;
   float: left;
 }
+.package-header {
+  width: 100%;
+  height: 83px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  margin-left: 0px;
+}
 .package-header.seqld {
-  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+  background-image: linear-gradient(90deg, #fccb90 0%, #d57eeb 100%);
 }
 .package-header.destination {
-  background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+  background-image: linear-gradient(to left, #5ee7df 0%, #b490ca 100%);
 }
 .package-header.sydmelb {
-  background-image: linear-gradient(to top, #8451c2 0%, #30cfd0 100%);
+  background-image: linear-gradient(to left, #8451c2 0%, #30cfd0 100%);
 }
 .text {
   font-size: 17px;
@@ -491,7 +517,7 @@ p {
   font-family: 'Muli', 'sans-serif';
   height: 100%;
   width: auto;
-  left: 150px;
+  top: 120px;
 }
 .text ul {
   padding-inline-start: 20px;
@@ -530,11 +556,12 @@ p {
 }
 .package-icon {
   position: absolute;
-  top: 140px;
-  width: 50px;
-  height: 50px;
-  left: 0px;
-  opacity: 0;
+  top: 0px;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  transform: translate(-50%);
+  opacity: 1;
   transition: opacity 0.6s ease, top 0.4s ease, left 0.4s ease;
   z-index: -1;
   backface-visibility: hidden;
@@ -573,8 +600,8 @@ p {
   position: absolute;
   width: 60px;
   height: 60px;
-  left: 90px;
-  top: 130px;
+  right: 30px;
+  top: 60px;
 }
 .heart-btn:hover{
   cursor: pointer;
@@ -591,11 +618,16 @@ p {
 ------------------CONTACT SECTION---------------
 ------------------------------------------------*/
 
+.contact {
+  border-bottom: none;
+}
 .contact h3 {
   font-size: 20px;
   font-family: 'Futura PT Light';
   text-align: center;
   position: relative;
+  width: fit-content;
+  margin: 0 auto;
 }
 .contact .underline {
   width: 0px;
@@ -607,6 +639,7 @@ p {
   transition: all 1.3s ease-in-out; 
 }
 .contact .container {
+  transition: all 0.6s ease;
   padding-top: 50px;
   padding-bottom: 50px;
   border-radius: 6px;
@@ -673,6 +706,9 @@ textarea:focus,
   /*background: #1e65ae33;*/
   /*font-size: 16px;*/
 }
+textarea:focus {
+  background: #1e65ae33;
+}
 form {
   width: 500px;
   margin: 0 auto;
@@ -699,8 +735,8 @@ form .col-md-12 textarea {
   font-family: 'Muli', sans-serif;
   text-align: left;
   color: transparent !important;
-  background-color: transparent;
   border: none;
+  cursor: pointer;
   border: 1px solid #1e65ae70;
   border-radius: 6px !important;
   transition: border-color 0.2s ease-out;
@@ -738,8 +774,13 @@ form .col-md-12 textarea {
   border: 1px solid #1e65ae70;
   height: 35px;
   width: 127px;
+  cursor: pointer;
   border-radius: 6px;
+  transition: all 0.6s ease;
   padding: 9px 9px 0 12px;
+}
+.input-group.time {
+  cursor: pointer;
 }
 .input-group-append {
   position: absolute;
@@ -750,9 +791,13 @@ form .col-md-12 textarea {
   width: 210px;
   height: 100%;
 }
+.timepicker-hour {
+  margin-left: 10px;
+}
 .timepicker-hour,
 .timepicker-minute {
-  margin-left: 10px;
+  padding-top: 2px;
+  cursor: pointer;
 }
 .timepicker-hours .table-condensed,
 .timepicker-minutes .table-condensed {
@@ -766,10 +811,14 @@ label {
   color: #555;
   background: white;
   padding: 0 5px 0 5px;
+  border-radius: 6px;
   font-family: 'Muli', sans-serif;
 }
 .col-md-12 label {
   top: -23px;
+}
+.half-width, .picker {
+  margin-bottom: 20px !important;
 }
 .picker { 
   margin-top: 0px;
@@ -791,10 +840,10 @@ label {
   animation: popup 0.2s ease-out forwards;
 }
 .datepicker.dropdown-menu table {
-  background-color: #1b7983;
+  background-color: #1e65ae;
 }
 .datepicker.dropdown-menu table thead {
-  background-color: #1b7983;
+  background-color: #1e65ae;
 }
 .datepicker.dropdown-menu table thead tr {
   border-top: 0;
@@ -844,7 +893,7 @@ label {
 }
 .datepicker.dropdown-menu table tr th.prev, .datepicker.dropdown-menu table tr th.next {
   color: #fff;
-  background-color: #17656e;
+  background-color: #054b93;
   border-radius: 0;
   padding-left: 20px;
 }
@@ -853,13 +902,14 @@ label {
   font-size: 12px;
   line-height: 2;
   color: #fff;
-  background-color: #19717a;
+  background-color: #2482b0;
   border-top: 1px solid #196d76;
   border-radius: 0;
 }
 .datepicker.dropdown-menu table tr td.day {
   width: 24px;
   border-right: 1px solid #ededed;
+  cursor: pointer;
 }
 .datepicker.dropdown-menu table tr td.day:last-child {
   border-right-width: 0;
@@ -891,12 +941,14 @@ label {
   }
 }
 .bootstrap-datetimepicker-widget.dropdown-menu {
-  border: 1px solid #34495e;
-  border-radius: 0;
-  box-shadow: none;
+  border: 1px solid #1e65ae;
+  border-radius: 6px;
+  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   margin: 10px 0 0 0;
   padding: 0;
-  min-width: 300px;
+  height: 120px;
   max-width: 100%;
   width: auto;
 }
@@ -905,6 +957,7 @@ label {
 }
 .bootstrap-datetimepicker-widget.dropdown-menu table td, .bootstrap-datetimepicker-widget.dropdown-menu table th {
   border-radius: 0;
+  cursor: pointer;
 }
 .bootstrap-datetimepicker-widget.dropdown-menu table td.old, .bootstrap-datetimepicker-widget.dropdown-menu table td.new {
   color: #bbb;
@@ -1001,6 +1054,7 @@ footer {
   z-index: 2;
   overflow: hidden;
   font-family: 'Muli', 'sans-serif';
+  transition: all 0.3s ease;
 }
 .contact-links {
   display: block;
@@ -1009,16 +1063,39 @@ footer {
   margin: 0 auto;
   padding-top: 10px;
   padding-bottom: 5px;
+  padding: 20px 20px 5px 20px;
+  height: 110px;
 }
 .social-item {
   position: relative;
   display: inline-block;
-  width: fit-content;
-  height: 100%;
+  min-width: 160px;
+  height: 70px;
   padding: 20px 30px 20px 30px;
+  transition: all 0.5s ease;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.contact-links a,
+.contact-links a:hover {
+  color: #3b3b3b;
+  text-decoration: none;
+}
+.social-item .details {
+  font-size: 10px; 
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: -50px;
+  transition: all 0.4s ease;
 }
 .social-item img {
-  float: left;
   width: 20px;
   height: auto;
 }
@@ -1091,9 +1168,13 @@ footer {
   position: absolute;
   float: none;
 }
+.navbar-right a:hover {
+  text-decoration: none;
+}
 .contact-icon {
   width: 15px;
   height: 15px;
+  transition: all 0.5s ease;
 }
 .contact-icon {
   margin-right: 15px;
@@ -1282,7 +1363,12 @@ footer {
     height: auto;
   }
 } 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1120px){
+  .package-item {
+    width: 100%;
+    height: 440px;
+    margin-bottom: 60px;
+  }
   .about .left-container {
     width: 100%;
   }
@@ -1295,6 +1381,8 @@ footer {
     margin-top: 30px;
     margin-bottom: 20px;
   }
+}
+@media only screen and (max-width: 991px) {
   .jarallax {
     height: 40vh;
   }
@@ -1310,13 +1398,6 @@ footer {
   .jarallax .jarallax-img img {
     width: auto;
     margin-left: -394px;
-  }
-  .package-item {
-    height: 340px;
-  }
-  .package-icon {
-    width: 40px;
-    height: 40px;
   }
   .block {
     padding: 40px 80px 40px 80px;
@@ -1349,6 +1430,7 @@ footer {
   .main .title-text h1 {
     font-size: 70px;
   }
+  .main .title-text h3 .better-text,
   .main .title-text h3 {
     font-size: 28px;
   }
@@ -1366,6 +1448,15 @@ footer {
   }
   form {
     padding-top: 20px;
+  }
+  .time-label {
+    width: 100%;
+  }
+  .col-md-12 {
+    margin-top: 35px;
+  }
+  .col-md-12 label {
+    top: -10px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -1408,7 +1499,7 @@ footer {
     top: 73px;
   }
   .text {
-    margin-top: 20px;
+    margin-top: 10px;
     left: -3px;
   }
   .package-item {
@@ -1449,36 +1540,38 @@ footer {
     display: block;
     margin: 0 auto;
   }
+  .contact-links {
+    height: auto;
+  }
   .social-item {
-    display: block;
-    width: 190px;
+    min-width: 150px;
     margin: 0 auto;
     margin-bottom: 10px;
   }
-}
-@media only screen and (max-width: 479px) {
+  .social-item .details {
+    bottom: -8px !important;
+    opacity: 1 !important;
+  }
+  .contact h3 {
+    font-size: 18px;
+  }
+  .packages .container {
+    margin-top: 30px;
+  }
+  .jarallax.one .jarallax-img img,
+  .jarallax.two .jarallax-img img,
+  .jarallax.three .jarallax-img img {
+    width: auto;
+    margin-left: 0; 
+  }
+  .jarallax {
+    height: 65vh;
+  }
   .main .title-text h1 {
-    font-size: 45px;
+    font-size: 60px;
   }
-  .main .title-text .smaller {
-    margin-top: -8px;
-    font-size: 20px;
-  }
-  .main .title-text h3 {
-    font-size: 28px;
-  }
-  .main .title-text {
-    bottom: 83px !important;
-    left: 22px;
-  }
-  .block {
-    padding: 15px;
-  }
-  .block h1 {
-    padding: 10px 20px 0 20px;
-  }
-  .about .right-container .image-container {
-    margin-bottom: 40px;
+  .main .title-text h3 .better-text, .main .title-text h3 {
+    font-size: 23px;
   }
   .testimonial-image {
     float: none;
@@ -1509,6 +1602,55 @@ footer {
   .testimonials .container {
     margin-bottom: 30px;
   }
+  .testimonial-info {
+    width: fit-content;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px
+  }
+  .block {
+    padding: 40px 10px 40px 10px;
+  }
+  .time-label {
+    width: 100%;
+  }
+  form .col-md-4,
+  form .col-md-6,
+  form .col-md-8,
+  form .col-md-12 {
+    margin-bottom: 20px;
+  }
+  form .col-md-12 textarea {
+    margin-top: -14px;
+  }
+  .better-text {
+    background: #fff !important;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .main .title-text h1 {
+    font-size: 45px;
+  }
+  .main .title-text .smaller {
+    margin-top: -8px;
+    font-size: 20px;
+  }
+  .main .title-text h3 {
+    font-size: 28px;
+  }
+  .main .title-text {
+    bottom: 83px !important;
+    left: 22px;
+  }
+  .block {
+    padding: 15px;
+  }
+  .block h1 {
+    padding: 10px 20px 0 20px;
+  }
+  .about .right-container .image-container {
+    margin-bottom: 40px;
+  }
   .jarallax {
     height: 50vh;
   }
@@ -1516,7 +1658,7 @@ footer {
     height: auto;
   }
   .jarallax.one .jarallax-img img {
-    margin-left: -300px;
+    margin-left: -200px;
   }
   .jarallax.two .jarallax-img img {
     margin-left: -232px;
@@ -1524,8 +1666,7 @@ footer {
     width: auto;
   }
   .jarallax.three .jarallax-img img {
-    margin-top: 50px;
-    margin-left: -350px;
+    margin-left: -285px;
   }
   .package-item {
     height: 510px;
@@ -1543,17 +1684,8 @@ footer {
     display: block;
     width: 100%;
   }
-  .time-label {
-    width: 98%;
-  }
-  form .col-md-12 textarea {
-    margin-top: 15px;
-  }
-  .testimonial-info {
-    width: fit-content;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 10px
+  .col-md-12 label {
+     top: -9px; 
   }
   .pattern.two {
     width: 35px;
@@ -1583,18 +1715,26 @@ footer {
     height: auto !important;
   }
   .main .title-text {
-    width: 300px;
+    width: 330px;
   }
   .jarallax .jarallax-img img {
     height: 100% !important;
     width: auto !important;
   }
-  form .col-md-4,
-  form .col-md-6,
-  form .col-md-8,
-  form .col-md-12 {
-    margin-bottom: 30px;
+  .col-md-12 {
+    margin-top: 35px;
   }
+  .contact-links {
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .social-item {
+    min-width: 100%;
+  }
+  .main .title-text h3 .better-text, .main .title-text h3 {
+    font-size: 28px;
+  }
+}
 @media only screen and (max-width: 300px) {
   .too-small-message {
     display: block;  
