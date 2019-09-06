@@ -256,7 +256,8 @@ function setMainElements(){
   $(".main").removeAttr("style");
   $(".navbar-default").removeAttr("style");
   $(".navbar-collapse").removeAttr("style");
-
+  $(".item").removeAttr("style");
+  
   animateNavbar();
   // setTimeout( function(){
   //   $(".better-text").css("opacity", "1");
@@ -268,6 +269,11 @@ function setMainElements(){
   }
   if($(window).width() < 479) {
     $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
+    $('.item').css('height', $(window).innerWidth() + "px");
+    $('.item').css('width', $(window).innerWidth() + "px");
+    $('.owl-item .item img').css('height', $(window).innerWidth() + "px");
+    $('.owl-item .item img').css('min-width', $(window).innerWidth() + "px");
+    $('#sync1').css('height', $(window).innerWidth() + "px");
   }
   else {
     $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
@@ -574,11 +580,11 @@ var checkViewportPackagesHeaderFirst = {
     setTimeout(function(){
       $(".package-item.two").css("opacity", "1");
       $(".package-item.two").css("transform", "scale(1)");
-    },400);
+    },300);
     setTimeout(function(){
       $(".package-item.three").css("opacity", "1");
       $(".package-item.three").css("transform", "scale(1)");
-    },800);
+    },600);
   }
 };
 var checkViewportPackagesHeaderSecond = {
@@ -589,11 +595,22 @@ var checkViewportPackagesHeaderSecond = {
     setTimeout(function(){
       $(".package-item.two").css("opacity", "1");
       $(".package-item.two").css("transform", "scale(1)");
-    },400);
+    },300);
     setTimeout(function(){
       $(".package-item.three").css("opacity", "1");
       $(".package-item.three").css("transform", "scale(1)");
-    },800);
+    },600);
+  }
+};
+var checkViewportInstaHeader = {
+  opacity: 1,
+  afterReveal: function() {
+    $(".instagram.block").css("padding-bottom", "80px");
+    $(".instagram .container").css("margin-top", "40px");
+    $(".instagram .container").css("padding-top", "30px");
+    $(".instagram .container").css("padding-bottom", "20px");
+    $("#instafeed").css("margin-bottom", "0");
+    $("#instafeed").css("opacity", "1");
   }
 };
 var checkViewportContactHeader = {
@@ -607,6 +624,7 @@ function initialiseScrollReveal() {
   ScrollReveal().reveal(".testimonials .second", checkViewportTestimonialsHeaderSecond);
   ScrollReveal().reveal(".packages .first", checkViewportPackagesHeaderFirst);
   ScrollReveal().reveal(".packages .second", checkViewportPackagesHeaderSecond);
+  ScrollReveal().reveal(".instagram h1", checkViewportInstaHeader);
   ScrollReveal().reveal(".contact h1", checkViewportContactHeader);
 }
 
@@ -626,7 +644,12 @@ $(document).ready(function() {
     animateNavbar();   
     preventScrollOnMenuOpen();
   });
-
+  $('#instafeed').instastream({
+    instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
+    instaUser: '4090409456',
+    instaResults: 10,
+    instaMenu: 'yes'
+  }); 
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());
 });
