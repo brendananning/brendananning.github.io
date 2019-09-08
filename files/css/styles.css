@@ -8,7 +8,7 @@ body {
 }
 
 *::selection { 
-  background: rgb(0,0,0);
+  background: #1e65ae;
   color: white;
 }
 
