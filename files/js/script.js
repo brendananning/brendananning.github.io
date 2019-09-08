@@ -251,6 +251,7 @@ function createGoTopArrow(){
 
 //Reset the elements that require resizing
 function setMainElements(){
+  //Remove every change first
   $('.testimonial-quote-top').removeAttr("style");
   $('.testimonial-quote-bottom').removeAttr("style");
   $('.time-label').removeAttr("style");
@@ -259,7 +260,8 @@ function setMainElements(){
   $(".navbar-default").removeAttr("style");
   $(".navbar-collapse").removeAttr("style");
   $(".item").removeAttr("style");
-  
+  $('.jarallax').jarallax('destroy');
+
   if($(window).width() < 991) {
     $(".main").css("height", $(window).innerHeight());
     // $(".time-label").css("width", $("#name").outerWidth() + "px");
