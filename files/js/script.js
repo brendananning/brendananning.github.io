@@ -308,7 +308,7 @@ function setMainElements(){
       speed: 0.3
     });
   } 
-  if($(window).width() < $(window).height() * 1.1) {
+  if($(window).width() < $(window).height() * 1.4) {
     $(".jarallax-img img").css("width", "auto");
     $(".jarallax-img img").css("height", "100vh");
     if($(window).width() > 479) {
@@ -316,8 +316,13 @@ function setMainElements(){
     }
   }
   if($(window).width() > $(window).height() * 1.3) {
-    $(".jarallax-img img").css("width", "100%");
+    $(".jarallax-img img").css("width", "130%");
     $(".jarallax-img img").css("height", "auto");
+    $(".jarallax-img img").css("margin-left", "-150px");
+  }
+  //Compensate for thin images
+  if($(window).width() > $(window).height() * 1.6) {
+    $(".jarallax-img img").css("width", "100%");
     $(".jarallax-img img").css("margin-left", "0px");
   }
   $('#instafeed').instastream({
