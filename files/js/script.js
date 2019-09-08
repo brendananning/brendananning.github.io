@@ -436,6 +436,7 @@ resizeTimeout = setTimeout(function() {
 Pace.restart();
 Pace.on("done", function(){
   if ( $('.pace-progress').attr('data-progress-text') == '100%' ) {
+      $('.preloader-background').fadeOut(1500);
       $('.preloader-wrap').fadeOut(1500);
       var counter = 0;
 
