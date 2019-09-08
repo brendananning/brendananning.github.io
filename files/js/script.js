@@ -565,15 +565,15 @@ var checkViewportPackagesHeaderFirst = {
 var checkViewportPackagesHeaderSecond = {
   opacity: 1,
   afterReveal: function() {
-    $(".package-item.one").css("opacity", "1");
-    $(".package-item.one").css("transform", "scale(1)");
+    $(".package-item.three").css("opacity", "1");
+    $(".package-item.three").css("transform", "scale(1)");
     setTimeout(function(){
       $(".package-item.two").css("opacity", "1");
       $(".package-item.two").css("transform", "scale(1)");
     },300);
     setTimeout(function(){
-      $(".package-item.three").css("opacity", "1");
-      $(".package-item.three").css("transform", "scale(1)");
+      $(".package-item.one").css("opacity", "1");
+      $(".package-item.one").css("transform", "scale(1)");
     },600);
   }
 };
@@ -607,7 +607,6 @@ function initialiseScrollReveal() {
 }
 
 $(document).ready(function() {
-  jarallax(document.querySelectorAll('.jarallax'));
 
   // add initial scenes
   addScenes(scenes);

@@ -89,7 +89,7 @@ p {
   text-align: center;
   font-family: 'Futura PT Bold';
   font-size: 90px;
-  color: #fff;
+  color: #fff !important;
   transform: translate(-50%, -50%);
 }
 .loader-icon {
@@ -582,8 +582,6 @@ p {
 }
 .item:hover .insta-overlay {
   opacity: 1;
-}
-.item:hover {
   transform: scale(1.04, 1.04);
 }
 .img-info {
@@ -1774,7 +1772,7 @@ footer {
     transform: translate(-50%) !important;
   }
   .packages h1 {
-    margin-bottom: 80px;
+    margin-bottom: 30px;
   }
   .packages .container {
     margin-bottom: -30px;
@@ -1948,6 +1946,27 @@ footer {
     font-size: 30px;
     width: 60%; 
   }
+  .contact .container p {
+    padding-right: 0px;
+  }
+  form .col-md-12 {
+    margin-top: 40px;
+  }
+  form .col-md-12 label {
+    top: -21px;
+  }
+  form .col-md-12 textarea {
+    margin-bottom: 0px;
+  }
+  .text {
+    font-size: 15px;
+  }
+  .about .container {
+    padding-top: 20px;
+  }
+  .main .title-text {
+    bottom: 20px !important;
+  }
 }
 @media only screen and (max-width: 479px) {
   .main .title-text h1 {
@@ -1997,7 +2016,11 @@ footer {
     font-size: 24px; 
   }
   .contact {
-    padding: 0 30px;
+    padding: 0 30px 50px 30px;
+  }
+  .social-item {
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
   .contact .container form div {
     padding-right: 5px;
@@ -2029,6 +2052,10 @@ footer {
   }
   .packages .container {
     margin-bottom: 10px; 
+  }
+  .package-item {
+    margin-bottom: 0px;
+    margin-top: 60px;
   }
   .contact .container {
     padding-left: 15px;
@@ -2104,8 +2131,8 @@ footer {
   .item, .owl-item, .owl-carousel .owl-stage-outer {
     overflow: visible;
   }
-  .owl-stage {
-    width: 6000px !important;
+  .item:hover .insta-overlay{
+    transform: none;
   }
 } 
 @media only screen and (max-width: 300px) {
