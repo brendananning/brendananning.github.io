@@ -263,13 +263,13 @@ function setMainElements(){
   if($(window).width() < 991) {
     $(".main").css("height", $(window).innerHeight());
     // $(".time-label").css("width", $("#name").outerWidth() + "px");
-    $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
     //Wait until the instafeed is initialised before setting items
-    // setTimeout(function(){
+    setTimeout(function(){
     //   $(".item").css("width", ($("#instafeed").width() * 0.33) + "px");
     //   $(".item").css("height", ($("#instafeed").width() * 0.33) + "px");
     //   $(".owl-item .item img").css("width", ($("#instafeed").width() * 0.33) + "px");
-    // }, 600);
+      $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
+    }, 400);
   }
   if($(window).width() < 479) {
     $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
