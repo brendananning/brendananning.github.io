@@ -554,7 +554,7 @@ p {
   -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
-  transition: opacity 2s ease-in-out, margin 1s linear;
+  transition: opacity 1.7s ease-in-out, margin 0.8s linear;
   overflow: hidden; 
 }
 /*.owl-stage-width {
@@ -666,8 +666,9 @@ p {
 }
 .packages p {
   margin-top: 10px;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
+  transition: all 0.7s ease;
 }
 .packages p a {
   text-decoration: underline;
@@ -816,6 +817,7 @@ p {
 ------------------------------------------------*/
 
 .contact {
+  overflow: visible;
   border-bottom: none;
 }
 .contact h3 {
@@ -1701,6 +1703,16 @@ footer {
   }
   .col-md-12 label {
     top: -10px;
+  }
+  .packages p {
+    margin-top: 20px;
+  }
+  form .col-md-12 {
+    margin-bottom: 0px;
+  }
+  .contact .container p {
+    margin-top: 7px;
+    margin-bottom: 65px;
   }
 }
 @media only screen and (max-width: 767px) {

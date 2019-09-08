@@ -78,6 +78,7 @@ function hoverEffects() {
       $(".package-item").not(this).css("transform", "scale(0.9)");
       $(".package-item").not(this).css("opacity", "0.3");
       $(this).css("transform", "scale(1.05)");
+      $(".packages p").css("opacity", "0.3");
     },
      function() {
       $(this).find('.package-icon').css("opacity", "0");
@@ -86,6 +87,7 @@ function hoverEffects() {
       $(".package-item").not(this).css("transform", "scale(1)");
       $(".package-item").not(this).css("opacity", "1");
       $(this).css("transform", "scale(1)");
+      $(".packages p").css("opacity", "1");
     },
   );
   $(".social-item").hover(
