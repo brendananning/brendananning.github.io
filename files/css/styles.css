@@ -1714,6 +1714,12 @@ footer {
     margin-top: 7px;
     margin-bottom: 65px;
   }
+  .navbar-collapse {
+    padding-left: 30px;
+  }
+  .logo-img {
+    right: 30px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .navbar-collapse.in {
