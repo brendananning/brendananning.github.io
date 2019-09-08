@@ -653,7 +653,9 @@ p {
 /*----------------------------------------------
 -----------------PACKAGES SECTION---------------
 ------------------------------------------------*/
-
+.packages {
+  padding: 40px 80px 40px 80px; 
+}
 .packages .container {
   margin-top: 100px;
   max-width: 1080px;
@@ -661,6 +663,14 @@ p {
 .packages .second {
   height: 1px;
   display: inline-block;
+}
+.packages p {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+.packages p a {
+  text-decoration: underline;
 }
 .package-item {
   display: block;
@@ -701,7 +711,7 @@ p {
   color: #515151;
   position: absolute;
   font-family: 'Muli', 'sans-serif';
-  height: 100%;
+  height: auto;
   width: auto;
   top: 120px;
 }
@@ -839,6 +849,18 @@ p {
 .contact .container form div {
   padding-right: 35px;
 }
+.contact .container p {
+  display: inline-block;
+  text-align: center;
+  width: 100%; 
+  padding-right: 35px;
+  font-size: 14px;
+  margin-top: -30px;
+  margin-bottom: 60px;
+}
+.contact .container p a {
+  text-decoration: underline;
+}
 .form-input {
   font-size: 16px;
   background-color: unset;
@@ -909,6 +931,9 @@ form .col-md-12 {
   padding-left: 5px;
   margin-bottom: 30px;
   position: relative;
+}
+form .col-md-12 {
+  margin-bottom: 0px;
 }
 form .col-md-12 textarea {
   height: 100px;
