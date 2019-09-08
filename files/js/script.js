@@ -305,17 +305,17 @@ function setMainElements(){
   }
   else {
     $('.jarallax').jarallax({
-      speed: 0.2
+      speed: 0.3
     });
   } 
-  if($(window).width() < $(window).height() * 1.4) {
+  if($(window).width() < $(window).height() * 1.1) {
     $(".jarallax-img img").css("width", "auto");
     $(".jarallax-img img").css("height", "100vh");
     if($(window).width() > 479) {
       $(".jarallax-img img").css("margin-left", "-400px");
     }
   }
-  if($(window).width() > $(window).height()) {
+  if($(window).width() > $(window).height() * 1.3) {
     $(".jarallax-img img").css("width", "100%");
     $(".jarallax-img img").css("height", "auto");
     $(".jarallax-img img").css("margin-left", "0px");
