@@ -93,7 +93,7 @@ function hoverEffects() {
       $(this).find('.details').css("opacity", "1");
       $(this).find('.details').css("bottom", "-3px");
       $(this).find('.img').css("transform", "scale(0.95)");
-      $(this).css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
+      $(this).css("box-shadow", "2px 2px 22px -4px rgba(255,255,255,0.44)");
       $(this).css("background", "#fff");
       $(this).css("transform", "scale(1.05)");
     },
@@ -258,22 +258,20 @@ function setMainElements(){
   $(".navbar-collapse").removeAttr("style");
   $(".item").removeAttr("style");
   
-  animateNavbar();
-  // setTimeout( function(){
-  //   $(".better-text").css("opacity", "1");
-  // }, 3500);
   if($(window).width() < 991) {
     $(".main").css("height", $(window).innerHeight());
     // $(".time-label").css("width", $("#name").outerWidth() + "px");
     $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
+    //Wait until the instafeed is initialised before setting items
+    // setTimeout(function(){
+    //   $(".item").css("width", ($("#instafeed").width() * 0.33) + "px");
+    //   $(".item").css("height", ($("#instafeed").width() * 0.33) + "px");
+    //   $(".owl-item .item img").css("width", ($("#instafeed").width() * 0.33) + "px");
+    // }, 600);
   }
   if($(window).width() < 479) {
     $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
-    $('.item').css('height', $(window).innerWidth() + "px");
-    $('.item').css('width', $(window).innerWidth() + "px");
-    $('.owl-item .item img').css('height', $(window).innerWidth() + "px");
-    $('.owl-item .item img').css('min-width', $(window).innerWidth() + "px");
-    $('#sync1').css('height', $(window).innerWidth() + "px");
+   
   }
   else {
     $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
@@ -309,39 +307,30 @@ function setMainElements(){
   if($(window).width() < $(window).height() * 1.4) {
     $(".jarallax-img img").css("width", "auto");
     $(".jarallax-img img").css("height", "100vh");
+    if($(window).width() > 479) {
+      $(".jarallax-img img").css("margin-left", "-400px");
+    }
   }
-  else {
+  if($(window).width() > $(window).height()) {
     $(".jarallax-img img").css("width", "100%");
     $(".jarallax-img img").css("height", "auto");
+    $(".jarallax-img img").css("margin-left", "0px");
   }
-  // $(document).click(function(){
-  //   if ($(".bootstrap-datetimepicker-widget").length) {
-  //     $(".contact .container").css("background", "#1e65ae50");
-  //     $(".time-label").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
-  //     $(".time-label").css("background", "#fff");
-  //   }
-  //   else {
-  //     $(".contact .container").css("background", "white");
-  //     $(".time-label").css("box-shadow", "none");
-  //     $(".time-label").css("background", "none");
-  //   }
-  // });
-  // $(document).click(function(){
-  //   if ($(".datepicker-dropdown").length) {
-  //     $(".contact .container").css("background", "#1e65ae50");
-  //     $("#wedding-datepicker input").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
-  //     $("#wedding-datepicker input").css("background", "#fff");
-  //   }
-  //   else {
-  //     $(".contact .container").css("background", "white");
-  //     $("#wedding-datepicker input").css("box-shadow", "none");
-  //     $("#wedding-datepicker input").css("background", "none");
-  //   }
-  // });
+  $('#instafeed').instastream({
+    instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
+    instaUser: '4090409456',
+    instaResults: 10,
+    instaMenu: 'yes'
+  }); 
+  // setTimeout(function(){
+  //   $(".owl-stage").addClass("owl-stage-width");
+  //   $(".owl-stage-width").css("width", (Math.ceil($(".owl-stage").width() / 100) * 100) + "px");
+  // },400);
 }
 
 $(window).resize(function () { 
   setMainElements();
+  animateNavbar();
 });
 
 function bindVelocity(){
@@ -446,27 +435,10 @@ resizeTimeout = setTimeout(function() {
 
 Pace.restart();
 Pace.on("done", function(){
-  $(function() {  
-  $('.btn-animated')
-    .on('mouseenter', function(e) {
-      var parentOffset = $(this).offset(),
-          relX = e.pageX - parentOffset.left,
-          relY = e.pageY - parentOffset.top;
-      $(this).find('span').css({top:relY, left:relX})
-    })
-    .on('mouseout', function(e) {
-      var parentOffset = $(this).offset(),
-          relX = e.pageX - parentOffset.left,
-          relY = e.pageY - parentOffset.top;
-      $(this).find('span').css({top:relY, left:relX})
-    });
-});
-  // $(".package-header").css("width", ($(".package-item").width() + 1) + "px");
   if ( $('.pace-progress').attr('data-progress-text') == '100%' ) {
-      $('.preloader-wrap').fadeOut(1000);
-      $('.ribbon').css("animation", "slide 0.6s forwards");
-      // $('.ribbon').css("-webkit-animation", "slide 0.6s forwards");
+      $('.preloader-wrap').fadeOut(1500);
       var counter = 0;
+
 
       //Only activate once
       $(window).scroll(function() { 
@@ -477,12 +449,12 @@ Pace.on("done", function(){
           counter = 1;
         }
       });
-
+      $(".pace .pace-progress").css("right", "0");
       setTimeout( function(){
+        animateNavbar();
         $(".navbar-default").css("opacity", "1");
         $(".main-background").css("opacity", "1");
         $(".main-background").css("transform", "perspective(1px) scale(1.0)");
-
       }, 700);
       
       // Make sure that the header animation doesn't start until page load finishes
@@ -611,6 +583,9 @@ var checkViewportInstaHeader = {
     $(".instagram .container").css("padding-bottom", "20px");
     $("#instafeed").css("margin-bottom", "0");
     $("#instafeed").css("opacity", "1");
+    setTimeout(function(){
+      $(window).scrollTop($(window).scrollTop()+1);
+    },1000);
   }
 };
 var checkViewportContactHeader = {
@@ -631,7 +606,6 @@ function initialiseScrollReveal() {
 $(document).ready(function() {
   jarallax(document.querySelectorAll('.jarallax'));
 
-  animateNavbar();
   // add initial scenes
   addScenes(scenes);
   setMainElements();
