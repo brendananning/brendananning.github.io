@@ -2028,15 +2028,15 @@ footer {
     height: auto;
   }
   .jarallax.one .jarallax-img img {
-    margin-left: -200px;
+    margin-left: -250px;
   }
   .jarallax.two .jarallax-img img {
-    margin-left: -232px;
+    margin-left: -285px;
     height: 100%;
     width: auto;
   }
   .jarallax.four .jarallax-img img {
-    margin-left: -285px;
+    margin-left: -310px;
   }
   .package-item {
     height: 510px;
@@ -2109,6 +2109,7 @@ footer {
   }
   .social-item {
     min-width: 100%;
+    width: 100%;
   }
   .main .title-text h3 .better-text, .main .title-text h3 {
     font-size: 22px;
@@ -2163,6 +2164,13 @@ footer {
   }
   .item:hover .insta-overlay{
     transform: none;
+  }
+  .contact .container p {
+    margin-bottom: 20px;
+  }
+  .better-text {
+    padding: 0px 7px 2px 4px !important;
+    border-top-right-radius: unset;
   }
 } 
 @media only screen and (max-width: 300px) {
