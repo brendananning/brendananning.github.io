@@ -2108,7 +2108,7 @@ footer {
     padding-bottom: 20px;
   }
   .social-item {
-    min-width: 100%;
+    min-width: 300px;
     width: 100%;
   }
   .main .title-text h3 .better-text, .main .title-text h3 {
