@@ -156,8 +156,8 @@ function addWhiteNavDesktop(){
 }
 function addTransparentNav(){
   //Make navbar transparent if scroll position is on main section
-  $(".navbar-default").css("padding-top", "20px");
-  $(".navbar-default").css("height", "80px");
+  $(".navbar-default").css("padding-top", "30px");
+  $(".navbar-default").css("height", "90px");
   $(".navbar-default").css("background-color", "transparent");
   $(".navbar-default").css("box-shadow", "none");
   $(".navbar-nav li a").css("color", "white");
