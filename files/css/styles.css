@@ -279,6 +279,7 @@ p {
   color: #3b3b3b !important;
   opacity: 0;
   font-size: 34px;
+  letter-spacing: -1px;
   font-family: 'Futura PT Medium';
   padding: 7px !important;
   display: inline-block;
