@@ -1723,8 +1723,12 @@ footer {
   }
 }
 @media only screen and (max-width: 767px) {
+  .fade-last {
+    padding: 5px 0px 0px 5px;
+  }
   .better-text {
-    padding-top: 2px;
+    padding: 0px 4px 2px 4px !important;
+    border-radius: 6px;
   }
   .navbar-collapse.in {
     margin-top: 17px;
@@ -1972,6 +1976,7 @@ footer {
   }
   .about .container {
     padding-top: 20px;
+    margin-top: 10px;
   }
   .main .title-text {
     bottom: 20px !important;
@@ -1994,6 +1999,12 @@ footer {
   .main .title-text {
     bottom: 83px !important;
     left: 22px;
+  }
+  .fade.last {
+    line-height: 28px;
+  }
+  .better-text {
+    line-height: 25px;
   }
   .block {
     padding: 15px;
@@ -2025,7 +2036,7 @@ footer {
     height: 510px;
   }
   .block h1 {
-    font-size: 24px; 
+    font-size: 30px; 
   }
   .contact {
     padding: 0 30px 50px 30px;
