@@ -265,7 +265,7 @@ p {
 .fade.last .better-text {
   background: white;
   color: black;
-  padding-left: 7px;
+  padding-left: 11px;
   /*opacity: 1 !important;*/
   transition: all 0.6s linear;
 }
@@ -282,6 +282,7 @@ p {
   letter-spacing: -1px;
   font-family: 'Futura PT Medium';
   padding: 7px !important;
+  padding-right: 11px !important;
   display: inline-block;
   margin-left: 5px;
 }
