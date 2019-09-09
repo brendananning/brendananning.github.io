@@ -260,6 +260,7 @@ function setMainElements(){
   $(".navbar-default").removeAttr("style");
   $(".navbar-collapse").removeAttr("style");
   $(".item").removeAttr("style");
+  $(".jarallax-img img").removeAttr("style");
   $('.jarallax').jarallax('destroy');
 
   if($(window).width() < 991) {
@@ -323,7 +324,9 @@ function setMainElements(){
   //Compensate for thin images
   if($(window).width() > $(window).height() * 1.6) {
     $(".jarallax-img img").css("width", "100%");
-    $(".jarallax-img img").css("margin-left", "0px");
+    if($(window).width() > 479) {
+      $(".jarallax-img img").css("margin-left", "0px");
+    }
   }
   $('#instafeed').instastream({
     instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
@@ -608,7 +611,9 @@ function initialiseScrollReveal() {
   ScrollReveal().reveal(".testimonials .first", checkViewportTestimonialsHeaderFirst);
   ScrollReveal().reveal(".testimonials .second", checkViewportTestimonialsHeaderSecond);
   ScrollReveal().reveal(".packages .first", checkViewportPackagesHeaderFirst);
-  ScrollReveal().reveal(".packages .second", checkViewportPackagesHeaderSecond);
+  if($(window).width() < 479){
+    ScrollReveal().reveal(".packages .second", checkViewportPackagesHeaderSecond);
+  }
   ScrollReveal().reveal(".instagram h1", checkViewportInstaHeader);
   ScrollReveal().reveal(".contact h1", checkViewportContactHeader);
 }
