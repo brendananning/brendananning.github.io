@@ -41,7 +41,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="./files/css/styles.css?v=2.4"/>
+	<link rel="stylesheet" type="text/css" href="./files/css/styles.css?v=2.5"/>
 </head>
 <body>
 	<div class="preloader-background">
@@ -61,27 +61,29 @@
 			</button>
 			<a id="go-home" href="#banner" class="navbar-left"><img class="logo-img" src="./files/img/logo_white.png"></a>
 		</div>
-		<div class="collapse navbar-collapse" id="navbar-collapse-x">
-			<ul class="nav navbar-nav navbar-left">
-				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#home">Home</a></li>
-				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#about">About</a></li>
-				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#testimonials">Testimonials</a></li>
-				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#instagram">Gallery</a></li>
-				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#packages">Packages</a></li>
-				<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#contact">Contact</a></li>
-			</ul>
-		</div>
-		<div class="navbar-right">
-			<a href="tel:0422659140">
-				<img class="contact-icon phone" src="./files/img/icons/phone_white.png" alt="Phone">
-			</a>
-			<a href="mailto:hello@brendananning.com">
-				<img class="contact-icon email" src="./files/img/icons/email_white.png" alt="Email">
-			</a>
-			<a href="https://www.instagram.com/brendananningcelebrant/" target="_blank">
-				<img class="contact-icon insta" src="./files/img/icons/instagram_white.png" alt="Instagram">
-			</a>
-			<a href="https://www.facebook.com/brendananningwedding/" target="_blank"><img class="contact-icon facebook" src="./files/img/icons/fb_white.png" alt="Facebook"></a>
+		<div class="nav-container">
+			<div class="collapse navbar-collapse" id="navbar-collapse-x">
+				<ul class="nav navbar-nav navbar-left">
+					<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#home">Home</a></li>
+					<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#about">About</a></li>
+					<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#testimonials">Testimonials</a></li>
+					<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#instagram">Gallery</a></li>
+					<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#packages">Packages</a></li>
+					<li data-toggle="collapse" data-target="#navbar-collapse.in"><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+			<div class="navbar-right">
+				<a href="tel:0422659140">
+					<img class="contact-icon phone" src="./files/img/icons/phone_white.png" alt="Phone">
+				</a>
+				<a href="mailto:hello@brendananning.com">
+					<img class="contact-icon email" src="./files/img/icons/email_white.png" alt="Email">
+				</a>
+				<a href="https://www.instagram.com/brendananningcelebrant/" target="_blank">
+					<img class="contact-icon insta" src="./files/img/icons/instagram_white.png" alt="Instagram">
+				</a>
+				<a href="https://www.facebook.com/brendananningwedding/" target="_blank"><img class="contact-icon facebook" src="./files/img/icons/fb_white.png" alt="Facebook"></a>
+			</div>
 		</div>
 	</nav>
 	<section class="main" id="home">
@@ -404,7 +406,9 @@
 					onchange="try{setCustomValidity('')}catch(e){}" required></textarea>
 					<label>Your Message</label>
 				</div>
-				<p>By choosing me, you are agreeing to the terms of <a target="_blank" href="Contract_Brendan_Anning.pdf">my contract</a>.</p>
+				<p>
+					<!-- By choosing me, you are agreeing to the terms of <a target="_blank" href="Contract_Brendan_Anning.pdf">my contract</a>. -->
+				</p>
 			    <input class="btn-animated" type="submit" value="Send">
 			</form>
 			<div id="scene-4" data-jarallax-element="-200">

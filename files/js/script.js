@@ -39,6 +39,7 @@ function hoverEffects() {
       $(".gradient").css("opacity", "0");
       $(".gradient").css("transform", "scale(1.1)");
       $(".about-image").css("transform", "scale(1.1)");
+      $(".about-image").css("box-shadow", "none");
     },
      function() {
       $(".gradient").css("opacity", "0.2");
@@ -588,6 +589,9 @@ var checkViewportPackagesHeaderSecond = {
 };
 var checkViewportInstaHeader = {
   opacity: 1,
+  viewOffset: {
+    top: 400
+  },
   afterReveal: function() {
     $(".instagram.block").css("padding-bottom", "80px");
     $(".instagram .container").css("margin-top", "40px");
@@ -613,7 +617,7 @@ function initialiseScrollReveal() {
   if($(window).width() < 479){
     ScrollReveal().reveal(".packages .second", checkViewportPackagesHeaderSecond);
   }
-  ScrollReveal().reveal(".instagram h1", checkViewportInstaHeader);
+  ScrollReveal().reveal(".jarallax.two", checkViewportInstaHeader);
   ScrollReveal().reveal(".contact h1", checkViewportContactHeader);
 }
 

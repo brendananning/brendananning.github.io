@@ -347,6 +347,9 @@ p {
   border-radius: 6px;
   overflow: hidden;
   transform: scale(1.05);
+  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
 }
 .about .right-container picture img {
   height: 100%;
@@ -647,6 +650,7 @@ p {
   height: 100%;
   opacity: 0;
   transition: all 0.7s ease;
+  backface-visibility: hidden;
 }
 .simply-scroll-container { position:relative;}
 .simply-scroll-clip { position:relative; overflow:hidden;}
