@@ -498,9 +498,9 @@ Pace.on("done", function(){
                   0.5
                  )
           .staggerTo($(".better-text"), 
-                  2,
+                  3,
                  {opacity: 1},
-                  1
+                  0.5
                  )
           //build a scene
           var contentScene = new ScrollMagic.Scene({
@@ -510,7 +510,7 @@ Pace.on("done", function(){
           .addTo(controller);        
       }, 1700);
       setInterval(function() {
-        if($(".better-text").css('opacity') > '0.7') {
+        if($(".fade.last").css('opacity') > '0.8') {
           $(".better-text").addClass("text-underline");
         }
       }, 100);
