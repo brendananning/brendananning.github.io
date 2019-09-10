@@ -96,7 +96,7 @@ img {
   font-family: 'Futura PT Bold';
   font-size: 90px;
   transform: translate(-50%, -50%);
-  transition: all 1s ease;
+  transition: all 1.2s ease;
 }
 .loader-icon {
   position: absolute;
@@ -107,7 +107,7 @@ img {
   transform: translate(-50%, -50%);
   -webkit-animation: bounce 1.5s infinite;
   animation: bounce 1.5s infinite;
-  transition: all 1.5s ease;
+  transition: all 1.4s ease, opacity 0.3s ease;
 }
 
 @keyframes bounce {
@@ -299,7 +299,7 @@ img {
   backface-visibility: hidden;
   transition: background-size 1.2s ease-in-out;
 }
-.better-text.underline {
+.better-text.text-underline {
   background-size: 100% 1px;
 }
 /*----------------------------------------------
@@ -326,7 +326,6 @@ img {
   margin-top: 40px;
 }
 .block p {
-  color: #515151;
   font-size: 17px; 
   font-family: 'Muli', 'sans-serif';
   text-align: left;
@@ -335,8 +334,12 @@ img {
   font-family: 'Futura PT Bold';
   letter-spacing: 1px;
   font-size: 35px; 
-  color: #3b3b3b;
   text-align: center;
+}
+.block p,
+.block h1,
+.block h3 {
+  color: #515151;
 }
 .about .container {
   padding-top: 20px;
@@ -575,7 +578,7 @@ img {
   -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
-  transition: opacity 1s ease-in-out, margin 0.7s ease;
+  transition: opacity 0.8s ease-in-out, margin 0.7s ease;
   overflow: hidden; 
 }
 /*.owl-stage-width {
@@ -621,6 +624,7 @@ img {
 .img-info p {
   display: inline-block;
   font-size: 15px;
+  color: #fff;
   word-break: break-word;
 }
 .animation-container {
@@ -854,7 +858,7 @@ img {
   bottom: -3px;
   left: 50%;
   transform: translate(-50%);
-  border-bottom: 1px solid #1e65ae;
+  border-bottom: 1px solid #aec8e2;
   transition: all 1.3s ease-in-out; 
 }
 .contact .container {

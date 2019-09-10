@@ -454,7 +454,7 @@ resizeTimeout = setTimeout(function() {
 
 Pace.on("done", function(){
   if ( $('.pace-progress').attr('data-progress-text') == '100%' ) {
-        $('.preloader-background').fadeOut(1500);
+      $('.preloader-background').fadeOut(1500);
       $('.preloader-wrap').fadeOut(1500);
       var counter = 0;
 
@@ -470,17 +470,17 @@ Pace.on("done", function(){
       });
       setTimeout( function(){
         $(".loader-icon").css("left", "120%");
-      }, 300);
-      setTimeout( function(){
         $(".preloader-wrap p").css("left", "170%");
-      }, 100);
-      $(".pace .pace-progress").css("right", "0");
+      }, 400);
+      setTimeout( function(){
+        $(".pace .pace-progress").css("right", "0");
+      }, 200);
       setTimeout( function(){
         animateNavbar();
         $(".navbar-default").css("opacity", "1");
         $(".main-background").css("opacity", "1");
         $(".main-background").css("transform", "perspective(1px) scale(1.0)");
-      }, 700);
+      }, 1000);
       
       // Make sure that the header animation doesn't start until page load finishes
       setTimeout(function(){
@@ -511,7 +511,7 @@ Pace.on("done", function(){
       }, 1100);
       setInterval(function() {
         if($(".better-text").css('opacity') > '0.7') {
-          $(".better-text").addClass("underline");
+          $(".better-text").addClass("text-underline");
         }
       }, 100);
   } 
@@ -607,7 +607,7 @@ var checkViewportPackagesHeaderSecond = {
 var checkViewportInstaHeader = {
   opacity: 1,
   viewOffset: {
-    top: 200
+    top: 700
   },
   afterReveal: function() {
     $(".instagram.block").css("padding-bottom", "80px");
