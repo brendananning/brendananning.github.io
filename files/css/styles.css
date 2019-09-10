@@ -292,7 +292,7 @@ img {
   display: inline-block;
   /*Underline styles*/
   text-decoration: none;
-  background-image: linear-gradient(to right, #0c83ff 0%, #7b2dd3 100%);
+  background-image: linear-gradient(to right, #0c83ff 0%, #0c83ff 100%);
   background-position: 0% 82%;
   background-repeat: no-repeat;
   background-size: 0% 1px;
