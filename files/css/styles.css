@@ -4,7 +4,7 @@
 body {
   background: #FFF;
   overflow-x: hidden;
-  color: #515151;
+  color: #fff;
 }
 
 *::selection { 
@@ -19,9 +19,7 @@ img {
   -o-user-select: none;
   user-select: none;
 }
-p {
-  transition: all 0.4s ease; 
-}
+
 @font-face {
   font-family: 'Futura PT Light';
   src: url('../fonts/FuturaPT-Light.woff2') format('woff2'),
@@ -40,6 +38,13 @@ p {
   font-family: 'Futura PT Medium';
   src: url('../fonts/FuturaPT-Medium.woff2') format('woff2'),
       url('../fonts/FuturaPT-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT Medium Oblique';
+  src: url('../fonts/FuturaPT-Medium-Oblique.woff2') format('woff2'),
+      url('../fonts/FuturaPT-Medium-Oblique.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -80,6 +85,7 @@ p {
   top: 0;
   bottom: 0;
   z-index: 103;
+  color: #fff !important;
 }
 .preloader-wrap p {
   position: absolute;
@@ -89,8 +95,8 @@ p {
   text-align: center;
   font-family: 'Futura PT Bold';
   font-size: 90px;
-  color: #fff !important;
   transform: translate(-50%, -50%);
+  transition: all 1s ease;
 }
 .loader-icon {
   position: absolute;
@@ -101,6 +107,7 @@ p {
   transform: translate(-50%, -50%);
   -webkit-animation: bounce 1.5s infinite;
   animation: bounce 1.5s infinite;
+  transition: all 1.5s ease;
 }
 
 @keyframes bounce {
@@ -224,7 +231,7 @@ p {
   z-index: -1;
   opacity: 0;
   transform: perspective(1px) scale(1.25);
-  transition: opacity 0.5s ease, transform 3s ease, height 0.7s ease;
+  transition: opacity 0.5s ease, transform 1s ease, height 0.7s ease;
   background-repeat: no-repeat !important;
   background: url('../img/brendan.jpg');
   background-position: 0% 30% !important;
@@ -260,12 +267,12 @@ p {
   position: relative;
   font-family: 'Futura PT Light';
 }
-.fade.last,
-.fade.last .better-text {
+.fade.last {
   background: white;
   color: black;
-  padding-left: 11px;
   /*opacity: 1 !important;*/
+  padding-left: 11px;
+  padding-right: 11px;
   transition: all 0.6s linear;
 }
 .fade.last {
@@ -273,17 +280,27 @@ p {
   overflow: hidden;
 }
 .better-text {
+  color: #3b3b3b;
   bottom: 0;
-  background: #b3deff !important;
-  color: #3b3b3b !important;
   opacity: 0;
   font-size: 34px;
   letter-spacing: -1px;
-  font-family: 'Futura PT Medium';
-  padding: 7px !important;
-  padding-right: 11px !important;
+  font-family: 'Futura PT Medium Oblique';
+  margin-left: 7px;
+  margin-right: 7px;
+  padding: 7px 0px 7px 0px;
   display: inline-block;
-  margin-left: 5px;
+  /*Underline styles*/
+  text-decoration: none;
+  background-image: linear-gradient(to right, #0c83ff 0%, #7b2dd3 100%);
+  background-position: 0% 82%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  backface-visibility: hidden;
+  transition: background-size 1.2s ease-in-out;
+}
+.better-text.underline {
+  background-size: 100% 1px;
 }
 /*----------------------------------------------
 -------------------ABOUT SECTION-----------------
@@ -309,6 +326,7 @@ p {
   margin-top: 40px;
 }
 .block p {
+  color: #515151;
   font-size: 17px; 
   font-family: 'Muli', 'sans-serif';
   text-align: left;
@@ -397,7 +415,7 @@ p {
   z-index: 3;
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: -80px;
   transform: translate(-50%);
 }
 /*----------------------------------------------
@@ -1298,6 +1316,7 @@ footer {
   overflow: hidden;
   margin-left: 5px;
   margin-right: 5px;
+  backface-visibility: hidden;
 }
 .contact-links a,
 .contact-links a:hover {
@@ -2001,14 +2020,21 @@ footer {
     font-size: 28px;
   }
   .main .title-text {
+    text-align: center;
     bottom: 83px !important;
     left: 22px;
   }
   .fade.last {
     line-height: 28px;
+    padding: 3px 0px 0px 0px;
   }
   .better-text {
+    border-radius: 0px;
     line-height: 25px;
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    margin-top: 5px;
   }
   .block {
     padding: 15px;
@@ -2167,10 +2193,6 @@ footer {
   }
   .contact .container p {
     margin-bottom: 20px;
-  }
-  .better-text {
-    padding: 0px 7px 2px 4px !important;
-    border-top-right-radius: unset;
   }
 } 
 @media only screen and (max-width: 300px) {

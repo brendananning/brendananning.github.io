@@ -454,7 +454,7 @@ resizeTimeout = setTimeout(function() {
 
 Pace.on("done", function(){
   if ( $('.pace-progress').attr('data-progress-text') == '100%' ) {
-      $('.preloader-background').fadeOut(1500);
+        $('.preloader-background').fadeOut(1500);
       $('.preloader-wrap').fadeOut(1500);
       var counter = 0;
 
@@ -468,6 +468,12 @@ Pace.on("done", function(){
           counter = 1;
         }
       });
+      setTimeout( function(){
+        $(".loader-icon").css("left", "120%");
+      }, 300);
+      setTimeout( function(){
+        $(".preloader-wrap p").css("left", "170%");
+      }, 100);
       $(".pace .pace-progress").css("right", "0");
       setTimeout( function(){
         animateNavbar();
@@ -492,7 +498,7 @@ Pace.on("done", function(){
                   0.5
                  )
           .staggerTo($(".better-text"), 
-                  1,
+                  2,
                  {opacity: 1},
                   1
                  )
@@ -502,7 +508,12 @@ Pace.on("done", function(){
           })
           .setTween(displayTl)
           .addTo(controller);        
-      }, 900);
+      }, 1100);
+      setInterval(function() {
+        if($(".better-text").css('opacity') > '0.7') {
+          $(".better-text").addClass("underline");
+        }
+      }, 100);
   } 
   $(window).scroll(function(){
     $(".title-text").css("opacity", 1 - $(window).scrollTop() / 600);
