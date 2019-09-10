@@ -224,12 +224,11 @@ p {
   z-index: -1;
   opacity: 0;
   transform: perspective(1px) scale(1.25);
-  transition: opacity .5s ease, transform 3s ease;
+  transition: opacity 0.5s ease, transform 3s ease, height 0.7s ease;
   background-repeat: no-repeat !important;
   background: url('../img/brendan.jpg');
   background-position: 0% 30% !important;
   background-size: cover !important;
-  transition: all 0.8s ease;
 }
 .main, .about {
   display: block;
@@ -2035,6 +2034,11 @@ footer {
     height: 100%;
     width: auto;
   }
+  .jarallax.three .jarallax-img img {
+    margin-left: -190px;
+    height: 100%;
+    width: auto;
+  }
   .jarallax.four .jarallax-img img {
     margin-left: -310px;
   }
@@ -2130,9 +2134,6 @@ footer {
   }
   #sync1 {
     height: 300px;
-  }
-  .jarallax.three .jarallax-img img {
-     margin-left: -150px; 
   }
   .img-info p {
     font-size: 14px;
