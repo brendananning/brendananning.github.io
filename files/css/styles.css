@@ -85,7 +85,6 @@ img {
   top: 0;
   bottom: 0;
   z-index: 103;
-  color: #fff !important;
 }
 .preloader-wrap p {
   position: absolute;
@@ -96,7 +95,7 @@ img {
   font-family: 'Futura PT Bold';
   font-size: 90px;
   transform: translate(-50%, -50%);
-  transition: all 1.2s ease;
+  transition: left 1.2s ease;
 }
 .loader-icon {
   position: absolute;
@@ -336,10 +335,12 @@ img {
   font-size: 35px; 
   text-align: center;
 }
-.block p,
+.block p {
+  color: #515151;
+}
 .block h1,
 .block h3 {
-  color: #515151;
+  color: #3b3b3b;
 }
 .about .container {
   padding-top: 20px;
@@ -1241,41 +1242,15 @@ th.next, th.prev {
   left: 50%;
   transform: translate(-50%);
   border: 0;
-}
-.btn-animated::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background-color: rgba(255,255,255,0.1);
-  transition: all 0.3s;
+  backface-visibility: hidden;
+  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
 }
 .btn-animated:hover {
-  font-size: 12px;
-}
-.btn-animated:hover::before {
-  opacity: 0;
-  transform: scale(0.5,0.5);
-}
-.btn-animated::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: all 0.3s;
-  border: 1px solid rgba(255,255,255,0.5);
-  transform: scale(1.2,1.2);
-}
-.btn-animated:hover::after {
-  opacity: 1;
-  transform: scale(1,1);
+  color: #fff;
+  transform: translate(-50%) scale(0.95);
+  box-shadow: none;
 }
 .pattern.four {
   width: 100px;

@@ -454,8 +454,10 @@ resizeTimeout = setTimeout(function() {
 
 Pace.on("done", function(){
   if ( $('.pace-progress').attr('data-progress-text') == '100%' ) {
-      $('.preloader-background').fadeOut(1500);
-      $('.preloader-wrap').fadeOut(1500);
+      setTimeout( function(){
+        $('.preloader-background').fadeOut(1500);
+        $('.preloader-wrap').fadeOut(1500);
+      }, 800);
       var counter = 0;
 
 
@@ -471,16 +473,14 @@ Pace.on("done", function(){
       setTimeout( function(){
         $(".loader-icon").css("left", "120%");
         $(".preloader-wrap p").css("left", "170%");
-      }, 400);
-      setTimeout( function(){
         $(".pace .pace-progress").css("right", "0");
-      }, 200);
+      }, 1100);
       setTimeout( function(){
         animateNavbar();
         $(".navbar-default").css("opacity", "1");
         $(".main-background").css("opacity", "1");
         $(".main-background").css("transform", "perspective(1px) scale(1.0)");
-      }, 1000);
+      }, 1300);
       
       // Make sure that the header animation doesn't start until page load finishes
       setTimeout(function(){
@@ -508,7 +508,7 @@ Pace.on("done", function(){
           })
           .setTween(displayTl)
           .addTo(controller);        
-      }, 1100);
+      }, 1700);
       setInterval(function() {
         if($(".better-text").css('opacity') > '0.7') {
           $(".better-text").addClass("text-underline");
@@ -545,6 +545,7 @@ $(document).click(function() {
 });
 var checkViewportTestimonialsHeaderFirst = {
   opacity: 1,
+  duration: 0,
   afterReveal: function() {
       $(".testimonial-item.one").css("opacity", "1");
       $(".testimonial-item.one").css("transform", "scale(1)");
@@ -560,6 +561,7 @@ var checkViewportTestimonialsHeaderFirst = {
 };
 var checkViewportTestimonialsHeaderSecond = {
   opacity: 1,
+  duration: 0,
   afterReveal: function() {
       $(".testimonial-item.three").css("opacity", "1");
       $(".testimonial-item.three").css("transform", "scale(1)");
@@ -606,9 +608,7 @@ var checkViewportPackagesHeaderSecond = {
 };
 var checkViewportInstaHeader = {
   opacity: 1,
-  viewOffset: {
-    top: 700
-  },
+  duration: 0,
   afterReveal: function() {
     $(".instagram.block").css("padding-bottom", "80px");
     $(".instagram .container").css("margin-top", "40px");
@@ -634,7 +634,7 @@ function initialiseScrollReveal() {
   if($(window).width() < 479){
     ScrollReveal().reveal(".packages .second", checkViewportPackagesHeaderSecond);
   }
-  ScrollReveal().reveal(".jarallax.two", checkViewportInstaHeader);
+  ScrollReveal().reveal(".instagram h1", checkViewportInstaHeader);
   ScrollReveal().reveal(".contact h1", checkViewportContactHeader);
 }
 
