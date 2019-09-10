@@ -590,7 +590,7 @@ var checkViewportPackagesHeaderSecond = {
 var checkViewportInstaHeader = {
   opacity: 1,
   viewOffset: {
-    top: 400
+    top: 100
   },
   afterReveal: function() {
     $(".instagram.block").css("padding-bottom", "80px");
