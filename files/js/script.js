@@ -282,14 +282,16 @@ function setMainElements(){
   else {
     $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
   }
-  var scene = document.getElementById('scene');
-  var scene2 = document.getElementById('scene-2');
-  var scene3 = document.getElementById('scene-3');
-  var scene4 = document.getElementById('scene-4');
-  var parallaxInstance = new Parallax(scene);
-  var parallaxInstance2 = new Parallax(scene2);
-  var parallaxInstance3 = new Parallax(scene3);
-  var parallaxInstance4 = new Parallax(scene4);
+  if($(window).width() > 767) {
+    var scene = document.getElementById('scene');
+    var scene2 = document.getElementById('scene-2');
+    var scene3 = document.getElementById('scene-3');
+    var scene4 = document.getElementById('scene-4');
+    var parallaxInstance = new Parallax(scene);
+    var parallaxInstance2 = new Parallax(scene2);
+    var parallaxInstance3 = new Parallax(scene3);
+    var parallaxInstance4 = new Parallax(scene4);
+  }
 
   // if desktop device, use DateTimePicker
   $("#timepicker").datetimepicker({

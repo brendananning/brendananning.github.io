@@ -207,12 +207,12 @@ p {
   z-index: -1;
   height: 100vh;
   width: 100%;
-  background: -moz-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%, rgba(13, 75, 119, 0.5) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(13, 75, 119, 0.5)), color-stop(100%,rgba(92, 92, 92, 0.5))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(13, 75, 119, 0.5) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(13, 75, 119, 0.5) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(13, 75, 119, 0.5) 100%); /* IE10+ */
-  background: linear-gradient(to top, rgba(92, 92, 92, 0.5) 0%,rgba(13, 75, 119, 0.5) 100%); /* W3C */
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(14, 56, 134, 0.5) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(14, 56, 134, 0.5)), color-stop(100%,rgba(0, 0, 0, 0.5))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%,rgba(14, 56, 134, 0.5) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%,rgba(14, 56, 134, 0.5) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%,rgba(14, 56, 134, 0.5) 100%); /* IE10+ */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%,rgba(14, 56, 134, 0.5) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 .main-background {
@@ -2028,15 +2028,15 @@ footer {
     height: auto;
   }
   .jarallax.one .jarallax-img img {
-    margin-left: -200px;
+    margin-left: -280px;
   }
   .jarallax.two .jarallax-img img {
-    margin-left: -232px;
+    margin-left: -310px;
     height: 100%;
     width: auto;
   }
   .jarallax.four .jarallax-img img {
-    margin-left: -285px;
+    margin-left: -310px;
   }
   .package-item {
     height: 510px;
@@ -2108,7 +2108,8 @@ footer {
     padding-bottom: 20px;
   }
   .social-item {
-    min-width: 100%;
+    min-width: 300px;
+    width: 100%;
   }
   .main .title-text h3 .better-text, .main .title-text h3 {
     font-size: 22px;
@@ -2163,6 +2164,13 @@ footer {
   }
   .item:hover .insta-overlay{
     transform: none;
+  }
+  .contact .container p {
+    margin-bottom: 20px;
+  }
+  .better-text {
+    padding: 0px 7px 2px 4px !important;
+    border-top-right-radius: unset;
   }
 } 
 @media only screen and (max-width: 300px) {
