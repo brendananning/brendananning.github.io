@@ -1070,6 +1070,9 @@ label {
 .datepicker.dropdown-menu table tr {
   border-top: 1px solid #ededed;
 }
+th.next, th.prev {
+  cursor: pointer;
+}
 .datepicker.dropdown-menu table tr td, .datepicker.dropdown-menu table tr th {
   width: auto;
   height: 24px;
