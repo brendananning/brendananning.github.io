@@ -1150,6 +1150,7 @@ th.next, th.prev {
 }
 .datepicker.dropdown-menu table tr td.day {
   width: 24px;
+  color: #515151;
   border-right: 1px solid #ededed;
   cursor: pointer;
 }
@@ -1160,7 +1161,7 @@ th.next, th.prev {
   background-color: #eee;
 }
 .datepicker.dropdown-menu .new, .datepicker.dropdown-menu .old, .datepicker.dropdown-menu .disabled, .datepicker.dropdown-menu .disabled:hover {
-  color: #ccc;
+  color: #ccc !important;
 }
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
@@ -1193,6 +1194,7 @@ th.next, th.prev {
   height: 120px;
   max-width: 100%;
   width: auto;
+  color: #515151;
 }
 .bootstrap-datetimepicker-widget.dropdown-menu.bottom:before, .bootstrap-datetimepicker-widget.dropdown-menu.bottom:after {
   display: none;
