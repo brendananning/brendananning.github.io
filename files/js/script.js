@@ -42,7 +42,7 @@ function hoverEffects() {
       $(".about-image").css("box-shadow", "none");
     },
      function() {
-      $(".gradient").css("opacity", "0.2");
+      $(".gradient").css("opacity", "1");
       $(".gradient").css("transform", "scale(1.05)");
       $(".about-image").css("transform", "scale(1.05)");
     },
@@ -276,11 +276,15 @@ function setMainElements(){
     }, 400);
   }
   if($(window).width() < 479) {
-    $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
+    setTimeout(function(){
+      $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
+    }, 400);
    
   }
   else {
-    $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
+    setTimeout(function(){
+      $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
+    }, 400);
   }
   if($(window).width() > 767) {
     var scene = document.getElementById('scene');
