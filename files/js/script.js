@@ -42,7 +42,7 @@ function hoverEffects() {
       $(".about-image").css("box-shadow", "none");
     },
      function() {
-      $(".gradient").css("opacity", "1");
+      $(".gradient").css("opacity", "0.5");
       $(".gradient").css("transform", "scale(1.05)");
       $(".about-image").css("transform", "scale(1.05)");
     },
@@ -267,23 +267,14 @@ function setMainElements(){
   // $('.jarallax').jarallax('destroy');
 
   if($(window).width() < 991) {
+    $(".main-background").css("height", $(window).innerHeight());
     $(".main").css("height", $(window).innerHeight());
     //Wait until the instafeed is initialised before setting items
     setTimeout(function(){
       $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
     }, 400);
   }
-  if($(window).width() < 479) {
-    setTimeout(function(){
-      $(".about-image img").css("width", $(".left-container").innerWidth() - 15 + "px");
-    }, 400);
-   
-  }
-  else {
-    setTimeout(function(){
-      $(".about-image img").css("height", $(".left-container").outerHeight() + "px");
-    }, 400);
-  }
+  
   if($(window).width() > 767) {
     var scene = document.getElementById('scene');
     var scene2 = document.getElementById('scene-2');

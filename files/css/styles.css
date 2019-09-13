@@ -320,8 +320,8 @@ img {
   width: 100%;
   overflow: hidden;
   z-index: 1; 
-  border-top: 2px solid #1e65ae70;
-  border-bottom: 2px solid #1e65ae70;
+  border-top: 2px solid rgba(30, 101, 174, 0.7);
+  border-bottom: 2px solid rgba(30, 101, 174, 0.7);
 }
 .block .container {
   position: relative;
@@ -379,7 +379,8 @@ img {
   box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
 }
 .about .right-container picture img {
-  height: 100%;
+  height: auto;
+  width: 100%;
   border-radius: 6px;
   transition: all 0.5s ease;
 }
@@ -856,6 +857,7 @@ img {
   font-family: 'Futura PT Light';
   text-align: center;
   position: relative;
+  display: table;
   width: fit-content;
   margin: 0 auto;
 }
@@ -904,7 +906,7 @@ img {
   color: #555;
   border: none;
   border-radius: 6px;
-  border: 1px solid #1e65ae70;
+  border: 1px solid rgba(30, 101, 174, 0.7);
   margin-bottom: 10px;
 }
 input:-webkit-autofill,
@@ -982,7 +984,7 @@ form .col-md-12 textarea {
   color: transparent !important;
   border: none;
   cursor: pointer;
-  border: 1px solid #1e65ae70;
+  border: 1px solid rgba(30, 101, 174, 0.7);
   border-radius: 6px !important;
   transition: border-color 0.2s ease-out;
 }
@@ -1016,7 +1018,7 @@ form .col-md-12 textarea {
   float: left;
   font-family: 'Muli', sans-serif;
   text-align: left;
-  border: 1px solid #1e65ae70;
+  border: 1px solid rgba(30, 101, 174, 0.7);
   height: 35px;
   width: 127px;
   cursor: pointer;
@@ -1859,7 +1861,7 @@ footer {
     font-size: 60px;
   }
   .main .title-text h3 .better-text, .main .title-text h3 {
-    font-size: 23px;
+    font-size: 30px;
   }
   .testimonial-image {
     float: none;
@@ -1998,6 +2000,7 @@ footer {
     text-align: center;
     bottom: 83px !important;
     left: 22px;
+    margin-right: 22px;
   }
   .fade.last {
     line-height: 28px;
@@ -2009,6 +2012,12 @@ footer {
     display: block;
     margin: 0 auto;
     margin-top: 5px;
+  }
+  .text-underline {
+    background-position: 0% 97%;
+  }
+  .preloader-wrap p {
+    font-size: 45px; 
   }
 }
 @media only screen and (max-width: 479px) {
@@ -2185,6 +2194,9 @@ footer {
   }
   .about .container #scene {
     right: -65px;
+  }
+  .preloader-wrap p {
+    font-size: 35px; 
   }
 } 
 @media only screen and (max-width: 300px) {
