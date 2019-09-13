@@ -262,16 +262,14 @@ function setMainElements(){
   $(".navbar-collapse").removeAttr("style");
   $(".item").removeAttr("style");
   $(".jarallax-img img").removeAttr("style");
-  $('.jarallax').jarallax('destroy');
+  $(".parallax").removeClass("contain");
+  $(".parallax").removeClass("cover");
+  // $('.jarallax').jarallax('destroy');
 
   if($(window).width() < 991) {
     $(".main").css("height", $(window).innerHeight());
-    // $(".time-label").css("width", $("#name").outerWidth() + "px");
     //Wait until the instafeed is initialised before setting items
     setTimeout(function(){
-    //   $(".item").css("width", ($("#instafeed").width() * 0.33) + "px");
-    //   $(".item").css("height", ($("#instafeed").width() * 0.33) + "px");
-    //   $(".owl-item .item img").css("width", ($("#instafeed").width() * 0.33) + "px");
       $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
     }, 400);
   }
@@ -306,35 +304,18 @@ function setMainElements(){
       down: "fa fa-chevron-down"
     }
   })
-  if($(window).width() < 991) {
-    $('.jarallax').jarallax({
-      speed: 1.2
-    });
-  }
-  else {
-    $('.jarallax').jarallax({
-      speed: 0.3
-    });
-  } 
-  if($(window).width() < $(window).height() * 1.4) {
-    $(".jarallax-img img").css("width", "auto");
-    $(".jarallax-img img").css("height", "100vh");
-    if($(window).width() > 479) {
-      $(".jarallax-img img").css("margin-left", "-400px");
-    }
-  }
-  if($(window).width() > $(window).height() * 1.3) {
-    $(".jarallax-img img").css("width", "130%");
-    $(".jarallax-img img").css("height", "auto");
-    $(".jarallax-img img").css("margin-left", "-150px");
-  }
-  //Compensate for thin images
-  if($(window).width() > $(window).height() * 1.6) {
-    $(".jarallax-img img").css("width", "100%");
-    if($(window).width() > 479) {
-      $(".jarallax-img img").css("margin-left", "0px");
-    }
-  }
+  $(window).stellar({ horizontalScrolling: false });
+  
+  setTimeout(function(){
+    $(window).stellar('refresh');
+  },300);
+  // //Compensate for thin images
+  // if($(window).width() > $(window).height() * 1.6) {
+  //   $(".jarallax-img img").css("width", "100%");
+  //   if($(window).width() > 479) {
+  //     $(".jarallax-img img").css("margin-left", "0px");
+  //   }
+  // }
   $('#instafeed').instastream({
     instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
     instaUser: '4090409456',

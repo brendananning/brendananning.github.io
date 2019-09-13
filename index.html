@@ -41,10 +41,10 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="./files/css/styles.css?v=3.4"/>
+	<link rel="stylesheet" type="text/css" href="./files/css/styles.css?v=3.5"/>
 </head>
 <body>
-	<div class="preloader-background">
+	<!-- <div class="preloader-background">
 	</div>
 	<div class="preloader-wrap">
 	    <p>Loading awesomeness...</p>
@@ -52,7 +52,7 @@
 	</div>
 	<div class="too-small-message">
 		<p>Please resize your browser.</p>
-	</div>
+	</div> -->
 	<nav class="navbar navbar-default">		
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle x collapsed" data-toggle="collapse" data-target="#navbar-collapse-x">
@@ -122,18 +122,14 @@
 					</picture>
 				</div>
 			</div>
-			<div id="scene" data-jarallax-element="-140">
+			<div id="scene" data-stellar-ratio="1.5">
 			  <div data-depth="1.5">
 			  	<img class="pattern one" src="./files/img/icons/pattern_one.png">
 			  </div>
 			</div>
 		</div>
 	</section>
-	<section class="jarallax one">
-	    <picture class="jarallax-img">
-	        <source srcset="./files/img/parallax_one.jpg">
-	        <img src="./files/img/parallax_one.jpg" alt="Photo of Brendan Anning Celebrant at Yandina Station">
-	    </picture>
+	<section class="parallax one" data-stellar-background-ratio="0.4" data-stellar-vertical-offset="100">
 	    <div class="overlay">
 		</div>
 	</section>
@@ -205,12 +201,12 @@
 					</div>
 				</div>
 			</div>
-			<div id="scene-2" data-jarallax-element="-140">
-			  <div data-depth="1.0">
+			<div id="scene-2" data-stellar-ratio="1.9">
+			  <div data-depth="1.5">
 			  	<img class="pattern two" src="./files/img/icons/pattern_two.png">
 			  </div>
 			</div>
-			<div id="scene-3" data-jarallax-element="-40">
+			<div id="scene-3" data-stellar-ratio="1.4">
 			  <div data-depth="0.7">
 			  	<img class="pattern three" src="./files/img/icons/pattern_three.png">
 			  </div>
@@ -218,11 +214,7 @@
 			<h1 class="second"></h1>
 		</div>
 	</section>
-	<section class="jarallax two">
-	    <picture class="jarallax-img">
-	        <source srcset="./files/img/parallax_two.jpg">
-	        <img src="./files/img/parallax_two.jpg" alt="Photo of Brendan Anning's Port Douglas Wedding">
-	    </picture>
+	<section class="parallax two" data-stellar-background-ratio="0.4"  data-stellar-vertical-offset="100">
 	    <div class="overlay">
 		</div>
 	</section>
@@ -235,11 +227,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="jarallax three">
-	    <picture class="jarallax-img">
-	        <source srcset="./files/img/parallax_three.jpg">
-	        <img src="./files/img/parallax_three.jpg" alt="Photo of Andrew and Jess">
-	    </picture>
+	<section class="parallax three" data-stellar-background-ratio="0.4" data-stellar-vertical-offset="-150">
 	    <div class="overlay">
 		</div>
 	</section>
@@ -332,11 +320,7 @@
 		</div>
 		<p>Check out my contract <a target="_blank" href="Contract_Brendan_Anning.pdf">here</a>.</p>
 	</section>
-	<section class="jarallax four">
-	    <picture class="jarallax-img">
-	        <source srcset="./files/img/parallax_four.jpg">
-	        <img src="./files/img/parallax_four.jpg" alt="Photo of Brendan Anning's Port Douglas Wedding">
-	    </picture>
+	<section class="parallax four" data-stellar-background-ratio="0.4" data-stellar-vertical-offset="200">
 	    <div class="overlay">
 		</div>
 	</section>
@@ -409,7 +393,7 @@
 				</p>
 			    <input class="btn-animated" type="submit" value="Send">
 			</form>
-			<div id="scene-4" data-jarallax-element="-200">
+			<div id="scene-4" data-stellar-ratio="1.5">
 			  <div data-depth="1.0">
 			  	<img class="pattern four" src="./files/img/icons/pattern_four.png">
 			  </div>
@@ -467,10 +451,8 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js" integrity="sha256-8VU/+18Z5eyYrv12HuV6lH74T2PFmP1ggKi+JkwYDHE=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.2.0/jquery.visible.min.js" integrity="sha256-VzXcD0HmV1s8RGdJ/yIf7YkZiOZrcxPphaDpwM++pSs=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.11.0/jarallax.min.js" integrity="sha256-bNL7abArAf9qApPjGFQ8apa/1S8fbdVdgNzrS9j3pcg=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js" integrity="sha256-1HqoI76JGKA17K0C0s9K8L/iy8PAC43KVLt1hRD/Ojc=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.11.0/jarallax-element.min.js" integrity="sha256-c/q0mvJWUZY4x+wwcEi2EA9OpNf580croHQ/XjD0xB8=" crossorigin="anonymous"></script>
 	<script src="./files/js/stylus.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
@@ -481,6 +463,7 @@
 	</script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
   	<script src="./files/js/instagram.js"></script>
+	<script src="./files/js/stellar.js"></script>
 	<script src="./files/js/script.js"></script>
 </body>
 </html>
