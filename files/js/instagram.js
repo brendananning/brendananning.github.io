@@ -68,14 +68,14 @@
 				var syncedSecondary = true;
 					sync1.owlCarousel({
 					  navigation : false, // Show next and prev buttons
-					  slideSpeed : 300,
 					  dots: false,
+					  autoplaySpeed: 800,
 					  singleItem: true,
 					  items: 4,
 					  autoplay: true,
 					  autoplayHoverPause: true,
 					  animateOut: 'fadeOut',
-					  autoplayTimeout: 2500,
+					  autoplayTimeout: 3000,
 					  loop: true,
 					  autoWidth: true,
 					  responsiveRefreshRate: 500,

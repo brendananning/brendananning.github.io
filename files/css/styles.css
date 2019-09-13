@@ -603,7 +603,12 @@ img {
   min-width: 320px;
 }
 .owl-item {
+  opacity: 0.3;
   overflow: hidden;
+  transition: all 0.8s ease;
+}
+.owl-item.active {
+  opacity: 1;
 }
 .item {
   height: 310px;
