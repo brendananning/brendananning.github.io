@@ -289,7 +289,7 @@ function setMainElements(){
   // if desktop device, use DateTimePicker
   $("#timepicker").datetimepicker({
     format: "LT",
-    debug:true,
+    debug: false,
     icons: {
       up: "fa fa-chevron-up",
       down: "fa fa-chevron-down"
