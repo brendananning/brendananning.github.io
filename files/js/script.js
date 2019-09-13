@@ -550,17 +550,19 @@ var checkViewportTestimonialsHeaderSecond = {
 var checkViewportPackagesHeaderFirst = {
   opacity: 1,
   afterReveal: function() {
-    //Combine this into a function later
-    $(".package-item.one").css("opacity", "1");
-    $(".package-item.one").css("transform", "scale(1)");
     setTimeout(function(){
-      $(".package-item.two").css("opacity", "1");
-      $(".package-item.two").css("transform", "scale(1)");
-    },300);
-    setTimeout(function(){
-      $(".package-item.three").css("opacity", "1");
-      $(".package-item.three").css("transform", "scale(1)");
-    },600);
+       //Combine this into a function later
+      $(".package-item.one").css("opacity", "1");
+      $(".package-item.one").css("transform", "scale(1)");
+      setTimeout(function(){
+        $(".package-item.two").css("opacity", "1");
+        $(".package-item.two").css("transform", "scale(1)");
+      },300);
+      setTimeout(function(){
+        $(".package-item.three").css("opacity", "1");
+        $(".package-item.three").css("transform", "scale(1)");
+      },600);
+    }, 400);
   }
 };
 var checkViewportPackagesHeaderSecond = {
