@@ -277,7 +277,7 @@ img {
   /*opacity: 1 !important;*/
   padding-left: 11px;
   padding-right: 11px;
-  transition: all 0.6s linear;
+  /*transition: all 0.6s linear;*/
 }
 .fade.last {
   border-radius: 6px;
