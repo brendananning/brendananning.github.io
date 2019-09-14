@@ -1026,6 +1026,7 @@ form .col-md-12 textarea {
   border: 1px solid rgba(30, 101, 174, 0.7);
   height: 35px;
   width: 127px;
+  color: #3b3b3b;
   cursor: pointer;
   border-radius: 6px;
   transition: all 0.6s ease;
