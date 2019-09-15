@@ -320,6 +320,7 @@ img {
   background: #fff;
   display: block;
   position: relative;
+  overflow-y: hidden;
   width: 100%;
   z-index: 2; 
   border-top: 2px solid rgba(30, 101, 174, 0.7);
@@ -2096,7 +2097,7 @@ footer {
     width: 45px;
   }
   .testimonials .container #scene-3 {
-    right: -5px;
+    right: -5px !important;
   }
   .pattern.four {
     width: 45px;
@@ -2191,7 +2192,7 @@ footer {
     margin-bottom: 20px;
   }
   .about .container #scene {
-    right: -65px;
+    right: -59px;
   }
   .preloader-wrap p {
     font-size: 35px; 
