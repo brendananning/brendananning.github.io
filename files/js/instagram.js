@@ -1,3 +1,15 @@
+function fixOwl(){
+    var $stage = $('.owl-stage'),
+        stageW = $stage.width(),
+        $el = $('.owl-item'),
+        elW = 0;
+    $el.each(function() {
+        elW += $(this).width()+ +($(this).css("margin-right").slice(0, -2))
+    });
+    if ( elW > stageW ) {
+        $stage.width( elW );
+    };
+}
 ;(function ( $, window, undefined ) {
 
     // Create the defaults once
@@ -5,7 +17,7 @@
         document = window.document,
         defaults = {
             instaUser: '4090409456',
-            instaResults: 10,
+            instaResults: 12,
             instaMenu: 'false'
         };
     
@@ -67,19 +79,22 @@
 				var sync1 = $("#sync1");
 				var syncedSecondary = true;
 					sync1.owlCarousel({
-					  navigation : false, // Show next and prev buttons
-					  dots: false,
-					  autoplaySpeed: 800,
-					  singleItem: true,
-					  items: 4,
-					  autoplay: true,
-					  autoplayHoverPause: true,
-					  animateOut: 'fadeOut',
-					  autoplayTimeout: 3000,
-					  loop: true,
-					  autoWidth: true,
-					  responsiveRefreshRate: 500,
-					  navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>','<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
+						navigation : false, // Show next and prev buttons
+						dots: false,
+						autoplaySpeed: 800,
+						singleItem: true,
+						items: 3,
+						autoplay: true,
+						autoplayHoverPause: true,
+						animateOut: 'fadeOut',
+						autoplayTimeout: 3000,
+						loop: true,
+						// rewind: true,
+						autoWidth: true,
+						responsiveRefreshRate: 500,
+						autoWidth: true,
+				        onInitialized: fixOwl,
+				        onRefreshed: fixOwl
 					}).on('changed.owl.carousel', syncPosition);
 
 				  	$('.owl-carousel').on('touchstart',function(){

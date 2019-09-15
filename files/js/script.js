@@ -289,7 +289,7 @@ function setMainElements(){
   $('#instafeed').instastream({
     instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
     instaUser: '4090409456',
-    instaResults: 10,
+    instaResults: 6,
     instaMenu: 'yes'
   }); 
   // setTimeout(function(){
@@ -636,7 +636,7 @@ $(document).ready(function() {
     $(".main").css("height", "100vh");
   }
   new universalParallax().init({
-    speed: 3.0
+    speed: 2.0
   });
   $('#instafeed').instastream({
     instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
