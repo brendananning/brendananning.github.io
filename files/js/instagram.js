@@ -1,15 +1,3 @@
-function fixOwl(){
-    var $stage = $('.owl-stage'),
-        stageW = $stage.width(),
-        $el = $('.owl-item'),
-        elW = 0;
-    $el.each(function() {
-        elW += $(this).width()+ +($(this).css("margin-right").slice(0, -2))
-    });
-    if ( elW > stageW ) {
-        $stage.width( elW );
-    };
-}
 ;(function ( $, window, undefined ) {
 
     // Create the defaults once
@@ -93,8 +81,6 @@ function fixOwl(){
 						autoWidth: true,
 						responsiveRefreshRate: 500,
 						autoWidth: true,
-				        onInitialized: fixOwl,
-				        onRefreshed: fixOwl
 					}).on('changed.owl.carousel', syncPosition);
 
 				  	$('.owl-carousel').on('touchstart',function(){
