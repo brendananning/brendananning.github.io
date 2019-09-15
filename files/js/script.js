@@ -603,7 +603,7 @@ var checkViewportInstaHeader = {
 var checkViewportContactHeader = {
   opacity: 1,
   afterReveal: function() {
-    $(".underline").css("width", $(".contact h3").width() - 20 + "px");
+    $(".underline").css("width", $(".contact h2").width() - 20 + "px");
   }
 };
 function initialiseScrollReveal() {

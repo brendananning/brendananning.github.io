@@ -320,7 +320,8 @@ img {
   background: #fff;
   display: block;
   position: relative;
-  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  overflow-y: visible;
   width: 100%;
   z-index: 2; 
   border-top: 2px solid rgba(30, 101, 174, 0.7);
