@@ -276,6 +276,15 @@ function setMainElements(){
     var parallaxInstance4 = new Parallax(scene4);
   }
 
+  if($(window).width() < 991) {
+    setTimeout(function(){
+      $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
+    }, 600);
+  }
+  else {
+      $("#wedding-datepicker input").removeAttr("style");
+  }
+
   // if desktop device, use DateTimePicker
   $("#timepicker").datetimepicker({
     format: "LT",
@@ -289,7 +298,7 @@ function setMainElements(){
   $('#instafeed').instastream({
     instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
     instaUser: '4090409456',
-    instaResults: 6,
+    instaResults: 12,
     instaMenu: 'yes'
   }); 
   // setTimeout(function(){
