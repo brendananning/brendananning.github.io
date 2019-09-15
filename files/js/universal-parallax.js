@@ -1,4 +1,6 @@
 "use strict";
+var screenWidth = $(window).width();
+var newScreenWidth;
 var windowHeight = window.innerHeight
   , windowHeightExtra = 0
   , safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
@@ -51,9 +53,17 @@ var positionParallax = function(e, t, a, i) {
             "complete" === e.target.readyState && (t = n,
             (a = i.speed) < 1 && (a = 1),
             calculateHeight(t, a),
+            //My own code
             $(window).resize(function() { 
-                windowHeight = window.innerHeight,
-                calculateHeight(t, a)
+                setTimeout(function(){
+                    newScreenWidth = $(window).width();
+                    if((screenWidth - newScreenWidth) > 50 || (newScreenWidth - screenWidth) > 50){
+                      windowHeight = window.innerHeight,
+                        calculateHeight(t, a)
+                      screenWidth = $(window).width();
+                    }
+                  }, 400);
+                
             }),
             window.addEventListener("scroll", function() {
                 animateParallax(t, a)

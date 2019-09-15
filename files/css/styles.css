@@ -320,7 +320,7 @@ img {
   background: #fff;
   display: block;
   position: relative;
-  overflow-y: hidden;
+  overflow-y: hidden !important;
   width: 100%;
   z-index: 2; 
   border-top: 2px solid rgba(30, 101, 174, 0.7);
@@ -1737,6 +1737,10 @@ footer {
   .logo-img {
     right: 30px;
   }
+  .package-item {
+    margin-right: unset;
+    margin-left: unset;
+  }
 }
 @media only screen and (max-width: 767px) {
   .fade-last {
@@ -1822,7 +1826,13 @@ footer {
     width: 90px;
   }
   .about .container #scene {
-    right: -11px;
+    right: -35px;
+  }
+  .testimonials .container #scene-2 {
+    left: -67px !important;
+  }
+  .testimonials .container #scene-3 {
+    right: -32px !important;
   }
   form {
     width: auto;
@@ -1968,7 +1978,8 @@ footer {
   }
   .preloader-wrap p {
     font-size: 30px;
-    width: 60%; 
+    width: 60%;
+    text-align: left; 
   }
   .contact .container p {
     padding-right: 0px;
@@ -2198,6 +2209,11 @@ footer {
   }
   .preloader-wrap p {
     font-size: 35px; 
+  }
+  .preloader-wrap p {
+    left: 45%;
+    text-align: left;
+    transform: translate(-50%, -50%);
   }
 } 
 @media only screen and (max-width: 300px) {

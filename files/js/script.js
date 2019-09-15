@@ -601,8 +601,8 @@ function initialiseScrollReveal() {
   ScrollReveal().reveal(".testimonials .first", checkViewportTestimonialsHeaderFirst);
   ScrollReveal().reveal(".testimonials .second", checkViewportTestimonialsHeaderSecond);
   ScrollReveal().reveal(".packages .first", checkViewportPackagesHeaderFirst);
-  if($(window).width() < 479){
-    ScrollReveal().reveal(".packages .second", checkViewportPackagesHeaderSecond);
+  if($(window).width() < 767){
+    ScrollReveal().reveal(".packages .contract-text", checkViewportPackagesHeaderSecond);
   }
   ScrollReveal().reveal(".instagram h1", checkViewportInstaHeader);
   ScrollReveal().reveal(".contact h1", checkViewportContactHeader);
