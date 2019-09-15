@@ -267,10 +267,11 @@ function setMainElements(){
   // $('.jarallax').jarallax('destroy');
 
   if($(window).width() < 991) {
-    $(".main-background").css("height", $(window).innerHeight());
-    $(".main").css("height", $(window).innerHeight());
+   
     //Wait until the instafeed is initialised before setting items
     setTimeout(function(){
+      // $(".main-background").css("height", $(window).innerHeight());
+      // $(".parallax").css("height", $(window).innerHeight());
       $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
     }, 400);
   }
@@ -295,18 +296,7 @@ function setMainElements(){
       down: "fa fa-chevron-down"
     }
   })
-  $(window).stellar({ horizontalScrolling: false });
-  
-  setTimeout(function(){
-    $(window).stellar('refresh');
-  },300);
-  // //Compensate for thin images
-  // if($(window).width() > $(window).height() * 1.6) {
-  //   $(".jarallax-img img").css("width", "100%");
-  //   if($(window).width() > 479) {
-  //     $(".jarallax-img img").css("margin-left", "0px");
-  //   }
-  // }
+  $.stellar();
   $('#instafeed').instastream({
     instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
     instaUser: '4090409456',
@@ -319,9 +309,10 @@ function setMainElements(){
   // },400);
 }
 
-$(window).resize(function () { 
+$(window).resize(function(){ 
   setMainElements();
   animateNavbar();
+  $.stellar('refresh');
 });
 
 function bindVelocity(){
@@ -625,6 +616,9 @@ $(document).ready(function() {
   $(window).scroll(function() { 
     animateNavbar();   
     preventScrollOnMenuOpen();
+  });
+  new universalParallax().init({
+    speed: 3.0
   });
   $('#instafeed').instastream({
     instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',

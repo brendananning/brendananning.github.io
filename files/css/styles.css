@@ -140,6 +140,7 @@ img {
   right: 100%;
   bottom: 0;
   width: 100%;
+  display: none !important;
   transition: all 1.2s ease;
 }
 .too-small-message {
@@ -166,32 +167,12 @@ img {
 }
 #scene, #scene-2, #scene-3, #scene-4 {
   display: block !important;
+  left: unset !important;
 }
-.parallax {
+.parallax-wrapper {
   position: relative;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
   height: 60vh;
   z-index: 1;
-}
-.parallax.contain {
-  background-size: contain !important;
-}
-.parallax.cover {
-  background-size: cover !important;
-}
-.parallax.one {
-  background: url('../img/parallax_one.jpg');
-}
-.parallax.two {
-  background: url('../img/parallax_two.jpg');
-}
-.parallax.three {
-  background: url('../img/parallax_three.jpg');
-}
-.parallax.four {
-  background: url('../img/parallax_four.jpg');
 }
 .parallax .overlay {
   display: block;
@@ -200,7 +181,7 @@ img {
   left: 0;
   z-index: 1;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: -moz-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%, rgba(0, 15, 90, 0.5) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 15, 90, 0.5)), color-stop(100%,rgba(92, 92, 92, 0.5))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* Chrome10+,Safari5.1+ */
@@ -209,6 +190,29 @@ img {
   background: linear-gradient(to bottom, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* W3C */
   background: linear-gradient(to bottom, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+.parallax__container {
+  clip: rect(0, auto, auto, 0);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.parallax {
+  position: fixed;
+  top: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  width: 100%;
+  /* BG behaviour */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /*----------------------------------------------
 -------------------MAIN SECTION-----------------
@@ -246,7 +250,6 @@ img {
   position: relative;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
   z-index: 1; 
 }
 .main .title-text {
@@ -318,8 +321,7 @@ img {
   display: block;
   position: relative;
   width: 100%;
-  overflow: hidden;
-  z-index: 1; 
+  z-index: 2; 
   border-top: 2px solid rgba(30, 101, 174, 0.7);
   border-bottom: 2px solid rgba(30, 101, 174, 0.7);
 }
@@ -522,12 +524,12 @@ img {
 .testimonials .container #scene-2 {
   position: absolute;
   top: 30%;
-  left: -90px;
+  left: -90px !important;
 }
 .testimonials .container #scene-3 {
   position: absolute;
   bottom: 33%;
-  right: -70px;
+  right: -70px !important;
 }
 .underline-anim {
   margin: 0;
@@ -1275,6 +1277,7 @@ th.next, th.prev {
   position: absolute;
   top: 10%;
   right: -80px;
+  left: unset !important;
 }
 /*----------------------------------------------
 ------------------FOOTER STYLES-----------------
@@ -1648,21 +1651,15 @@ footer {
   }
 }
 @media only screen and (max-width: 991px) {
-  .jarallax {
-    height: 40vh;
+  .parallax-wrapper {
+    position: relative;
+    height: 500px;
   }
   .contact .container #scene-4 {
     right: -58px;
   }
   .testimonials .container #scene-2 {
     left: -69px;
-  }
-  .jarallax.one .jarallax-img img {
-    margin-left: -412px;
-  }
-  .jarallax .jarallax-img img {
-    width: auto;
-    margin-left: -394px;
   }
   .block {
     padding: 40px 80px 40px 80px;
@@ -1854,14 +1851,9 @@ footer {
   .packages .container {
     margin-top: 30px;
   }
-  .jarallax.one .jarallax-img img,
-  .jarallax.two .jarallax-img img,
-  .jarallax.four .jarallax-img img {
-    width: auto;
-    margin-left: 0; 
-  }
-  .jarallax {
-    height: 65vh;
+  .parallax-wrapper {
+    position: relative;
+    height: 300px;
   }
   .main .title-text h1 {
     font-size: 60px;

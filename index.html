@@ -13,7 +13,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 	<meta property="og:image" content="./files/img/logo_og.jpg" />
 	<meta property="og:image:width" content="1200" />
@@ -57,15 +57,15 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="./files/css/styles.css?v=4.2"/>
+	<link rel="stylesheet" type="text/css" href="./files/css/styles.css?v=4.6"/>
 </head>
 <body>
-	<div class="preloader-background">
+	<!-- <div class="preloader-background">
 	</div>
 	<div class="preloader-wrap">
 	    <p>Loading awesomeness...</p>
 		<div class="loader-icon confetti"></div>
-	</div>
+	</div> -->
 	<div class="too-small-message">
 		<p>Please resize your browser.</p>
 	</div>
@@ -145,8 +145,10 @@
 			</div>
 		</div>
 	</section>
-	<div class="parallax one" data-stellar-background-ratio="0.4" data-stellar-vertical-offset="100">
-	    <div class="overlay">
+	<div class="parallax-wrapper">
+		<div class="parallax one" data-parallax-image="./files/img/parallax_one.jpg">
+			<div class="overlay">
+			</div>
 		</div>
 	</div>
 	<section class="testimonials block" id="testimonials">
@@ -230,8 +232,10 @@
 			<div class="second"></div>
 		</div>
 	</section>
-	<div class="parallax two" data-stellar-background-ratio="0.4"  data-stellar-vertical-offset="100">
-	    <div class="overlay">
+	<div class="parallax-wrapper">
+		<div class="parallax two" data-parallax-image="./files/img/parallax_two.jpg">
+			<div class="overlay">
+			</div>
 		</div>
 	</div>
 	<section class="instagram block" id="instagram">
@@ -243,8 +247,10 @@
 			</div>
 		</div>
 	</section>
-	<div class="parallax three" data-stellar-background-ratio="0.4" data-stellar-vertical-offset="-150">
-	    <div class="overlay">
+	<div class="parallax-wrapper">
+		<div class="parallax three" data-parallax-image="./files/img/parallax_three.jpg">
+			<div class="overlay">
+			</div>
 		</div>
 	</div>
 	<section class="packages block" id="packages">
@@ -335,8 +341,10 @@
 		</div>
 		<p>Check out my contract <a target="_blank" href="Contract_Brendan_Anning.pdf">here</a>.</p>
 	</section>
-	<div class="parallax four" data-stellar-background-ratio="0.4" data-stellar-vertical-offset="200">
-	    <div class="overlay">
+	<div class="parallax-wrapper">
+		<div class="parallax four" data-parallax-image="./files/img/parallax_four.jpg">
+			<div class="overlay">
+			</div>
 		</div>
 	</div>
 	<section class="contact block" id="contact">
@@ -467,7 +475,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.2.0/jquery.visible.min.js" integrity="sha256-VzXcD0HmV1s8RGdJ/yIf7YkZiOZrcxPphaDpwM++pSs=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js" integrity="sha256-1HqoI76JGKA17K0C0s9K8L/iy8PAC43KVLt1hRD/Ojc=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-	<script src="./files/js/stylus.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/universal-parallax@1.3.2/dist/universal-parallax.min.js" integrity="sha256-i1xtbt+CXKjaRLMVlKah9y9Qadzq0Ymh4tR9gZbWur4=" crossorigin="anonymous"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery.stellar@0.6.2/jquery.stellar.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
@@ -476,8 +485,9 @@
   		$(".title-text").css("opacity", "0");
 	</script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+	<script src="./files/js/stylus.js"></script>
   	<script src="./files/js/instagram.js"></script>
-	<script src="./files/js/stellar.js"></script>
+  	<script src="./files/js/universal-parallax.js"></script>
 	<script src="./files/js/script.js"></script>
 </body>
 </html>
