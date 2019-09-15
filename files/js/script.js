@@ -4,6 +4,8 @@ var activeScenes = [];
 var smScene;
 var scrollMagicEnabled = false;
 var firstTime = true;
+var screenWidth;
+var newScreenWidth;
 
 function preventScrollOnMenuOpen(){
   //If the dropdown menu on mobile is open
@@ -262,21 +264,6 @@ function setMainElements(){
   $(".navbar-collapse").removeAttr("style");
   $(".item").removeAttr("style");
   $(".jarallax-img img").removeAttr("style");
-
-  if($(window).width() < 991) {
-   
-    //Wait until the instafeed is initialised before setting items
-    setTimeout(function(){
-      $(".main-background").css("height", $(window).innerHeight());
-      $(".main").css("height", $(window).innerHeight());
-      $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
-    }, 400);
-  }
-  else {
-    $(".main-background").css("height", "100vh");
-    $(".main").css("height", "100vh");
-  }
-
   
   if($(window).width() > 767) {
     var scene = document.getElementById('scene');
@@ -314,6 +301,22 @@ function setMainElements(){
 $(window).resize(function(){ 
   setMainElements();
   animateNavbar();
+  setTimeout(function(){
+    newScreenWidth = $(window).width();
+    if((screenWidth - newScreenWidth) > 50 || (newScreenWidth - screenWidth) > 50){
+      if($(window).width() < 991) {
+        //Wait until the instafeed is initialised before setting items
+          $(".main-background").css("height", $(window).innerHeight());
+          $(".main").css("height", $(window).innerHeight());
+          $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
+      }
+      else {
+        $(".main-background").css("height", "100vh");
+        $(".main").css("height", "100vh");
+      }
+      screenWidth = $(window).width();
+    }
+  }, 400);
   $(window).stellar('refresh');
 });
 
@@ -619,6 +622,19 @@ $(document).ready(function() {
     animateNavbar();   
     preventScrollOnMenuOpen();
   });
+  screenWidth = $(window).width();
+  if($(window).width() < 991) {
+    //Wait until the instafeed is initialised before setting items
+    setTimeout(function(){
+      $(".main-background").css("height", $(window).innerHeight());
+      $(".main").css("height", $(window).innerHeight());
+      $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
+    }, 400);
+  }
+  else {
+    $(".main-background").css("height", "100vh");
+    $(".main").css("height", "100vh");
+  }
   new universalParallax().init({
     speed: 3.0
   });
@@ -630,4 +646,5 @@ $(document).ready(function() {
   }); 
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());
+
 });

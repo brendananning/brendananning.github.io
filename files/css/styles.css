@@ -248,6 +248,7 @@ img {
 .main, .about {
   display: block;
   position: relative;
+  overflow-y: hidden;
   height: 100vh;
   width: 100%;
   z-index: 1; 
@@ -1860,7 +1861,7 @@ footer {
     font-size: 60px;
   }
   .main .title-text h3 .better-text, .main .title-text h3 {
-    font-size: 30px;
+    font-size: 22px;
   }
   .testimonial-image {
     float: none;
@@ -1998,8 +1999,10 @@ footer {
   .main .title-text {
     text-align: center;
     bottom: 83px !important;
-    left: 22px;
-    margin-right: 22px;
+    left: 50%;
+    width: fit-content;
+    display: table; 
+    transform: translate(-50%) !important;
   }
   .fade.last {
     line-height: 28px;
