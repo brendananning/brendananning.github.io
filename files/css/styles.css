@@ -320,8 +320,7 @@ img {
   background: #fff;
   display: block;
   position: relative;
-  overflow-x: visible !important;
-  overflow-y: hidden !important;
+  overflow: hidden; 
   width: 100%;
   z-index: 2; 
   border-top: 2px solid rgba(30, 101, 174, 0.7);
@@ -429,7 +428,7 @@ img {
 .about .container #scene {
   z-index: 3;
   position: absolute;
-  top: 50%;
+  top: -20%;
   right: -80px;
   transform: translate(-50%);
 }
