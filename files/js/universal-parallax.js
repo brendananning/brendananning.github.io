@@ -57,13 +57,12 @@ var positionParallax = function(e, t, a, i) {
             $(window).resize(function() { 
                 setTimeout(function(){
                     newScreenWidth = $(window).width();
-                    if((screenWidth - newScreenWidth) > 50 || (newScreenWidth - screenWidth) > 50){
+                    if((screenWidth - newScreenWidth) > 100 || (newScreenWidth - screenWidth) > 100){
                       windowHeight = window.innerHeight,
                         calculateHeight(t, a)
                       screenWidth = $(window).width();
                     }
-                  }, 400);
-                
+                  }, 700);
             }),
             window.addEventListener("scroll", function() {
                 animateParallax(t, a)
