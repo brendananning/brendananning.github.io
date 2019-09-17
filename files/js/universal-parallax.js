@@ -62,7 +62,7 @@ var positionParallax = function(e, t, a, i) {
                         calculateHeight(t, a)
                       screenWidth = $(window).width();
                     }
-                  }, 800);
+                  }, 1000);
             }),
             window.addEventListener("scroll", function() {
                 animateParallax(t, a)

@@ -140,7 +140,7 @@ function addWhiteNav(){
   $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
   $(".navbar-collapse").css("background-color", "rgba(255,255,255,1)");
   $(".bars .line").css("stroke", "#3b3b3b");
-  $(".logo-img").attr("src", "./files/img/logo.png");
+  $(".logo-img").attr("src", "https://brendananning.wedding//files/img/logo.png");
   $(".navbar-right").css("display", "none");
 }
 function addWhiteNavDesktop(){
@@ -150,12 +150,12 @@ function addWhiteNavDesktop(){
   $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
   $(".navbar-nav li a").css("color", "black");
   $(".navbar-collapse").css("background-color", "none");
-  $(".logo-img").attr("src", "./files/img/logo.png");
+  $(".logo-img").attr("src", "https://brendananning.wedding//files/img/logo.png");
   $(".navbar-right").css("display", "block");
-  $(".contact-icon.phone").attr("src", "./files/img/icons/phone.png");
-  $(".contact-icon.email").attr("src", "./files/img/icons/email.png");
-  $(".contact-icon.insta").attr("src", "./files/img/icons/instagram.png");
-  $(".contact-icon.facebook").attr("src", "./files/img/icons/fb.png");
+  $(".contact-icon.phone").attr("src", "https://brendananning.wedding/files/img/icons/phone.png");
+  $(".contact-icon.email").attr("src", "https://brendananning.wedding/files/img/icons/email.png");
+  $(".contact-icon.insta").attr("src", "https://brendananning.wedding/files/img/icons/instagram.png");
+  $(".contact-icon.facebook").attr("src", "https://brendananning.wedding/files/img/icons/fb.png");
 }
 function addTransparentNav(){
   //Make navbar transparent if scroll position is on main section
@@ -165,12 +165,12 @@ function addTransparentNav(){
   $(".navbar-default").css("box-shadow", "none");
   $(".navbar-nav li a").css("color", "white");
   $(".navbar-collapse").css("background-color", "none");
-  $(".logo-img").attr("src", "./files/img/logo_white.png");
+  $(".logo-img").attr("src", "https://brendananning.wedding/files/img/logo_white.png");
   $(".navbar-right").css("display", "block");
-  $(".contact-icon.phone").attr("src", "./files/img/icons/phone_white.png");
-  $(".contact-icon.email").attr("src", "./files/img/icons/email_white.png");
-  $(".contact-icon.insta").attr("src", "./files/img/icons/instagram_white.png");
-  $(".contact-icon.facebook").attr("src", "./files/img/icons/fb_white.png");
+  $(".contact-icon.phone").attr("src", "https://brendananning.wedding/files/img/icons/phone_white.png");
+  $(".contact-icon.email").attr("src", "https://brendananning.wedding/files/img/icons/email_white.png");
+  $(".contact-icon.insta").attr("src", "https://brendananning.wedding/files/img/icons/instagram_white.png");
+  $(".contact-icon.facebook").attr("src", "https://brendananning.wedding/files/img/icons/fb_white.png");
 }
 function animateNavbar(){
   //If on mobile
@@ -264,8 +264,10 @@ function setMainElements(){
   $(".navbar-collapse").removeAttr("style");
   $(".item").removeAttr("style");
   $(".jarallax-img img").removeAttr("style");
-  
-  if($(window).width() > 767) {
+
+  //Only render parallax, instastream and stellar on main page
+  var title = document.title;
+  if($(window).width() > 767 && title == "Brendan Anning | Wedding Celebrant Brisbane") {
     var scene = document.getElementById('scene');
     var scene2 = document.getElementById('scene-2');
     var scene3 = document.getElementById('scene-3');
@@ -274,9 +276,16 @@ function setMainElements(){
     var parallaxInstance2 = new Parallax(scene2);
     var parallaxInstance3 = new Parallax(scene3);
     var parallaxInstance4 = new Parallax(scene4);
+    $(window).stellar({horizontalScrolling: false});
+    $('#instafeed').instastream({
+      instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
+      instaUser: '4090409456',
+      instaResults: 12,
+      instaMenu: 'yes'
+    }); 
+    $(window).stellar('refresh');
   }
-
-  if($(window).width() < 991) {
+  if($(window).width() < 991 && title == "Brendan Anning | Wedding Celebrant Brisbane") {
     setTimeout(function(){
       $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
     }, 600);
@@ -294,22 +303,12 @@ function setMainElements(){
       down: "fa fa-chevron-down"
     }
   })
-  $(window).stellar({horizontalScrolling: false});
-  $('#instafeed').instastream({
-    instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
-    instaUser: '4090409456',
-    instaResults: 12,
-    instaMenu: 'yes'
-  }); 
-  // setTimeout(function(){
-  //   $(".owl-stage").addClass("owl-stage-width");
-  //   $(".owl-stage-width").css("width", (Math.ceil($(".owl-stage").width() / 100) * 100) + "px");
-  // },400);
 }
 
 $(window).resize(function(){ 
   setMainElements();
   animateNavbar();
+  $(".parallax.contact h1").css("display", "none");
   setTimeout(function(){
     newScreenWidth = $(window).width();
     if((screenWidth - newScreenWidth) > 50 || (newScreenWidth - screenWidth) > 50){
@@ -325,8 +324,8 @@ $(window).resize(function(){
       }
       screenWidth = $(window).width();
     }
+    $(".parallax.contact h1").css("display", "block");
   }, 400);
-  $(window).stellar('refresh');
 });
 
 function bindVelocity(){
@@ -647,12 +646,6 @@ $(document).ready(function() {
   new universalParallax().init({
     speed: 2.0
   });
-  $('#instafeed').instastream({
-    instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
-    instaUser: '4090409456',
-    instaResults: 10,
-    instaMenu: 'yes'
-  }); 
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());
 

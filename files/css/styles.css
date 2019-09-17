@@ -140,6 +140,7 @@ img {
   right: 100%;
   bottom: 0;
   width: 100%;
+  /*display: none !important;*/
   transition: all 1.2s ease;
 }
 .too-small-message {
@@ -265,11 +266,6 @@ img {
 }
 .main .title-text h1 {
   font-size: 80px;
-}
-.main .title-text .smaller {
-  margin-top: -13px;
-  font-size: 25px;
-  font-family: 'Proxima Nova Regular';
 }
 .main .title-text h2 {
   font-size: 34px;
@@ -1595,8 +1591,108 @@ footer {
 }
 
 /*----------------------------------------------
+-------------------BOOKING PAGE-----------------
+------------------------------------------------*/
+
+.parallax.contact h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-size: 60px;
+  z-index: 5;
+  font-family: 'Futura PT Medium';
+  transform: translate(-50%, -50%);
+}
+.parallax.contact .overlay {
+  opacity: 0.4;
+}
+.booking .container {
+  padding: 40px 20px;
+}
+.booking .container h1 {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  width: 100%;
+  float: left;
+}
+.booking .container form div {
+  padding-right: 5px;
+  margin-bottom: 20px;
+}
+.booking .container form #wedding-datepicker {
+  margin-bottom: 0px !important;
+}
+.booking .container form #wedding-datepicker input {
+  width: 322px;
+}
+.booking .container form .time-label {
+  width: 157px;
+  margin-bottom: 15px;
+}
+.booking .container form .col-md-12 label {
+    top: -9px;
+}
+.booking .container form .input-group.time {
+  display: none;
+}
+hr {
+  float: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #9b9b9b;
+  width: 100%;
+}
+.booking .container form .half-width, .picker {
+  margin-bottom: 15px !important;
+}
+.booking .container form .col-md-12 textarea {
+ margin-top: 0px;
+}
+.booking .container p {
+  font-size: 14px;
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  float: left;
+  text-align: left;
+}
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], 
+.radio input[type=radio], .radio-inline input[type=radio] { 
+  margin-left: -4px;
+}
+.regular-checkbox {
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+  padding: 9px !important;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+  top: -14px;
+  z-index: 3;
+}
+.regular-checkbox:active, .regular-checkbox:checked:active {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+.regular-checkbox:checked {
+  background-color: #e9ecee;
+  border: 1px solid #adb8c0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+  color: #99a1a7;
+}
+.col-md-12.checkbox {
+  margin-top: 20px;
+  height: 15px;
+}
+.col-md-12.checkbox label {
+  top: unset;
+}
+/*----------------------------------------------
 ------------------MEDIA QUERIES-----------------
 ------------------------------------------------*/
+
 @media only screen and (min-width: 2000px){
   .jarallax.four .jarallax-img img {
     width: 100%;
