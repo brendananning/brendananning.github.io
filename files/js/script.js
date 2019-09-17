@@ -294,7 +294,6 @@ function setMainElements(){
       $("#wedding-datepicker input").removeAttr("style");
   }
 
-  // if desktop device, use DateTimePicker
   $("#timepicker").datetimepicker({
     format: "LT",
     debug: false,

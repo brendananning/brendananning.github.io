@@ -1633,7 +1633,15 @@ footer {
     top: -9px;
 }
 .booking .container form .input-group.time {
-  display: none;
+  display: block;
+}
+.booking .container form #timepicker .input-group-append {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  opacity: 0;
+  width: 157px;
+  height: 35px;
 }
 hr {
   float: left;
@@ -1673,12 +1681,12 @@ hr {
   z-index: 3;
 }
 .regular-checkbox:active, .regular-checkbox:checked:active {
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,1), inset 0px 1px 3px rgba(0,0,0,1);
 }
 .regular-checkbox:checked {
-  background-color: #e9ecee;
+  background-color: #4b62cf;
   border: 1px solid #adb8c0;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5), inset 0px -15px 10px -12px rgba(0,0,0,0.5), inset 15px 10px -12px rgba(255,255,255,0.1);
   color: #99a1a7;
 }
 .col-md-12.checkbox {

@@ -55,7 +55,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<!-- link to the local custom styles for SqPaymentForm -->
-	<link rel="stylesheet" type="text/css" href="../files/css/mysqpaymentform.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../files/css/mysqpaymentform.css"> -->
 
 	<!-- Behavioral Meta Data -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -123,68 +123,66 @@
 		    <form action="https://formspree.io/hello@brendananning.wedding" method="POST">
 		    	<h1>General Info</h1>
 				<div class="col-md-12">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
+					<input type="text" class="form-input" id="name" name="First Person Name" pattern="[a-z A-Z]+" 
 					oninvalid="setCustomValidity('Please enter a valid name.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
 					<label>Name of the First Person</label>
 				</div>
 				<div class="col-md-8">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
-					oninvalid="setCustomValidity('Please enter a valid name.')"
+					<input type="text" class="form-input" id="1stAddress" name="1st Address" pattern="[a-zA-Z]+" 
+					oninvalid="setCustomValidity('Please enter a valid address.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
 					<label>Current Residental Address</label>
 				</div>
 				<div class="col-md-4">
-					<input type="tel" class="form-input" id="phone_no" name="Phone" pattern="[0-9]{8,10}" 
+					<input type="tel" class="form-input" id="1stPhone" name="1st Phone" pattern="[0-9]{8,10}" 
 					oninvalid="setCustomValidity('Please enter a valid number.')"
 					onchange="try{setCustomValidity('')}catch(e){}" required>
 					<label>Phone No.</label>
 				</div>
 				<div class="col-md-8">
-					<input type="email" class="form-input" id="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+					<input type="email" class="form-input" id="1stEmail" name="1st Email" required>
 					oninvalid="setCustomValidity('Please enter a valid email address.')"
 					onchange="try{setCustomValidity('')}catch(e){}" required>
 					<label>Email</label>
 				</div>
 				<div class="col-md-4">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
-					oninvalid="setCustomValidity('Please enter a valid name.')"
+					<input type="text" class="form-input" id="1stGender" name="1st Gender" pattern="[a-z A-Z]+" 
+					oninvalid="setCustomValidity('Please enter your gender.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
 					<label>Gender</label>
 				</div>
 				<hr>
 				<div class="col-md-12">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
+					<input type="text" class="form-input" id="2ndName" name="2nd Name" pattern="[a-z A-Z]+" 
 					oninvalid="setCustomValidity('Please enter a valid name.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
 					<label>Name of the Second Person</label>
 				</div>
 				<div class="col-md-8">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
-					oninvalid="setCustomValidity('Please enter a valid name.')"
+					<input type="text" class="form-input" id="2ndAddress" name="2nd Address" pattern="[a-z A-Z]+" 
+					oninvalid="setCustomValidity('Please enter a valid address.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
 					<label>Current Residental Address</label>
 				</div>
 				<div class="col-md-4">
-					<input type="tel" class="form-input" id="phone_no" name="Phone" pattern="[0-9]{8,10}" 
+					<input type="tel" class="form-input" id="2ndPhone" name="2nd Phone" pattern="[0-9]{8,10}" 
 					oninvalid="setCustomValidity('Please enter a valid number.')"
 					onchange="try{setCustomValidity('')}catch(e){}" required>
 					<label>Phone No.</label>
 				</div>
 				<div class="col-md-8">
-					<input type="email" class="form-input" id="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-					oninvalid="setCustomValidity('Please enter a valid email address.')"
-					onchange="try{setCustomValidity('')}catch(e){}" required>
+					<input type="email" class="form-input" id="2ndEmail" name="2nd Email" required>
 					<label>Email</label>
 				</div>
 				<div class="col-md-4">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
-					oninvalid="setCustomValidity('Please enter a valid name.')"
+					<input type="text" class="form-input" id="2ndGender" name="2nd Gender" pattern="[a-z A-Z]+" 
+					oninvalid="setCustomValidity('Please enter your gender.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
 					<label>Gender</label>
@@ -194,7 +192,7 @@
 				<div class="col-md-8 picker">
 					 <div class="input-daterange input-group" id="wedding-datepicker">
 				        <div class="form-item">
-				        	<input class="form-control" type="text" id="start-date" name="Wedding Date" data-date-format="DD, MM d" required/>
+				        	<input class="form-control" type="text" id="start-date" name="Ceremony Date" data-date-format="DD, MM d" required/>
 				        	<span class="date-text date-depart"></span>
 				        </div>
 				    </div>
@@ -203,7 +201,7 @@
 				<div class="col-md-4 half-width">
 					<span class="time-label"></span>
                     <div class="input-group time" id="timepicker">
-                    	<input id="wedding-time" name="Wedding Time" class="form-control" />
+                    	<input id="wedding-time" name="Ceremony Time" class="form-control" />
                     	<span class="input-group-append input-group-addon">
 	                    	<span class="input-group-text">
 	                    		<i class="fa fa-clock"></i>
@@ -213,14 +211,14 @@
 					<label>Ceremony Time</label>
 				</div>
 				<div class="col-md-4">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
+					<input type="text" class="form-input" id="Ceremony Venue" name="Ceremony Venue" pattern="[a-z A-Z]+" 
 					oninvalid="setCustomValidity('Please enter a valid name.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
 					<label>Ceremony Venue Name</label>
 				</div>
 				<div class="col-md-8">
-					<input type="text" class="form-input" id="location" name="Wedding Location" pattern="[a-zA-Z]+{4,50}" 
+					<input type="text" class="form-input" id="WeddingLocation" name="Wedding Location" pattern="[a-zA-Z]+{4,50}" 
 					oninvalid="setCustomValidity('Please enter a valid location.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
@@ -228,35 +226,32 @@
 				</div>
 				<hr>
 				<div class="col-md-8">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
+					<input type="text" class="form-input" id="CeremonyEntertainment" name="Ceremony Entertainment" pattern="[a-z A-Z]+" 
 					oninvalid="setCustomValidity('Please enter a valid name.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
 					<label>Ceremony Entertainment</label>
 				</div>
 				<div class="col-md-4">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
-					oninvalid="setCustomValidity('Please enter a valid name.')"
-					onchange="try{setCustomValidity('')}catch(e){}"
-					required>
+					<input type="text" class="form-input" id="ExpectedGuests" name="Expected Guests" required>
 					<label>No. of Expected Guests</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
+					<input type="text" class="form-input" id="Videographer" name="Videographer" pattern="[a-z A-Z]+" 
 					oninvalid="setCustomValidity('Please enter a valid name.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
 					<label>Videographer</label>
 				</div>
 				<div class="col-md-6">
-					<input type="text" class="form-input" id="name" name="Name" pattern="[a-z A-Z]+" 
+					<input type="text" class="form-input" id="Photographer" name="Photographer" pattern="[a-z A-Z]+" 
 					oninvalid="setCustomValidity('Please enter a valid name.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
 					<label>Photographer</label>
 				</div>
 				<div class="col-md-12">
-					<textarea cols="40" rows="5" class="form-input" id="message" name="Message" 
+					<textarea cols="40" rows="5" class="form-input" id="ExtraDetails" name="Extra Details" 
 					oninvalid="setCustomValidity('Please enter a valid message.')"
 					onchange="try{setCustomValidity('')}catch(e){}"></textarea>
 					<label>Extra ceremony details (if required)</label>
@@ -293,20 +288,19 @@
 					<input type="checkbox" id="Accept Contract" class="regular-checkbox" required/>
 					<label>I understand that the full fee is due in four months following the ceremony, or one month before the wedding (whichever comes sooner):</label>
 				</div>
-				<hr>
-				<h1>
+				<!-- <h1>
 					Payment
-				</h1>
+				</h1> -->
 				
-			    <!-- <input class="btn-animated" type="submit" value="Send"> -->
+			    <input class="btn-animated" type="submit" value="Send">
 			</form>
-			<div id="form-container">
+			<!-- <div id="form-container">
 			     <div id="sq-card-number"></div>
 			     <div class="third" id="sq-expiration-date"></div>
 			     <div class="third" id="sq-cvv"></div>
 			     <div class="third" id="sq-postal-code"></div>
 			     <button id="sq-creditcard" class="button-credit-card" onclick="onGetCardNonce(event)">Pay $1.00</button>
-			   </div> <!-- end #form-container --> 
+			   </div>  end #form-container -->  -->
 		</div>
 	</section>
 	
@@ -326,11 +320,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
 	<!-- link to the SqPaymentForm library -->
-	<script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform">
+	<!-- <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"> -->
 	</script>
   	<script src="../files/js/universal-parallax.js"></script>
 	<script src="../files/js/script.js"></script>
-	<script type="text/javascript">
+<!-- 	<script type="text/javascript">
 		// Create and initialize a payment form object
 		const paymentForm = new SqPaymentForm({
 			// Initialize the payment form elements
@@ -402,11 +396,11 @@
 			      })
 			      .then(data => {
 			        console.log(JSON.stringify(data));
-			        alert('Payment complete successfully!\nCheck browser developer consolf form more details');
+			        alert('Payment completed\n');
 			      })
 			      .catch(err => {
 			        console.error(err);
-			        alert('Payment failed to complete!\nCheck browser developer consolf form more details');
+			        alert('Payment failed\n');
 			      });
 			   }
 			}
@@ -420,6 +414,6 @@
 			// Request a nonce from the SqPaymentForm object
 			paymentForm.requestCardNonce();
 		}
-	</script>
+	</script> -->
 </body>
 </html>
