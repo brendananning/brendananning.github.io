@@ -171,6 +171,7 @@ img {
 .parallax-wrapper {
   position: relative;
   height: 60vh;
+  min-height: 300px;
   z-index: 1;
 }
 .parallax .overlay {
