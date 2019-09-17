@@ -178,6 +178,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0.3;
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -221,12 +222,12 @@ img {
   z-index: -101;
   height: 100vh;
   width: 100%;
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(14, 56, 134, 0.5) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(14, 56, 134, 0.5)), color-stop(100%,rgba(0, 0, 0, 0.5))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%,rgba(14, 56, 134, 0.5) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%,rgba(14, 56, 134, 0.5) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%,rgba(14, 56, 134, 0.5) 100%); /* IE10+ */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%,rgba(14, 56, 134, 0.5) 100%); /* W3C */
+  background: -moz-linear-gradient(top, rgba(98, 93, 93, 0.5) 0%, rgba(102, 112, 129, 0.25) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(102, 112, 129, 0.25)), color-stop(100%,rgba(98, 93, 93, 0.5))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(98, 93, 93, 0.5) 0%,rgba(102, 112, 129, 0.25) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(98, 93, 93, 0.5) 0%,rgba(102, 112, 129, 0.25) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(98, 93, 93, 0.5) 0%,rgba(102, 112, 129, 0.25) 100%); /* IE10+ */
+  background: linear-gradient(to top, rgba(98, 93, 93, 0.5) 0%,rgba(102, 112, 129, 0.25) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 .main-background {
@@ -256,7 +257,7 @@ img {
   left: 85px;
   position: absolute;
   top: auto !important;
-  bottom: 63px !important;
+  bottom: 40px !important;
   color: #fff;
   font-family: 'Futura PT Medium';
   overflow: hidden;
@@ -273,6 +274,8 @@ img {
   font-size: 34px;
   position: relative;
   font-family: 'Futura PT Light';
+  margin-top: -10px;
+  padding-left: 5px;
 }
 .fade.last {
   background: white;
