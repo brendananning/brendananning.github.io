@@ -1607,7 +1607,7 @@ footer {
   opacity: 0.4;
 }
 .booking .container {
-  padding: 40px 20px;
+  padding: 40px 20px 100px 20px;
 }
 .booking .container h1 {
   margin-top: 0px;
