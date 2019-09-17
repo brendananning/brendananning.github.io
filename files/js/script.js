@@ -283,6 +283,7 @@ function setMainElements(){
       instaResults: 12,
       instaMenu: 'yes'
     }); 
+    bindVelocity();
     $(window).stellar('refresh');
   }
   if($(window).width() < 991 && title == "Brendan Anning | Wedding Celebrant Brisbane") {
@@ -623,7 +624,6 @@ $(document).ready(function() {
   hoverEffects();
   createGoTopArrow();
   particleJSHoverEffects();
-  bindVelocity();
   initialiseScrollReveal();
   $(window).scroll(function() { 
     animateNavbar();   
