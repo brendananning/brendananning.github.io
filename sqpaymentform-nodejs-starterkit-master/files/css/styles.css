@@ -140,6 +140,7 @@ img {
   right: 100%;
   bottom: 0;
   width: 100%;
+  display: none !important;
   transition: all 1.2s ease;
 }
 .too-small-message {
