@@ -6,6 +6,14 @@ var scrollMagicEnabled = false;
 var firstTime = true;
 var screenWidth;
 var newScreenWidth;
+var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+var is_edge_or_ie;    
+
+var ua = window.navigator.userAgent;
+var trident = ua.indexOf('Trident/');
+var edge = ua.indexOf('Edge/');
+
 
 function preventScrollOnMenuOpen(){
   //If the dropdown menu on mobile is open
@@ -140,7 +148,7 @@ function addWhiteNav(){
   $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
   $(".navbar-collapse").css("background-color", "rgba(255,255,255,1)");
   $(".bars .line").css("stroke", "#3b3b3b");
-  $(".logo-img").attr("src", "https://brendananning.wedding//files/img/logo.png");
+  $(".logo-img").attr("src", "https://brendananning.wedding/files/img/logo.png");
   $(".navbar-right").css("display", "none");
 }
 function addWhiteNavDesktop(){
@@ -150,7 +158,7 @@ function addWhiteNavDesktop(){
   $(".navbar-default").css("box-shadow", "2px 2px 22px -4px rgba(0,0,0,0.44)");
   $(".navbar-nav li a").css("color", "black");
   $(".navbar-collapse").css("background-color", "none");
-  $(".logo-img").attr("src", "https://brendananning.wedding//files/img/logo.png");
+  $(".logo-img").attr("src", "https://brendananning.wedding/files/img/logo.png");
   $(".navbar-right").css("display", "block");
   $(".contact-icon.phone").attr("src", "https://brendananning.wedding/files/img/icons/phone.png");
   $(".contact-icon.email").attr("src", "https://brendananning.wedding/files/img/icons/email.png");
@@ -190,66 +198,6 @@ function animateNavbar(){
       addTransparentNav();
     }
   }
-}
-
-function createGoTopArrow(){
-  var target = "#home";
-  var offset = 0;
-
-  // Set the background arrow dependent on the page scroll location  
-  if ($(this).scrollTop() > 70) {        // If page is scrolled more than 70px
-    $('.arrow-img').css("background", "url('./files/img/icons/arrow_up.png");    // Change arrow to up
-    $('.arrow').css("background", "rgba(0, 0, 0, 0.7)");    // Add background
-    if($(window).width() > 767){
-      setTimeout(function(){ //Add delay in case of resizing
-        $('.arrow').css("bottom", "70px");
-      }, 200);
-    }
-    target = "#home";
-  } 
-  else {
-    $('.arrow-img').css("background", "url('./files/img/icons/arrow_down.png");    // Change arrow to down
-    $('.arrow').css("background", "none");    // Remove background
-    if($(window).width() > 767){
-      setTimeout(function(){
-        $('.arrow').css("bottom", "6px");   
-      }, 200);
-    }
-    target = "#about";
-  }
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 70) {        
-      $('.arrow-img').css("background", "url('./files/img/icons/arrow_up.png");   
-      $('.arrow').css("background", "rgba(0, 0, 0, 0.7)");  
-      if($(window).width() > 767){
-        setTimeout(function(){
-          $('.arrow').css("bottom", "70px");  
-        }, 200);
-      }  
-      target = "#home";
-    } 
-    else {
-      $('.arrow-img').css("background", "url('./files/img/icons/arrow_down.png");    
-      $('.arrow').css("background", "none");
-      if($(window).width() > 767){
-        setTimeout(function(){
-          $('.arrow').css("bottom", "6px");
-        }, 200);
-      }
-      target = "#about";
-    }
-  });
-
-  $('.arrow').click(function() {      // When arrow is clicked
-    //If not on desktop, make offset -51px for mobile screens to line up with top of section headers
-    if($(window).width() < 767){
-      offset = -52.5;
-    }
-    else {
-      offset = 0;
-    }
-    $(target).velocity("scroll", { duration: 1000, offset: offset });
-  });
 }
 
 //Reset the elements that require resizing
@@ -622,7 +570,6 @@ $(document).ready(function() {
   addScenes(scenes);
   setMainElements();
   hoverEffects();
-  createGoTopArrow();
   particleJSHoverEffects();
   initialiseScrollReveal();
   $(window).scroll(function() { 
@@ -642,9 +589,25 @@ $(document).ready(function() {
     $(".main-background").css("height", "100vh");
     $(".main").css("height", "100vh");
   }
-  new universalParallax().init({
-    speed: 2.0
-  });
+  if (trident > 0 || edge > 0) {
+    is_edge_or_ie = true;
+  }
+  if ((is_chrome)&&(is_safari)) {
+    is_safari=false;
+  }
+  if(is_edge_or_ie) {
+      $(".parallax.one").css("background", "url('./files/img/parallax_one.jpg')");
+      $(".parallax.two").css("background", "url('./files/img/parallax_two.jpg')");
+      $(".parallax.three").css("background", "url('./files/img/parallax_three.jpg')");
+      $(".parallax.four").css("background", "url('./files/img/parallax_four.jpg')");
+      $(".parallax.contact").css("background", "url('./files/img/parallax_contact.jpg')");
+      $(".parallax").addClass("fix");
+  }
+  else {
+    new universalParallax().init({
+      speed: 2.0
+    });
+  }
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());
 
