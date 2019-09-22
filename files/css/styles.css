@@ -862,7 +862,7 @@ img {
 ------------------------------------------------*/
 
 .contact {
-  overflow: visible;
+  overflow: hidden;
   border-bottom: none;
 }
 .contact h2 {
