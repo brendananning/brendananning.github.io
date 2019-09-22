@@ -1643,6 +1643,9 @@ footer {
 .booking .container form .input-group.time {
   display: block;
 }
+.booking .container form #timepicker #wedding-time {
+  height: 0px;
+}
 .booking .container form #timepicker .input-group-append {
   position: absolute;
   left: 0px;
