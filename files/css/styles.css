@@ -26,6 +26,7 @@ img {
       url('../fonts/FuturaPT-Light.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: 'Futura PT Regular';
@@ -33,6 +34,7 @@ img {
       url('../fonts/FuturaPT-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: 'Futura PT Medium';
@@ -40,6 +42,7 @@ img {
       url('../fonts/FuturaPT-Medium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: 'Futura PT Medium Oblique';
@@ -47,6 +50,7 @@ img {
       url('../fonts/FuturaPT-Medium-Oblique.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: 'Futura PT Bold';
@@ -54,6 +58,7 @@ img {
       url('../fonts/FuturaPT-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: 'Proxima Nova Light';
@@ -61,6 +66,7 @@ img {
       url('../fonts/ProximaNova-Light.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: 'Proxima Nova Regular';
@@ -68,6 +74,7 @@ img {
       url('../fonts/ProximaNova-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 .preloader-background {
   width: 100%;
@@ -250,7 +257,7 @@ img {
   transform: perspective(1px) scale(1.25);
   transition: opacity 0.5s ease, transform 1s ease, height 0.7s ease;
   background-repeat: no-repeat !important;
-  background: url('../img/brendan.jpg');
+  background: url('../img/brendan.webp');
   background-position: 0% 30% !important;
   background-size: cover !important;
 }

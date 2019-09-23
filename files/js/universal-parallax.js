@@ -1,5 +1,5 @@
 "use strict";
-var screenWidth = $(window).width();
+var screenWidth = $(window).innerWidth();
 var newScreenWidth;
 var windowHeight = window.innerHeight
   , windowHeightExtra = 0
@@ -56,11 +56,11 @@ var positionParallax = function(e, t, a, i) {
             //My own code
             $(window).resize(function() { 
                 setTimeout(function(){
-                    newScreenWidth = $(window).width();
+                    newScreenWidth = $(window).innerWidth();
                     if((screenWidth - newScreenWidth) > 100 || (newScreenWidth - screenWidth) > 100){
                       windowHeight = window.innerHeight,
                         calculateHeight(t, a)
-                      screenWidth = $(window).width();
+                      screenWidth = $(window).innerWidth();
                     }
                   }, 1200);
             }),
