@@ -58,7 +58,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="./files/css/styles.css?v=7.0"/>
+	<link rel="stylesheet" type="text/css" href="./files/css/styles.css?v=7.1"/>
 </head>
 <body>
 	<div class="preloader-background">
@@ -381,20 +381,12 @@
 					onchange="try{setCustomValidity('')}catch(e){}" required>
 					<label>Phone No.</label>
 				</div>
-				<div class="col-md-4 half-width">
-					<span class="time-label"></span>
-                    <div class="input-group time" id="timepicker">
-                    	<input id="wedding-time" name="Wedding Time" class="form-control" />
-                    	<span class="input-group-append input-group-addon">
-	                    	<span class="input-group-text">
-	                    		<i class="fa fa-clock"></i>
-	                    	</span>
-                   		</span>
-                   	</div>
+				<div class="col-md-4">
+					<input type="text" class="form-input" id="wedding-time" name="Wedding Time" required>
 					<label>Wedding Time</label>
 				</div>
 				<div class="col-md-8 picker">
-					 <div class="input-daterange input-group" id="wedding-datepicker">
+					 <div class="input-daterange contact-time input-group" id="wedding-datepicker">
 				        <div class="form-item">
 				        	<input class="form-control" type="text" id="start-date" name="Wedding Date" data-date-format="DD, MM d" required/>
 				        	<span class="date-text date-depart"></span>

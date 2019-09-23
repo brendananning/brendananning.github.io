@@ -270,6 +270,7 @@ img {
   color: #fff;
   font-family: 'Futura PT Medium';
   overflow: hidden;
+  transition: font-size 0.7s ease, transform 0.7s ease;
 }
 .main .title-text h1 {
   font-size: 80px;
@@ -905,6 +906,9 @@ img {
 .contact .container form div {
   padding-right: 35px;
 }
+.contact .container form .col-md-12 {
+  margin-top: 10px;
+}
 .contact .container p {
   display: inline-block;
   text-align: center;
@@ -1027,12 +1031,6 @@ form .col-md-12 textarea {
 .input-group.time .form-control {
   width: 70px;
 }
-#wedding-time {
-  width: 0px;
-  min-width: 0px;
-  padding: 0;
-  opacity: 0;
-}
 .time-label {
   position: relative;
   display: inline-block;
@@ -1150,7 +1148,8 @@ th.next, th.prev {
   border-radius: 0;
 }
 .datepicker.dropdown-menu table tr td.active, .datepicker.dropdown-menu table tr th.active, .datepicker.dropdown-menu table tr td.active:focus, .datepicker.dropdown-menu table tr th.active:focus, .datepicker.dropdown-menu table tr td.active.active:hover, .datepicker.dropdown-menu table tr th.active.active:hover, .datepicker.dropdown-menu table tr td:active:focus, .datepicker.dropdown-menu table tr th:active:focus, .datepicker.dropdown-menu table tr td.highlighted, .datepicker.dropdown-menu table tr th.highlighted {
-  background-color: #1b7983;
+  background-color: #1e65ae;
+  color: #fff !important;
   border-color: #ededed;
 }
 .datepicker.dropdown-menu table tr th.datepicker-switch {
@@ -1602,14 +1601,14 @@ footer {
 ------------------------------------------------*/
 
 .parallax.contact h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: relative;
+  padding-top: 25vh;
   color: #fff;
   font-size: 60px;
   z-index: 5;
+  width: 100%;
+  text-align: center;
   font-family: 'Futura PT Medium';
-  transform: translate(-50%, -50%);
 }
 .parallax.contact .overlay {
   opacity: 0.4;
@@ -1627,6 +1626,7 @@ footer {
   padding-right: 5px;
   margin-bottom: 20px;
 }
+
 .booking .container form #wedding-datepicker {
   margin-bottom: 0px !important;
 }
@@ -1703,8 +1703,8 @@ hr {
 /*.booking .container form .col-md-12 {
   float: left;
 }*/
-.col-md-12.checkbox {
-  margin-top: 20px;
+.booking .container form .col-md-12.checkbox {
+  margin-top: 25px;
   height: 15px;
 }
 .col-md-12.checkbox label {
@@ -1787,7 +1787,7 @@ hr {
   .picker {
     padding-right: 0 !important;
   }
-  .picker div {
+  .contact .container form .picker .contact-time {
     padding-right: 3px !important;
   }
   .picker .input-group .form-item .form-control {
@@ -1859,11 +1859,15 @@ hr {
   form .col-md-12 {
     margin-bottom: 30px;
   }
-  .picker {
-    margin-top: -25px;
+  .contact .container form .picker .contact-time {
+    width: 100%;
+    padding-right: 18px !important;
   }
-  .col-md-12 {
-    margin-top: 50px;
+  .contact .container form .col-md-12 {
+    margin-top: 40px;
+  }
+  .booking .container form .col-md-12 {
+    margin-top: 0px;
   }
   form {
     padding-top: 20px;
@@ -1896,6 +1900,21 @@ hr {
   .package-item {
     margin-right: unset;
     margin-left: unset;
+  }
+  #wedding-datepicker .date-text {
+    bottom: 5px;
+  }
+  .booking .container p {
+     margin-bottom: 20px; 
+  }
+  .contact .container form .btn-animated {
+    bottom: 55px;
+  }
+  .booking .container form .btn-animated {
+    bottom: 35px;
+  }
+  .parallax.contact h1 {
+    padding-top: 22vh;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2187,6 +2206,17 @@ hr {
   .preloader-wrap p {
     font-size: 45px; 
   }
+  .packages .container {
+    margin-top: 100px;
+  }
+  #wedding-datepicker .date-text {
+    bottom: -28px;
+  }
+  .parallax.contact h1 {
+    padding-top: 17vh;
+    font-size: 45px;
+  }
+
 }
 @media only screen and (max-width: 479px) {
   .main .title-text h1 {
@@ -2237,7 +2267,7 @@ hr {
     height: 510px;
   }
   .block h1 {
-    font-size: 30px; 
+    font-size: 28px; 
   }
   .contact {
     padding: 0 30px 50px 30px;
@@ -2379,6 +2409,18 @@ hr {
   }
   .input-daterange {
     width: 100% !important;
+  }
+  .contact .container form .picker .contact-time {
+    padding-right: 3px !important;
+  }
+  .contact .container form .btn-animated {
+    bottom: 30px;
+  }
+  .booking .container form #wedding-datepicker {
+    padding-right: 0;
+  }
+  .parallax.contact h1 {
+    padding-top: 20vh;
   }
 } 
 @media only screen and (max-width: 300px) {

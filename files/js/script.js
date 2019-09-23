@@ -59,7 +59,7 @@ function hoverEffects() {
   );
   $(".testimonial-item").hover(
     function() {
-      if($(window).width() > 479) {
+      if($(window).width() > 767) {
         $(this).find('.testimonial-quote-top').css("top", "-20px");
         $(this).find('.testimonial-quote-top').css("left", "-50px");
         $(this).find('.testimonial-quote-bottom').css("bottom", "-20px");
@@ -70,7 +70,7 @@ function hoverEffects() {
       $(this).css("transform", "scale(1.05)");
     },
     function() {
-      if($(window).width() > 479) {
+      if($(window).width() > 767) {
          $(this).find('.testimonial-quote-top').css("top", "-10px");
         $(this).find('.testimonial-quote-top').css("left", "-40px");
         $(this).find('.testimonial-quote-bottom').css("bottom", "-10px");
@@ -413,18 +413,13 @@ Pace.on("done", function(){
         displayTl
           .fromTo($(".title-text"), 
                  0.4,
-                 {autoAlpha: 0, x: 150},
+                 {autoAlpha: 0, x: 450},
                  {autoAlpha: 1, ease:Power1.easeOut, x: 0}
                  )
           .staggerTo($(".title-text").children(), 
                   1,
                  {opacity: 1},
-                  0.5
-                 )
-          .staggerTo($(".better-text"), 
-                  3,
-                 {opacity: 1},
-                  0.5
+                  0.8
                  )
           //build a scene
           var contentScene = new ScrollMagic.Scene({
@@ -432,7 +427,7 @@ Pace.on("done", function(){
           })
           .setTween(displayTl)
           .addTo(controller);        
-      }, 1700);
+      }, 1900);
       setInterval(function() {
         if($(".fade.last").css('opacity') > '0.8') {
           $(".better-text").addClass("text-underline");
@@ -441,7 +436,7 @@ Pace.on("done", function(){
   } 
   $(window).scroll(function(){
     $(".title-text").css("opacity", 1 - $(window).scrollTop() / 600);
-    $(".parallax.contact h1").css("opacity", 1 - $(window).scrollTop() / 600);
+    $(".parallax.contact h1").css("opacity", 1 - $(window).scrollTop() / 300);
   });
 });
 
@@ -523,14 +518,10 @@ var checkViewportPackagesHeaderSecond = {
   afterReveal: function() {
     $(".package-item.three").css("opacity", "1");
     $(".package-item.three").css("transform", "scale(1)");
-    setTimeout(function(){
-      $(".package-item.two").css("opacity", "1");
-      $(".package-item.two").css("transform", "scale(1)");
-    },300);
-    setTimeout(function(){
-      $(".package-item.one").css("opacity", "1");
-      $(".package-item.one").css("transform", "scale(1)");
-    },600);
+    $(".package-item.two").css("opacity", "1");
+    $(".package-item.two").css("transform", "scale(1)");
+    $(".package-item.one").css("opacity", "1");
+    $(".package-item.one").css("transform", "scale(1)");
   }
 };
 var checkViewportInstaHeader = {
@@ -558,7 +549,7 @@ function initialiseScrollReveal() {
   ScrollReveal().reveal(".testimonials .first", checkViewportTestimonialsHeaderFirst);
   ScrollReveal().reveal(".testimonials .second", checkViewportTestimonialsHeaderSecond);
   ScrollReveal().reveal(".packages .first", checkViewportPackagesHeaderFirst);
-  if($(window).width() < 767){
+  if($(window).width() < 991){
     ScrollReveal().reveal(".packages .contract-text", checkViewportPackagesHeaderSecond);
   }
   ScrollReveal().reveal(".instagram h1", checkViewportInstaHeader);
@@ -581,7 +572,7 @@ $(document).ready(function() {
   if($(window).width() < 991) {
     //Wait until the instafeed is initialised before setting items
     setTimeout(function(){
-      $(".main-background").css("height", $(window).innerHeight());
+      $(".main-background").css("height", $(window).height());
       $(".main").css("height", $(window).innerHeight());
       $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
     }, 400);
