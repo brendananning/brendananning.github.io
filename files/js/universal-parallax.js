@@ -56,13 +56,8 @@ var positionParallax = function(e, t, a, i) {
             //My own code
             $(window).resize(function() { 
                 setTimeout(function(){
-                    newScreenWidth = $(window).innerWidth();
-                    if((screenWidth - newScreenWidth) > 100 || (newScreenWidth - screenWidth) > 100){
-                      windowHeight = window.innerHeight,
-                        calculateHeight(t, a)
-                      screenWidth = $(window).innerWidth();
-                    }
-                  }, 1200);
+                    adjustOnLargeResize(t, a);
+                }, 1400);
             }),
             window.addEventListener("scroll", function() {
                 animateParallax(t, a)
@@ -70,3 +65,14 @@ var positionParallax = function(e, t, a, i) {
         })
     }
 };
+
+function adjustOnLargeResize(t, a){
+    newScreenWidth = $(window).innerWidth();
+    if((screenWidth - newScreenWidth) > 50 || (newScreenWidth - screenWidth) > 50){
+      // console.log(screenWidth + " old screen width");
+      // console.log(newScreenWidth + " new screen width");
+      windowHeight = window.innerHeight,
+        calculateHeight(t, a)
+      screenWidth = $(window).innerWidth();
+    }
+}
