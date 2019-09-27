@@ -257,7 +257,7 @@ img {
   transform: perspective(1px) scale(1.25);
   transition: opacity 0.5s ease, transform 1s ease, height 0.7s ease;
   background-repeat: no-repeat !important;
-  background: url('../img/brendan.webp');
+  background: url('../img/brendan.jpg');
   background-position: 0% 30% !important;
   background-size: cover !important;
 }
