@@ -259,7 +259,7 @@ $(window).resize(function(){
   $(".parallax.contact h1").css("display", "none");
   setTimeout(function(){
     newScreenWidth = $(window).width();
-    if((screenWidth - newScreenWidth) > 50 || (newScreenWidth - screenWidth) > 50){
+    if((screenWidth - newScreenWidth) > 100 || (newScreenWidth - screenWidth) > 100){
       if($(window).width() < 991) {
         //Wait until the instafeed is initialised before setting items
           $(".main-background").css("height", $(window).innerHeight());
@@ -273,7 +273,7 @@ $(window).resize(function(){
       screenWidth = $(window).width();
     }
     $(".parallax.contact h1").css("display", "block");
-  }, 400);
+  }, 500);
 });
 
 function bindVelocity(){
