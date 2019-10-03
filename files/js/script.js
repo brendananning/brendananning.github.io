@@ -15,22 +15,22 @@ var trident = ua.indexOf('Trident/');
 var edge = ua.indexOf('Edge/');
 
 
-function preventScrollOnMenuOpen(){
-  //If the dropdown menu on mobile is open
-  if ($(".collapse.in").length){
-    $("body").css("overflow-y", "hidden");
-    //If user scrolls when menu open 
-    //Then closes menu without selection
-    //Check if the menu has been closed after 1000msecs
-    setTimeout(function(){
-      preventScrollOnMenuOpen();
-    }, 1500);
-  } 
-  //Prevent scrolling until menu is closed
-  else {
-    $("body").css("overflow-y", "scroll");
-  }
-}
+// function preventScrollOnMenuOpen(){
+//   //If the dropdown menu on mobile is open
+//   if ($(".collapse.in").length){
+//     $("body").css("overflow-y", "hidden");
+//     //If user scrolls when menu open 
+//     //Then closes menu without selection
+//     //Check if the menu has been closed after 1000msecs
+//     setTimeout(function(){
+//       preventScrollOnMenuOpen();
+//     }, 1500);
+//   } 
+//   //Prevent scrolling until menu is closed
+//   else {
+//     $("body").css("overflow-y", "scroll");
+//   }
+// }
 function applyEffects(element){
   element.css("width", "100%");
   element.css("height", "240px");
@@ -566,7 +566,7 @@ $(document).ready(function() {
   initialiseScrollReveal();
   $(window).scroll(function() { 
     animateNavbar();   
-    preventScrollOnMenuOpen();
+    // preventScrollOnMenuOpen();
   });
   screenWidth = $(window).width();
   if($(window).width() < 991) {
