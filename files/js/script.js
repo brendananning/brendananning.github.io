@@ -231,7 +231,7 @@ function setMainElements(){
       instaResults: 12,
       instaMenu: 'yes'
     }); 
-    bindSmoothScroll();
+    bindVelocity();
     $(window).stellar('refresh');
   }
   if($(window).width() < 991 && title == "Brendan Anning | Wedding Celebrant Brisbane") {
@@ -276,13 +276,47 @@ $(window).resize(function(){
   }, 500);
 });
 
-function bindSmoothScroll(){
+function bindVelocity(){
   // bind click event to all internal page anchors
- 
-  // All animations will take exactly 1000ms
-  var scroll = new SmoothScroll('a[href*="#"]', {
-    speed: 1000,
-    speedAsDuration: true
+  $('a[href*="#"]').on('click', function (e) {
+      // prevent default action and bubbling
+      e.preventDefault();
+      e.stopPropagation();
+      // set target to anchor's "href" attribute
+      var target = $(this).attr('href');
+
+     
+      if($(window).width() < 767){
+        $('.navbar-collapse.in').collapse('hide');
+      }
+      if(target == "#package-one-contact") {
+        $("#message").val("Hello, I'd like to book the South East Queensland package.");    
+        target = "#contact";  
+        setTimeout(function(){
+          $( "#message" ).focus();
+        }, 1200);  
+      }
+      if(target == "#package-two-contact") {
+        $("#message").val("Hello, I'd like to book the Destination package.");    
+        target = "#contact";    
+        setTimeout(function(){
+          $( "#message" ).focus();
+        }, 1200);  
+      }
+      if(target == "#package-three-contact") {
+        $("#message").val("Hello, I'd like to book the Sydney/Melbourne package.");    
+        target = "#contact";    
+        setTimeout(function(){
+          $( "#message" ).focus();
+        }, 1200);  
+      }
+      // scroll to each target
+      if($(window).width() < 767){
+        $(target).velocity("scroll", { duration: 1000, offset: -52.5 });
+      }
+      else {
+        $(target).velocity("scroll", { duration: 1000, offset: -52.5 });
+      }
   });
 }
 function destroyScrollMagic() {
