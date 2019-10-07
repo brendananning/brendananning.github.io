@@ -259,10 +259,10 @@ $(window).resize(function(){
   $(".parallax.contact h1").css("display", "none");
   setTimeout(function(){
     newScreenWidth = $(window).width();
-    if((screenWidth - newScreenWidth) > 100 || (newScreenWidth - screenWidth) > 100){
+    if((screenWidth - newScreenWidth) > 150 || (newScreenWidth - screenWidth) > 150){
       if($(window).width() < 991) {
         //Wait until the instafeed is initialised before setting items
-          $(".main-background").css("height", $(window).innerHeight());
+          // $(".main-background").css("height", $(".main-background").height());
           $(".main").css("height", $(window).innerHeight());
           $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
       }
@@ -572,7 +572,7 @@ $(document).ready(function() {
   if($(window).width() < 991) {
     //Wait until the instafeed is initialised before setting items
     setTimeout(function(){
-      $(".main-background").css("height", $(window).height());
+      $(".main-background").css("height", $(".main-background").height());
       $(".main").css("height", $(window).innerHeight());
       $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
     }, 400);
