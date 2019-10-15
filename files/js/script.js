@@ -306,13 +306,13 @@ function bindVelocity(){
       if($(window).width() < 767){
         $(target).velocity("scroll", { 
           duration: 1000,
-          delay: -52.5
+          offset: -52.5
         });
       }
       else {
         $(target).velocity("scroll", { 
           duration: 1000,
-          delay: -52.5
+          offset: -52.5
         });
       }
   });
