@@ -77,6 +77,7 @@ img {
   font-display: block;
 }
 .preloader-background {
+  display: none !important;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -86,6 +87,7 @@ img {
   background: #fff;
 }
 .preloader-wrap {
+  display: none !important;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -140,6 +142,7 @@ img {
   transition: all 1.2s ease;
 }
 .pace .pace-progress {
+  display: none !important;
   background-color: rgb(107, 166, 255);
   position: fixed;
   z-index: 101;
@@ -230,6 +233,9 @@ img {
   transform: translateZ(0px) !important;
   width: 100%;
 }
+.centered {
+  text-align: center !important;
+}
 /*----------------------------------------------
 -------------------MAIN SECTION-----------------
 ------------------------------------------------*/
@@ -238,12 +244,7 @@ img {
   z-index: -101;
   height: 100vh;
   width: 100%;
-  background: -moz-linear-gradient(top, rgba(98, 93, 93, 0.5) 0%, rgba(102, 112, 129, 0.25) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(102, 112, 129, 0.25)), color-stop(100%,rgba(98, 93, 93, 0.5))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(98, 93, 93, 0.5) 0%,rgba(102, 112, 129, 0.25) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(98, 93, 93, 0.5) 0%,rgba(102, 112, 129, 0.25) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(98, 93, 93, 0.5) 0%,rgba(102, 112, 129, 0.25) 100%); /* IE10+ */
-  background: linear-gradient(to top, rgba(98, 93, 93, 0.5) 0%,rgba(102, 112, 129, 0.25) 100%); /* W3C */
+  background: linear-gradient(45deg, rgba(78, 95, 107, 0.5) 0%,rgba(102, 112, 129, 0.25) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 .main-background {
@@ -598,48 +599,23 @@ img {
   margin: 0 auto;
   margin-bottom: -300px; 
   opacity: 0;
-  min-height: 300px;
-  min-width: 650px;
+  width: 750px;
   border-radius: 6px;
   -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   transition: opacity 0.8s ease-in-out, margin 0.7s ease;
   overflow: hidden; 
-}
-/*.owl-stage-width {
-  width: 100%;
-}*/
-#sync1 {
-  height: 300px;
-}
-.owl-item .item img {
-  display: block;
-  position: relative;
-  width: auto;
-  height: 320px;
-  min-width: 320px;
-}
-.owl-carousel .owl-stage-outer{
-   overflow: hidden;
-   position: relative;
-   width: 100%;
-   z-index: 1;  /* added this */
-  transform: translateZ(0px);
-}
-.owl-item { 
-  overflow: hidden;
-  transition: all 0.8s ease;
-}
-.owl-item.active {
-  opacity: 1;
+  -webkit-mask-image: -webkit-radial-gradient(white, white);
 }
 .item {
-  height: 310px;
-  width: 310px;
+  height: 250px;
+  width: 250px;
   overflow: hidden;
   position: relative;
   transition: all 0.4s ease;
+  display: inline-block;
+  margin-bottom: -10px;
 }
 .item:hover .insta-overlay {
   opacity: 1;
@@ -650,7 +626,7 @@ img {
   font-size: 20px;
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 40%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -660,7 +636,7 @@ img {
 }
 .img-info p {
   display: inline-block;
-  font-size: 15px;
+  font-size: 12px;
   color: #fff;
   word-break: break-word;
 }
@@ -670,6 +646,9 @@ img {
 }
 .instagram-img {
   filter: sepia(20%);
+  height: 250px;
+  width: auto;
+  min-width: 250px;
 }
 .likes {
   position: absolute;
@@ -706,10 +685,6 @@ img {
   transition: all 0.7s ease;
   backface-visibility: hidden;
 }
-.simply-scroll-container { position:relative;}
-.simply-scroll-clip { position:relative; overflow:hidden;}
-.simply-scroll-list { margin:0; padding:0; overflow:hidden;}
-.simply-scroll-list li { float:left; width:150px; height:150px; margin:0; padding:0; list-style:none;}
 
 /*----------------------------------------------
 -----------------PACKAGES SECTION---------------
@@ -1757,16 +1732,7 @@ hr {
     width: 194px;
   }
   #instafeed {
-    max-width: 580px;
-    min-width: 580px;
-    min-height: 194px;
-  }
-  .owl-item .item img {
-    height: 194px;
-    min-width: 194px;
-  }
-  #sync1 {
-    height: 194px;
+    width: 582px;
   }
   .img-info p {
     font-size: 10px;
@@ -1783,6 +1749,12 @@ hr {
     margin-top: 0px;
     font-size: 10px;
     margin-left: 3px;
+  }
+  .instagram-img {
+    filter: sepia(20%);
+    height: 194px;
+    width: auto;
+    min-width: 194px;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -2105,34 +2077,12 @@ hr {
     margin-top: -14px;
   }
   .item {
-    height: 207px;
-    width: 207px;
+    height: 194px;
+    width: 194px;
   }
-  #instafeed {
-    min-height: 195px;
-  }
-  .owl-item .item img {
-    height: 207px;
-    min-width: 207px;
-  }
-  #sync1 {
-    height: 195px;
-  }
-  .item {
-    height: 167px;
-    width: 167px;
-  }
-  #instafeed {
-    max-width: 500px;
-    min-width: 500px;
-    min-height: 167px;
-  }
-  .owl-item .item img {
-    height: 167px;
-    min-width: 167px;
-  }
-  #sync1 {
-    height: 167px;
+  .instagram-img {
+    width: 300px;
+    height: auto;
   }
   .likes {
     bottom: -2px;
@@ -2347,49 +2297,24 @@ hr {
     font-size: 22px;
   }
   .item {
-    height: 300px;
+    height: 180px;
     width: 300px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+    -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+    box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+    -webkit-mask-image: -webkit-radial-gradient(white, white);
   }
   #instafeed {
-    max-width: 300px;
-    min-width: 300px;
-    min-height: 500px;
+    width: 300px;
     margin-bottom: -500px;
   }
-  .owl-item .item img {
-    height: 300px;
-    min-width: 300px;
-  }
-  #sync1 {
-    height: 300px;
-  }
-  .img-info p {
-    font-size: 14px;
-    color: #3b3b3b;
-  }
   .img-info {
-    top: 30%;
-    max-height: unset;
-  }
-  .likes {
-    bottom: 102px;
-  }
-  .likes img {
-    width: 22px !important;
-  }
-  .likes p {
-    margin-top: 3px;
-    font-size: 13px;
-    margin-left: 7px;
-    color: #3b3b3b;
+    display: none;
   }
   .insta-overlay {
-    opacity: 1;
-    top: 100%;
-    background: #fff;
-  }
-  .item, .owl-item, .owl-carousel .owl-stage-outer {
-    overflow: visible;
+    display: none;
   }
   .item:hover .insta-overlay{
     transform: none;

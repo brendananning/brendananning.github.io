@@ -225,12 +225,6 @@ function setMainElements(){
     var parallaxInstance3 = new Parallax(scene3);
     var parallaxInstance4 = new Parallax(scene4);
     $(window).stellar({horizontalScrolling: false});
-    $('#instafeed').instastream({
-      instaToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
-      instaUser: '4090409456',
-      instaResults: 12,
-      instaMenu: 'yes'
-    }); 
     bindVelocity();
     $(window).stellar('refresh');
   }
@@ -284,8 +278,6 @@ function bindVelocity(){
       e.stopPropagation();
       // set target to anchor's "href" attribute
       var target = $(this).attr('href');
-
-     
       if($(window).width() < 767){
         $('.navbar-collapse.in').collapse('hide');
       }
@@ -312,10 +304,16 @@ function bindVelocity(){
       }
       // scroll to each target
       if($(window).width() < 767){
-        $(target).velocity("scroll", { duration: 1000, offset: -52.5 });
+        $(target).velocity("scroll", { 
+          duration: 1000,
+          delay: -52.5
+        });
       }
       else {
-        $(target).velocity("scroll", { duration: 1000, offset: -52.5 });
+        $(target).velocity("scroll", { 
+          duration: 1000,
+          delay: -52.5
+        });
       }
   });
 }
@@ -555,7 +553,18 @@ function initialiseScrollReveal() {
   ScrollReveal().reveal(".instagram h1", checkViewportInstaHeader);
   ScrollReveal().reveal(".contact h1", checkViewportContactHeader);
 }
-
+function createInstafeed(){
+  var userFeed = new Instafeed({
+    get: 'user',
+    userId: 4090409456,
+    // target: 'contact',
+    accessToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
+    resolution: 'standard_resolution',
+    template: "<div class='item'><a class='animation-container' target='_blank' href='{{link}}'><img class='instagram-img' src='{{image}}' alt='{{caption}}'><div class=\"insta-overlay\"><div class=\"img-info\"><p>{{caption}}</p></div><div class='likes'><img src=\"./files/img/icons/heart.png\" class=\"icon-sml\"/><p>{{likes}}</p></div></div></a></div>",
+    limit: '9'
+  });
+  userFeed.run();
+}
 $(document).ready(function() {
 
   // add initial scenes
@@ -564,6 +573,7 @@ $(document).ready(function() {
   hoverEffects();
   particleJSHoverEffects();
   initialiseScrollReveal();
+  createInstafeed();
   $(window).scroll(function() { 
     animateNavbar();   
     // preventScrollOnMenuOpen();
