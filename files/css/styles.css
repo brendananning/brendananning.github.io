@@ -2186,6 +2186,9 @@ hr {
   .main .title-text h2 {
     font-size: 28px;
   }
+  .main .title-text {
+    bottom: 130px;
+  }
   .fade.last {
     padding: 3px 0px 5px 0px;
   }
