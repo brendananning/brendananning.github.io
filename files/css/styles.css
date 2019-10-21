@@ -2181,7 +2181,10 @@ hr {
     padding-top: 17vh;
     font-size: 45px;
   }
-
+  .preloader-wrap p {
+    text-align: left;
+    margin-left: auto;
+  }
 }
 @media only screen and (max-width: 479px) {
   .main .title-text h1 {
