@@ -1763,6 +1763,10 @@ hr {
     float: left;
     width: 100%;
   }
+  .preloader-wrap p {
+    text-align: left;
+    margin-left: 80px;
+  }
   .picker {
     padding-right: 0 !important;
   }
@@ -1808,7 +1812,11 @@ hr {
     margin-bottom: 20px;
   }
   .main-background {
+    height: 110vh !important;
     background-position: 50% 0% !important;
+  }
+  .main {
+    height: 110vh !important;
   }
   .navbar-right {
     display: none !important;
@@ -1823,7 +1831,7 @@ hr {
     left: 33px;
     position: absolute;
     top: auto !important;
-    bottom: 89px !important;
+    bottom: 189px !important;
   }
   .main .title-text h1 {
     font-size: 70px;
@@ -2187,7 +2195,7 @@ hr {
     font-size: 28px;
   }
   .main .title-text {
-    bottom: 130px;
+    bottom: 180px !important;
   }
   .fade.last {
     padding: 3px 0px 5px 0px;
