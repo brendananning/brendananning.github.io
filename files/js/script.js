@@ -561,7 +561,6 @@ $(document).ready(function() {
   hoverEffects();
   particleJSHoverEffects();
   initialiseScrollReveal();
-  createInstafeed();
   $(window).scroll(function() { 
     animateNavbar();   
     // preventScrollOnMenuOpen();
