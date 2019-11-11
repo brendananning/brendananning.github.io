@@ -558,6 +558,7 @@ $(document).ready(function() {
   // add initial scenes
   addScenes(scenes);
   setMainElements();
+  createInstafeed();
   hoverEffects();
   particleJSHoverEffects();
   initialiseScrollReveal();
