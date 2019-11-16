@@ -1756,6 +1756,7 @@ hr {
   border-radius: 6px;
   padding-right: 0px !important;
   float: none !important;
+  -webkit-mask-image: -webkit-radial-gradient(white, white);
 }
 .modal-wrapper.open .modal{
   margin-top:-200px;
