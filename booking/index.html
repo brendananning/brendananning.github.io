@@ -64,12 +64,12 @@
 	<link rel="stylesheet" type="text/css" href="../files/css/styles.css?v=7.9"/>
 </head>
 <style>
-	.pace .pace-progress {
+	/*.pace .pace-progress {
 			display: none !important;
-		}
+		}*/
 </style>
 <body>
-	<!-- <div class="preloader-background">
+	<div class="preloader-background">
 	</div>
 	<div class="preloader-wrap">
 	    <p>Loading awesomeness...</p>
@@ -77,7 +77,7 @@
 	</div>
 	<div class="too-small-message">
 		<p>Please resize your browser.</p>
-	</div> -->
+	</div>
 	<nav class="navbar navbar-default">		
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle x collapsed" data-toggle="collapse" data-target="#navbar-collapse-x">
@@ -127,7 +127,7 @@
 					oninvalid="setCustomValidity('Please enter a valid name.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
-					<label>Name of the First Person</label>
+					<label>Name of First Person</label>
 				</div>
 				<div class="col-md-8">
 					<input type="text" class="form-input" id="1stAddress" name="1st Address" required>
@@ -156,7 +156,7 @@
 					oninvalid="setCustomValidity('Please enter a valid name.')"
 					onchange="try{setCustomValidity('')}catch(e){}"
 					required>
-					<label>Name of the Second Person</label>
+					<label>Name of Second Person</label>
 				</div>
 				<div class="col-md-8">
 					<input type="text" class="form-input" id="2ndAddress" name="2nd Address" required>
@@ -242,28 +242,30 @@
 				</div>
 				<hr>
 				<h1>Contract Details</h1>
-				<p>
-					We understand that we have chosen Brendan Anning as our celebrant, and that the celebrant we have chosen will be our celebrant on the wedding day, although in the event of disaster, illness, emergency or if it is impracticable for our booked celebrant to attend our wedding, another celebrant  may attend, and this of course would be well communicated.
-				</p>
-				<p>
-					That full payment is required four months after the booking and/or before one month before the ceremony whichever is sooner.
-				</p>
-				<p>
-					And that the $400 retainer is required to secure our wedding date and time, as is payment within the specified due date of the invoice.
-				</p>
-				<p>
-					All payments, retainers and deposits made are non-refundable.
-				</p>
-				<p>
-					We agree to complete a NOIM in the required legal time and to supply our celebrant with necessary identification including birth certificates for Australian citizens and passports for internationals.
-					We are both over 18, not related and not already married.
-				</p>
-				<p>
-					We agree to communicate all of our expectations so we can have the most awesome wedding a service contract would ever allow us to have.
-				</p>
-				<p>
-					We are booking our celebrant for a minimum one hour and maximum two hour period on our wedding day unless otherwise agreed upon in writing. This time begins at least 30 minutes before the time booked above and ends at the earliest, 30 minutes after the time booked above. As a normal courtesy they will be an hour early and stay for an hour but in the event of natural disaster, bride or groom being late, there may be restrictions on time. If a party to the ceremony is more than 30 minutes late they realise that they are risking their presence at the ceremony if he has other appointments that day.
-				</p>
+				<div class="contract-details-justify">
+					<p>
+						We understand that we have chosen Brendan Anning as our celebrant, and that the celebrant we have chosen will be our celebrant on the wedding day, although in the event of disaster, illness, emergency or if it is impracticable for our booked celebrant to attend our wedding, another celebrant  may attend, and this of course would be well communicated.
+					</p>
+					<p>
+						That full payment is required four months after the booking and/or before one month before the ceremony whichever is sooner.
+					</p>
+					<p>
+						And that the $400 retainer is required to secure our wedding date and time, as is payment within the specified due date of the invoice.
+					</p>
+					<p>
+						All payments, retainers and deposits made are non-refundable.
+					</p>
+					<p>
+						We agree to complete a NOIM in the required legal time and to supply our celebrant with necessary identification including birth certificates for Australian citizens and passports for internationals.
+						We are both over 18, not related and not already married.
+					</p>
+					<p>
+						We agree to communicate all of our expectations so we can have the most awesome wedding a service contract would ever allow us to have.
+					</p>
+					<p>
+						We are booking our celebrant for a minimum one hour and maximum two hour period on our wedding day unless otherwise agreed upon in writing. This time begins at least 30 minutes before the time booked above and ends at the earliest, 30 minutes after the time booked above. As a normal courtesy they will be an hour early and stay for an hour but in the event of natural disaster, bride or groom being late, there may be restrictions on time. If a party to the ceremony is more than 30 minutes late they realise that they are risking their presence at the ceremony if he has other appointments that day.
+					</p>
+				</div>
 				<div class="col-md-12 checkbox">
 					<input type="checkbox" id="Accept Contract" class="regular-checkbox" required/>
 					<label>I agree to these terms and understand that the full fee is due in four months following the ceremony, or one month before the wedding (whichever comes sooner):</label>
@@ -299,6 +301,32 @@
 				        }
 				    }).render('#paypal-button-container');
 				</script>
+				<div class="modal-wrapper">
+				  <div class="modal">
+				    <div class="head">
+						<h1>Deposit Details</h1>
+				    	<a class="btn-close deposit-btn-trigger" href="javascript:;"></a>
+				    </div>
+				    <div class="content">
+				    	<p>
+				    		<b>Account Name:</b> Brendan J Anning<br>
+				    	</p>
+				    	<p>
+				    		<b>BSB:</b> 064129<br>
+				    	</p>
+				    	<p>
+				    		<b>Account Number:</b> 10525464<br>
+				    	</p>
+				    </div>
+				  </div>
+				</div>
+				<div class="deposit-details">
+					<p>
+						or
+					</p>
+					<a class="deposit-btn-trigger btn" href="javascript:;">Direct Deposit</a>
+				</div>
+				<hr>
 				<p class="centered">
 					Please do not submit form until after payment is completed.
 				</p>
@@ -329,101 +357,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
-	<!-- link to the SqPaymentForm library -->
-	<!-- <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"> -->
 	</script>
   	<script src="../files/js/universal-parallax.js"></script>
 	<script src="../files/js/script.js"></script>
-<!-- 	<script type="text/javascript">
-		// Create and initialize a payment form object
-		const paymentForm = new SqPaymentForm({
-			// Initialize the payment form elements
-
-			//TODO: Replace with your sandbox application ID
-			applicationId: "sandbox-sq0idb-Df8sy8x6tQBTEtnVoCBClQ",
-			inputClass: 'sq-input',
-			autoBuild: false,
-			// Customize the CSS for SqPaymentForm iframe elements
-			inputStyles: [{
-			   fontSize: '16px',
-			   lineHeight: '24px',
-			   padding: '16px',
-			   placeholderColor: '#a0a0a0',
-			   backgroundColor: 'transparent',
-			}],
-			// Initialize the credit card placeholders
-			cardNumber: {
-			   elementId: 'sq-card-number',
-			   placeholder: 'Card Number'
-			},
-			cvv: {
-			   elementId: 'sq-cvv',
-			   placeholder: 'CVV'
-			},
-			expirationDate: {
-			   elementId: 'sq-expiration-date',
-			   placeholder: 'MM/YY'
-			},
-			postalCode: {
-			   elementId: 'sq-postal-code',
-			   placeholder: 'Postal'
-			},
-			// SqPaymentForm callback functions
-			callbacks: {
-			   /*
-			   * callback function: cardNonceResponseReceived
-			   * Triggered when: SqPaymentForm completes a card nonce request
-			   */
-			   cardNonceResponseReceived: function (errors, nonce, cardData) {
-			   if (errors) {
-			       // Log errors from nonce generation to the browser developer console.
-			       console.error('Encountered errors:');
-			       errors.forEach(function (error) {
-			           console.error('  ' + error.message);
-			       });
-			       alert('Encountered errors, check browser developer console for more details');
-			       return;
-			   }
-			      alert(`The generated nonce is:\n${nonce}`);
-			      fetch('process-payment', {
-			        method: 'POST',
-			        headers: {
-			          'Accept': 'application/json',
-			          'Content-Type': 'application/json'
-			        },
-			        body: JSON.stringify({
-			          nonce: nonce
-			        })
-			      })
-			      .catch(err => {
-			        alert('Network error: ' + err);
-			      })
-			      .then(response => {
-			        if (!response.ok) {
-			          return response.text().then(errorInfo => Promise.reject(errorInfo));
-			        }
-			        return response.text();
-			      })
-			      .then(data => {
-			        console.log(JSON.stringify(data));
-			        alert('Payment completed\n');
-			      })
-			      .catch(err => {
-			        console.error(err);
-			        alert('Payment failed\n');
-			      });
-			   }
-			}
+	<script>
+		$( document ).ready(function() {
+		  $('.deposit-btn-trigger').click(function() {
+		     $('.modal-wrapper').toggleClass('open');
+		    $('.page-wrapper').toggleClass('blur');
+		     return false;
+		  });
 		});
-		paymentForm.build();
-
-		// onGetCardNonce is triggered when the "Pay $1.00" button is clicked
-		function onGetCardNonce(event) {
-			// Don't submit the form until SqPaymentForm returns with a nonce
-			event.preventDefault();
-			// Request a nonce from the SqPaymentForm object
-			paymentForm.requestCardNonce();
-		}
-	</script> -->
+</script>
 </body>
 </html>

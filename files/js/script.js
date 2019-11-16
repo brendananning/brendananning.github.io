@@ -561,7 +561,9 @@ $(document).ready(function() {
   hoverEffects();
   particleJSHoverEffects();
   initialiseScrollReveal();
-  createInstafeed();
+  if(document.title != "Booking Form | Wedding Celebrant Brisbane"){
+    createInstafeed();
+  }
   $(window).scroll(function() { 
     animateNavbar();   
     // preventScrollOnMenuOpen();
