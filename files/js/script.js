@@ -558,12 +558,16 @@ $(document).ready(function() {
   // add initial scenes
   addScenes(scenes);
   setMainElements();
+  createInstafeed();
   hoverEffects();
   particleJSHoverEffects();
   initialiseScrollReveal();
+<<<<<<< HEAD
   if(document.title != "Booking Form | Wedding Celebrant Brisbane"){
     createInstafeed();
   }
+=======
+>>>>>>> 3aafa477991f56491915c0a2adbd78a7d41e55cb
   $(window).scroll(function() { 
     animateNavbar();   
     // preventScrollOnMenuOpen();
