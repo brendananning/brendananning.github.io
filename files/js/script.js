@@ -525,7 +525,7 @@ var checkViewportInstaHeader = {
     },1000);
   }
 };
-var checkViewportContactHeader = {
+var checkViewportContactHeaderSecond = {
   opacity: 1,
   afterReveal: function() {
     $(".underline").css("width", $(".contact h2").width() - 20 + "px");
@@ -539,7 +539,7 @@ function initialiseScrollReveal() {
     ScrollReveal().reveal(".packages .contract-text", checkViewportPackagesHeaderSecond);
   }
   ScrollReveal().reveal(".instagram h1", checkViewportInstaHeader);
-  ScrollReveal().reveal(".contact h1", checkViewportContactHeader);
+  ScrollReveal().reveal(".contact h2", checkViewportContactHeaderSecond);
 }
 function createInstafeed(){
   var userFeed = new Instafeed({
