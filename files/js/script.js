@@ -120,27 +120,6 @@ function hoverEffects() {
     },
   );
 }
-function particleJSHoverEffects(){
-  //Modify particles JS colours on hover
-  $('#particles-js')
-    .mouseover(function() {
-      const newColor = '#fff';
-      $.each(pJSDom[0].pJS.particles.array, function(i,p){
-        pJSDom[0].pJS.particles.array[i].color.value = newColor;
-        pJSDom[0].pJS.particles.array[i].color.rgb = hexToRgb(newColor);
-        pJSDom[0].pJS.particles.line_linked.color_rgb_line = hexToRgb(newColor);
-      });
-    })
-    .mouseout(function() {
-      const newColor = '#fff';
-      $.each(pJSDom[0].pJS.particles.array, function(i,p){
-        pJSDom[0].pJS.particles.array[i].color.value = newColor;
-        pJSDom[0].pJS.particles.array[i].color.rgb = hexToRgb(newColor);
-        pJSDom[0].pJS.particles.line_linked.color_rgb_line = hexToRgb(newColor);
-      });
-  });
-}
-
 function addWhiteNav(){
   $(".navbar-nav li a").css("color", "black");
   $(".navbar-default").css("padding-top", "0");
@@ -207,12 +186,22 @@ function setMainElements(){
   $('.testimonial-quote-bottom').removeAttr("style");
   $('.time-label').removeAttr("style");
   $('#wedding-datepicker input').removeAttr("style");
-  $(".main").removeAttr("style");
+  // $(".main").removeAttr("style");
   $(".navbar-default").removeAttr("style");
   $(".navbar-collapse").removeAttr("style");
   $(".item").removeAttr("style");
-  $(".jarallax-img img").removeAttr("style");
 
+  if($(window).width() < 991 && document.title == "Brendan Anning | Brisbane Wedding Celebrant") {
+    setTimeout(function(){
+      $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
+    }, 600);
+  }
+  else {
+      $("#wedding-datepicker input").removeAttr("style");
+  }
+}
+
+function createParallaxElements(){
   //Only render parallax, instastream and stellar on main page
   var title = document.title;
   if(title == "Brendan Anning | Brisbane Wedding Celebrant") {
@@ -225,18 +214,10 @@ function setMainElements(){
     var parallaxInstance3 = new Parallax(scene3);
     var parallaxInstance4 = new Parallax(scene4);
     $(window).stellar({horizontalScrolling: false});
-    bindVelocity();
     $(window).stellar('refresh');
   }
-  if($(window).width() < 991 && title == "Brendan Anning | Brisbane Wedding Celebrant") {
-    setTimeout(function(){
-      $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
-    }, 600);
-  }
-  else {
-      $("#wedding-datepicker input").removeAttr("style");
-  }
-
+}
+function createTimepicker(){
   $("#timepicker").datetimepicker({
     format: "LT",
     debug: false,
@@ -250,6 +231,7 @@ function setMainElements(){
 $(window).resize(function(){ 
   setMainElements();
   animateNavbar();
+  setBannerHeight();
   $(".parallax.contact h1").css("display", "none");
   setTimeout(function(){
     // newScreenWidth = $(window).width();
@@ -546,29 +528,24 @@ function createInstafeed(){
     get: 'user',
     userId: 4090409456,
     // target: 'contact',
-    accessToken: '4090409456.fd0e14d.ba857bbfa91848b9bb33d582a792059d',
+    accessToken: '4090409456.fd0e14d.a60fa015f6ee4316837913c56a20e491',
     resolution: 'standard_resolution',
     template: "<div class='item'><a class='animation-container' target='_blank' href='{{link}}'><img class='instagram-img' src='{{image}}' alt='{{caption}}'><div class=\"insta-overlay\"><div class=\"img-info\"><p>{{caption}}</p></div><div class='likes'><img src=\"./files/img/icons/heart.png\" class=\"icon-sml\"/><p>{{likes}}</p></div></div></a></div>",
     limit: '9'
   });
   userFeed.run();
+  setTimeout(function(){
+    $(".img-info").each(function() {
+      //Limit caption text
+      var txt = $(this).children().text();
+      console.log(" txt length")
+      if(txt.length > 255){
+        $(this).children().text('Follow me on Instagram! @brendananningcelebrant');
+      }
+    });
+  }, 400);
 }
-$(document).ready(function() {
-
-  // add initial scenes
-  addScenes(scenes);
-  setMainElements();
-  hoverEffects();
-  particleJSHoverEffects();
-  initialiseScrollReveal();
-  if(document.title != "Booking Form | Wedding Celebrant Brisbane"){
-    createInstafeed();
-  }
-  $(window).scroll(function() { 
-    animateNavbar();   
-    // preventScrollOnMenuOpen();
-  });
-  screenWidth = $(window).width();
+function setBannerHeight(){
   if($(window).width() < 991) {
     //Wait until the instafeed is initialised before setting items
     setTimeout(function(){
@@ -581,6 +558,27 @@ $(document).ready(function() {
     $(".main-background").css("height", "100vh");
     $(".main").css("height", "100vh");
   }
+}
+$(document).ready(function() {
+
+  // add initial scenes
+  addScenes(scenes);
+  setMainElements();
+  bindVelocity();
+  hoverEffects();
+  initialiseScrollReveal();
+  if(document.title != "Booking Form | Wedding Celebrant Brisbane"){
+    createInstafeed();
+    createParallaxElements();
+    setBannerHeight();
+  }
+  else {
+    createTimepicker();
+  }
+  $(window).scroll(function() { 
+    animateNavbar();   
+    // preventScrollOnMenuOpen();
+  });
   if (trident > 0 || edge > 0) {
     is_edge_or_ie = true;
   }

@@ -50,11 +50,18 @@
 				$(target).append("<div id='sync1' class='owl-carousel owl-theme'></div>");
 		    	for (var i = 0; i < $nbrResults; i++) {
 				  if (j<20){
-					
+
 					if(data.data[j].caption == null){var myCaption = '';} else{var myCaption = data.data[j].caption.text;}
-					if (data.data[j].comments.count < 2){var commentLabel = 'commentaire'} else {var commentLabel = 'commentaires'}
+					if (data.data[j].comments.count < 2){var commentLabel = 'Comments'} else {var commentLabel = 'Comments'}
 					if(data.data[j].likes.count == null){var myCaption = '';} else{var likes = data.data[j].likes.count;}
-				  
+				  	
+				  	//Limit caption text
+			    	var txt = data.data[j].caption.text;
+					if(txt.length > 155){
+			    		myCaption = '';
+			    		console.log(txt.length + " txt length")
+					}
+
 					$('.owl-carousel').append("<div class='item'><a class='animation-container' target='_blank' href='" 
 						+ data.data[j].link + "'><img class='instagram-img' src='" + data.data[j].images.standard_resolution.url 
 						+ "' alt='" + myCaption + "'><div class=\"insta-overlay\"><div class=\"img-info\"><p>" + myCaption 

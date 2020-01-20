@@ -1934,11 +1934,7 @@ hr {
     margin-bottom: 20px;
   }
   .main-background {
-    height: 110vh !important;
     background-position: 50% 0% !important;
-  }
-  .main {
-    height: 110vh !important;
   }
   .navbar-right {
     display: none !important;
@@ -2144,7 +2140,7 @@ hr {
     font-size: 18px;
   }
   .packages .container {
-    margin-top: 30px;
+    margin-top: 0px;
   }
   .parallax-wrapper {
     position: relative;
@@ -2293,9 +2289,6 @@ hr {
   .preloader-wrap p {
     font-size: 45px; 
   }
-  .packages .container {
-    margin-top: 100px;
-  }
   #wedding-datepicker .date-text {
     bottom: -28px;
   }
@@ -2328,7 +2321,7 @@ hr {
     font-size: 28px;
   }
   .main .title-text {
-    bottom: 180px !important;
+    bottom: 80px !important;
   }
   .fade.last {
     padding: 3px 0px 5px 0px;
