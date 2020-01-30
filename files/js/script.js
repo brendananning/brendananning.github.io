@@ -252,21 +252,21 @@ function bindVelocity(){
         $('.navbar-collapse.in').collapse('hide');
       }
       if(target == "#package-one-contact") {
-        $("#message").val("Hello, I'd like to book the South East Queensland package.");    
+        $("#message").val("Hello, I'd like to book the South East Queensland package. ");    
         target = "#contact";  
         setTimeout(function(){
           $( "#message" ).focus();
         }, 1200);  
       }
       if(target == "#package-two-contact") {
-        $("#message").val("Hello, I'd like to book the Destination package.");    
+        $("#message").val("Hello, I'd like to book the Destination package. ");    
         target = "#contact";    
         setTimeout(function(){
           $( "#message" ).focus();
         }, 1200);  
       }
       if(target == "#package-three-contact") {
-        $("#message").val("Hello, I'd like to book the Sydney/Melbourne package.");    
+        $("#message").val("Hello, I'd like to book the Sydney/Melbourne package. ");    
         target = "#contact";    
         setTimeout(function(){
           $( "#message" ).focus();
