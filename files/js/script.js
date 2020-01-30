@@ -539,7 +539,7 @@ function createInstafeed(){
       //Limit caption text
       var txt = $(this).children().text();
       console.log(" txt length")
-      if(txt.length > 255){
+      if(txt.length > 270){
         $(this).children().text('Follow me on Instagram! @brendananningcelebrant');
       }
     });
