@@ -191,7 +191,7 @@ function setMainElements(){
   $(".navbar-collapse").removeAttr("style");
   $(".item").removeAttr("style");
 
-  if($(window).width() < 991 && document.title == "Brendan Anning | Brisbane Wedding Celebrant") {
+  if($(window).width() < 991 && document.title == "Brendan Anning | Wedding Celebrant Brisbane") {
     setTimeout(function(){
       $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
     }, 600);
@@ -204,7 +204,7 @@ function setMainElements(){
 function createParallaxElements(){
   //Only render parallax, instastream and stellar on main page
   var title = document.title;
-  if(title == "Brendan Anning | Brisbane Wedding Celebrant") {
+  if(title == "Brendan Anning | Wedding Celebrant Brisbane") {
     var scene = document.getElementById('scene');
     var scene2 = document.getElementById('scene-2');
     var scene3 = document.getElementById('scene-3');
