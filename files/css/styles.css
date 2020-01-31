@@ -2202,10 +2202,6 @@ hr {
   form .col-md-12 textarea {
     margin-top: -14px;
   }
-  .item {
-    height: 194px;
-    width: 194px;
-  }
   .instagram-img {
     width: 300px;
     height: auto;
@@ -2233,6 +2229,29 @@ hr {
   }
   .img-info {
     top: 44%;
+  }
+  .item {
+    height: 180px;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+    -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+    box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+    -webkit-mask-image: -webkit-radial-gradient(white, white);
+  }
+  #instafeed {
+    width: 300px;
+    margin-bottom: -500px;
+  }
+  .img-info {
+    display: none;
+  }
+  .insta-overlay {
+    display: none;
+  }
+  .item:hover .insta-overlay{
+    transform: none;
   }
   .preloader-wrap p {
     font-size: 30px;
