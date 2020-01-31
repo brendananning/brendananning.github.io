@@ -567,7 +567,7 @@ $(document).ready(function() {
   bindVelocity();
   hoverEffects();
   initialiseScrollReveal();
-  if(document.title != "Booking Form | Wedding Celebrant Brisbane"){
+  if(document.title == "Brendan Anning | Wedding Celebrant Brisbane"){
     createInstafeed();
     createParallaxElements();
     setBannerHeight();

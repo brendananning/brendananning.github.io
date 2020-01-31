@@ -1741,7 +1741,7 @@ hr {
 }
 .modal {
   width: 400px !important;
-  height: 255px;
+  height: 290px;
   display:block;
   margin: 0 auto;
   position:relative;
@@ -1780,9 +1780,12 @@ hr {
   color: white;
 }
 .content {
-  padding: 20px;
+  padding: 8px 20px 20px 20px !important;
 }
-.btn-close{
+.content p {
+  margin-bottom: 10px !important;
+}
+.btn-close {
   width: 32px;
   height: 32px;
   display: block;
@@ -1792,22 +1795,22 @@ hr {
   margin-right: 5px;
   padding: 0;
 }
-.btn-close::before, .btn-close::after{
-  content:'';
+.btn-close::before, .btn-close::after {
+  content: '';
   width: 22px;
-  height: 6px;
+  height: 2px;
   display: block;
   background: #fff;
 }
-.btn-close::before{
-  margin-top:12px;
+.btn-close::before {
+  margin-top: 12px;
   -webkit-transform:rotate(45deg);
   -moz-transform:rotate(45deg);
   -o-transform:rotate(45deg);
   transform:rotate(45deg);
 }
-.btn-close::after{
-  margin-top:-6px;
+.btn-close::after {
+  margin-top:-2px;
   -webkit-transform:rotate(-45deg);
   -moz-transform:rotate(-45deg);
   -o-transform:rotate(-45deg);
@@ -1893,7 +1896,7 @@ hr {
     padding-right: 0 !important;
   }
   .contact .container form .picker .contact-time {
-    padding-right: 3px !important;
+    padding-right: 0px !important;
   }
   .picker .input-group .form-item .form-control {
     width: 100% !important;
@@ -1966,7 +1969,6 @@ hr {
   }
   .contact .container form .picker .contact-time {
     width: 100%;
-    padding-right: 18px !important;
   }
   .contact .container form .col-md-12 {
     margin-top: 40px;
@@ -2020,6 +2022,12 @@ hr {
   }
   .parallax.contact h1 {
     padding-top: 22vh;
+  }
+  .about .right-container .image-container {
+    width: 60%;
+  }
+  .modal {
+    height: 275px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2324,8 +2332,11 @@ hr {
     height: 270px;
   }
   .head h1 {
-    margin-top: 5px !important;
+    margin-top: 11px !important;
     font-size: 24px !important;
+  }
+  .modal-wrapper.open .modal {
+    margin-top: -157px;
   }
 }
 @media only screen and (max-width: 479px) {
@@ -2513,6 +2524,15 @@ hr {
   }
   .modal-wrapper {
     padding-right: 0px !important;
+  }
+  .about .right-container .image-container {
+    width: 95%;
+  }
+  .modal-wrapper.open .modal {
+    margin-top: -200px;
+  }
+  .head h1 {
+    margin-top: 5px !important;
   }
 } 
 @media only screen and (max-width: 300px) {
