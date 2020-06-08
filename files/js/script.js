@@ -217,16 +217,6 @@ function createParallaxElements(){
     $(window).stellar('refresh');
   }
 }
-function createTimepicker(){
-  $("#timepicker").datetimepicker({
-    format: "LT",
-    debug: false,
-    icons: {
-      up: "fa fa-chevron-up",
-      down: "fa fa-chevron-down"
-    }
-  })
-}
 
 $(window).resize(function(){ 
   setMainElements();
@@ -535,15 +525,15 @@ function createInstafeed(){
   });
   userFeed.run();
   setTimeout(function(){
-    $(".img-info").each(function() {
+    $(".img-info p").each(function() {
       //Limit caption text
-      var txt = $(this).children().text();
-      // console.log(" txt length")
+      var txt = $(this).text();
+      // console.log(txt.length + " txt length")
       if(txt.length > 270){
-        $(this).children().text('Follow me on Instagram! @brendananningcelebrant');
+        $(this).text('Follow me on Instagram! @brendananningcelebrant');
       }
     });
-  }, 400);
+  }, 1500);
 }
 function setBannerHeight(){
   if($(window).width() < 991) {
@@ -567,13 +557,13 @@ $(document).ready(function() {
   bindVelocity();
   hoverEffects();
   initialiseScrollReveal();
-  if(document.title == "Brendan Anning | Wedding Celebrant Brisbane"){
+  if(document.title == "Brendan Anning | Brisbane Wedding Celebrant"){
     createInstafeed();
     createParallaxElements();
     setBannerHeight();
   }
   else {
-    createTimepicker();
+
   }
   $(window).scroll(function() { 
     animateNavbar();   

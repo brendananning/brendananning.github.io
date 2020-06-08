@@ -957,7 +957,7 @@ textarea:focus,
   /*font-size: 16px;*/
 }
 textarea:focus {
-  background: #1e65ae33;
+  background: #1e65ae0f;
 }
 form {
   width: 500px;
@@ -1336,7 +1336,7 @@ footer {
   color: #fff;
   background-color: #1e65ae;
   font-size: 10px;
-  height: 50px;
+  height: 80px;
   text-align: center;
 }
 .copyright a {
