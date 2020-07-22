@@ -191,7 +191,7 @@ function setMainElements(){
   $(".navbar-collapse").removeAttr("style");
   $(".item").removeAttr("style");
 
-  if($(window).width() < 991 && document.title == "Brendan Anning | Wedding Celebrant Brisbane") {
+  if($(window).width() < 991 && document.title == "Brisbane Marriage Celebrant | Brendan Anning") {
     setTimeout(function(){
       $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
     }, 600);
@@ -204,7 +204,7 @@ function setMainElements(){
 function createParallaxElements(){
   //Only render parallax, instastream and stellar on main page
   var title = document.title;
-  if(title == "Brendan Anning | Brisbane Wedding Celebrant") {
+  if(title == "Brisbane Marriage Celebrant | Brendan Anning") {
     var scene = document.getElementById('scene');
     var scene2 = document.getElementById('scene-2');
     var scene3 = document.getElementById('scene-3');
@@ -483,12 +483,7 @@ var checkViewportPackagesHeaderSecond = {
 var checkViewportInstaHeader = {
   opacity: 1,
   duration: 0,
-  afterReveal: function() {
-    $(".instagram.block").css("padding-bottom", "80px");
-    $(".instagram .container").css("margin-top", "40px");
-    $(".instagram .container").css("padding-top", "30px");
-    $(".instagram .container").css("padding-bottom", "20px");
-    $("#instafeed").css("margin-bottom", "0");
+  afterReveal: function() {    
     $("#instafeed").css("opacity", "1");
     setTimeout(function(){
       $(window).scrollTop($(window).scrollTop()+1);
@@ -498,7 +493,9 @@ var checkViewportInstaHeader = {
 var checkViewportContactHeaderSecond = {
   opacity: 1,
   afterReveal: function() {
-    $(".underline").css("width", $(".contact h2").width() - 20 + "px");
+    setTimeout(function(){
+      $(".underline").css("width", $(".contact h2").width() - 20 + "px");
+    }, 2000);
   }
 };
 function initialiseScrollReveal() {
@@ -535,7 +532,7 @@ function setBannerHeight(){
   if($(window).width() < 991) {
     //Wait until the instafeed is initialised before setting items
     setTimeout(function(){
-      $(".main-background").css("height", $(".main-background").height());
+      $(".main-background").css("height", $(window).height());
       $(".main").css("height", $(window).innerHeight());
       $("#wedding-datepicker input").css("width", $(".time-label").outerWidth() + "px");
     }, 400);
@@ -553,7 +550,7 @@ $(document).ready(function() {
   bindVelocity();
   hoverEffects();
   initialiseScrollReveal();
-  if(document.title == "Brendan Anning | Brisbane Wedding Celebrant"){
+  if(document.title == "Brisbane Marriage Celebrant | Brendan Anning"){
     createInstafeed();
     createParallaxElements();
     setBannerHeight();
@@ -580,9 +577,13 @@ $(document).ready(function() {
       $(".parallax").addClass("fix");
   }
   else {
-    new universalParallax().init({
-      speed: 2.0
-    });
+    setTimeout(function(){
+      $('.parallax-wrapper').paroller({
+        factor: '0.2',
+        type: 'foreground',
+        direction: 'vertical'
+      }); 
+    }, 2000);
   }
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());

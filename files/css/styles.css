@@ -102,7 +102,7 @@ img {
   top: 50%;
   text-align: center;
   font-family: 'Futura PT Bold';
-  font-size: 90px;
+  font-size: 70px;
   transform: translate(-50%, -50%);
   transition: left 1.2s ease;
 }
@@ -213,28 +213,12 @@ img {
   background: linear-gradient(to bottom, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
-.parallax__container {
-  clip: rect(0,auto,auto,0);
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -100;
-}
 .parallax {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  transform: translateZ(0px) !important;
+  position: relative;
+  top: -50%;
+  height: 120vh;
   width: 100%;
+  padding: 4rem 2rem;
 }
 .centered {
   text-align: center !important;
@@ -261,8 +245,8 @@ img {
   transform: perspective(1px) scale(1.25);
   transition: opacity 0.5s ease, transform 1s ease, height 0.7s ease;
   background-repeat: no-repeat !important;
-  background: url('../img/brendan.jpg');
-  background-position: 0% 30% !important;
+  background: url('../img/main.jpg');
+  background-position: 53% 100% !important;
   background-size: cover !important;
 }
 .main, .about {
@@ -284,6 +268,7 @@ img {
   transition: font-size 0.7s ease, transform 0.7s ease;
 }
 .main .title-text h1 {
+  transition: font-size 0.3s ease;
   font-size: 80px;
 }
 .main .title-text h2 {
@@ -589,18 +574,17 @@ img {
 -----------------INSTAFEED SECTION--------------
 ------------------------------------------------*/
 .instagram.block {
-  padding-bottom: 40px;
+  padding-bottom: 80px;
   transition: all 1s ease-in-out;
 }
 .instagram .container {
-  padding-top: 0px;
-  margin-top: 0px;
-  padding-bottom: 0px;
+  margin-top: 40px;
+  padding: 30px 0 20px 0;
   transition: all 1s ease-in-out;
 }
 #instafeed {
   margin: 0 auto;
-  margin-bottom: -300px; 
+  margin-bottom: 0px; 
   opacity: 0;
   width: 750px;
   border-radius: 6px;
@@ -1339,7 +1323,7 @@ footer {
   color: #fff;
   background-color: #1e65ae;
   font-size: 10px;
-  height: 80px;
+  height: 50px;
   text-align: center;
 }
 .copyright a {
@@ -1825,16 +1809,15 @@ hr {
 ------------------------------------------------*/
 
 @media only screen and (min-width: 2000px){
-  .jarallax.four .jarallax-img img {
-    width: 100%;
-    height: auto;
-    margin-left: auto;
+  .main-background {
+    background-position: 0% 40% !important;
   }
-} 
-@media only screen and (min-width: 1280px){
-  .jarallax .jarallax-img img {
-    width: 100%;
-    height: auto;
+  .parallax {
+    top: -40%;
+    height: 110vh;
+  }
+  .preloader-wrap p {
+    font-size: 90px;
   }
 } 
 @media only screen and (max-width: 1200px){
@@ -1921,7 +1904,7 @@ hr {
   }
   .parallax-wrapper {
     position: relative;
-    height: 500px;
+    height: 350px;
   }
   .contact .container #scene-4 {
     right: -58px;
@@ -1940,7 +1923,7 @@ hr {
     margin-bottom: 20px;
   }
   .main-background {
-    background-position: 50% 0% !important;
+    background-position: 53% 0% !important;
   }
   .navbar-right {
     display: none !important;
@@ -1955,7 +1938,6 @@ hr {
     left: 33px;
     position: absolute;
     top: auto !important;
-    bottom: 189px !important;
   }
   .main .title-text h1 {
     font-size: 70px;
@@ -2031,6 +2013,13 @@ hr {
   }
   .modal {
     height: 275px;
+  }
+  .parallax {
+    height: 100vh;
+    top: -90%;
+  }
+  .preloader-wrap p {
+    font-size: 50px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2137,8 +2126,8 @@ hr {
     width: 47%;
     float: left;
     margin: 0px 1.5% 30px 1.5%;
-    box-shadow: rgba(255, 255, 255, 0.44) 2px 2px 22px -4px; 
-    background: rgb(255, 255, 255);
+    box-shadow: none; 
+    background: none;
   }
   .contact-links {
     padding-bottom: 0px;
@@ -2253,7 +2242,6 @@ hr {
   }
   #instafeed {
     width: 300px;
-    margin-bottom: -500px;
   }
   .img-info {
     display: none;
@@ -2341,6 +2329,9 @@ hr {
   .modal-wrapper.open .modal {
     margin-top: -157px;
   }
+  .instagram.block {
+    padding-bottom: 80px;
+  }
 }
 @media only screen and (max-width: 479px) {
   .main .title-text h1 {
@@ -2367,28 +2358,6 @@ hr {
   }
   .about .right-container .image-container {
     margin-bottom: 40px;
-  }
-  .jarallax {
-    height: 50vh;
-  }
-  .jarallax .jarallax-img img {
-    height: auto;
-  }
-  .jarallax.one .jarallax-img img {
-    margin-left: -280px;
-  }
-  .jarallax.two .jarallax-img img {
-    margin-left: -310px;
-    height: 100%;
-    width: auto;
-  }
-  .jarallax.three .jarallax-img img {
-    margin-left: -190px;
-    height: 100%;
-    width: auto;
-  }
-  .jarallax.four .jarallax-img img {
-    margin-left: -310px;
   }
   .package-item {
     height: 510px;
@@ -2447,10 +2416,6 @@ hr {
   .main .title-text {
     width: 317px;
   }
-  .jarallax .jarallax-img img {
-    height: 100% !important;
-    width: auto !important;
-  }
   .col-md-12 {
     margin-top: 35px;
   }
@@ -2478,7 +2443,6 @@ hr {
   }
   #instafeed {
     width: 300px;
-    margin-bottom: -500px;
   }
   .img-info {
     display: none;
