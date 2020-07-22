@@ -76,10 +76,11 @@ img {
   font-style: normal;
   font-display: swap;
 }
+/*Enable for testing*/
 .pace .pace-progress,
 .preloader-background,
 .preloader-wrap {
-  display: none !important;
+  /*display: none !important;*/
 }
 .preloader-background {
   width: 100%;
