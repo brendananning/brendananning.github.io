@@ -214,6 +214,13 @@ function createParallaxElements(){
     var parallaxInstance3 = new Parallax(scene3);
     var parallaxInstance4 = new Parallax(scene4);
   }
+  setTimeout(function(){
+    $('.parallax-wrapper').paroller({
+      factor: '0.2',
+      type: 'foreground',
+      direction: 'vertical'
+    }); 
+  }, 2000);
 }
 
 $(window).resize(function(){ 
@@ -552,11 +559,8 @@ $(document).ready(function() {
   initialiseScrollReveal();
   if(document.title == "Brisbane Marriage Celebrant | Brendan Anning"){
     createInstafeed();
-    createParallaxElements();
     setBannerHeight();
-  }
-  else {
-
+    createParallaxElements();
   }
   $(window).scroll(function() { 
     animateNavbar();   
@@ -568,23 +572,16 @@ $(document).ready(function() {
   if ((is_chrome)&&(is_safari)) {
     is_safari=false;
   }
-  if(is_edge_or_ie) {
-      $(".parallax.one").css("background", "url('./files/img/parallax_one.jpg')");
-      $(".parallax.two").css("background", "url('./files/img/parallax_two.jpg')");
-      $(".parallax.three").css("background", "url('./files/img/parallax_three.jpg')");
-      $(".parallax.four").css("background", "url('./files/img/parallax_four.jpg')");
-      $(".parallax.contact").css("background", "url('./files/img/parallax_contact.jpg')");
-      $(".parallax").addClass("fix");
-  }
-  else {
-    setTimeout(function(){
-      $('.parallax-wrapper').paroller({
-        factor: '0.2',
-        type: 'foreground',
-        direction: 'vertical'
-      }); 
-    }, 2000);
-  }
+  $(".hamburger_slim").click(function(){
+    var $this = $(this);
+    if($this.data('clicked')) {
+        func(some, other, parameters);
+    }
+    else {
+        $this.data('clicked', true);
+        func(some, parameter);
+    }
+  });  
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());
 

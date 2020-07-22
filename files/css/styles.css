@@ -1575,10 +1575,36 @@ footer {
 /*----------------------------------------------
 -------------------BOOKING PAGE-----------------
 ------------------------------------------------*/
+.parallax.contact .parallax__container {
+  clip: rect(0, auto, auto, 0);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -100;
+}
 
+.parallax.contact {
+  position: fixed;
+  top: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  width: 100%;
+
+  /* BG behaviour */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .parallax.contact h1 {
-  position: relative;
-  padding-top: 25vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
   font-size: 60px;
   z-index: 5;
