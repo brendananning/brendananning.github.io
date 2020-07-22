@@ -340,6 +340,7 @@ img {
 .block p {
   font-size: 17px; 
   font-family: 'Muli', 'sans-serif';
+  font-weight: 300;
   text-align: left;
 }
 .block h1 {
@@ -735,6 +736,7 @@ img {
   color: #515151;
   position: absolute;
   font-family: 'Muli', 'sans-serif';
+  font-weight: 300;
   height: auto;
   width: auto;
   top: 120px;
@@ -757,6 +759,7 @@ img {
   text-align: left;
   font-size: 23px;
   margin-top: 12px;
+  font-family: 'Muli', 'sans-serif';
   font-weight: 700;
   padding-left: 25px;
   color: #515151;
@@ -1004,6 +1007,7 @@ form .col-md-12 textarea {
   display: inline-block;
   float: left;
   font-family: 'Muli', sans-serif;
+  font-weight: 300;
   text-align: left;
   border: 1px solid rgba(30, 101, 174, 0.7);
   height: 35px;
@@ -1042,12 +1046,13 @@ label {
   position: absolute;
   top: -7px;
   left: 13px;
-  font-size: 11px;
+  font-size: 12px;
   color: #555;
   background: white;
   padding: 0 5px 0 5px;
   border-radius: 6px;
   font-family: 'Muli', sans-serif;
+  font-weight: 300;
 }
 .col-md-12 label {
   top: -23px;
@@ -1068,6 +1073,7 @@ label {
 }
 .datepicker.dropdown-menu {
   font-family: 'Muli', sans-serif;
+  font-weight: 300;
   padding: 0;
   background-clip: border-box;
   border: none;
@@ -1234,6 +1240,7 @@ th.next, th.prev {
   background: #1e65ae;
   font-size: 16px;
   font-family: 'Muli', sans-serif;
+  font-weight: 300; 
   border-radius: 6px;
   position: absolute;
   bottom: 30px;
@@ -1270,6 +1277,7 @@ footer {
   z-index: 2;
   overflow: hidden;
   font-family: 'Muli', 'sans-serif';
+  font-weight: 300;
   transition: all 0.3s ease;
 }
 .contact-links {
@@ -1303,7 +1311,7 @@ footer {
   text-decoration: none;
 }
 .social-item .details {
-  font-size: 10px; 
+  font-size: 11px; 
   text-align: center;
   width: 100%;
   position: absolute;
@@ -1690,6 +1698,7 @@ hr {
   width: 150px;
   display: block;
   font-family: 'Muli', 'sans-serif';
+  font-weight: 300;
   margin:0 auto;
   padding: 1em 0;
   position: relative;
