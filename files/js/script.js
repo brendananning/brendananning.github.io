@@ -213,6 +213,8 @@ function createParallaxElements(){
     var parallaxInstance2 = new Parallax(scene2);
     var parallaxInstance3 = new Parallax(scene3);
     var parallaxInstance4 = new Parallax(scene4);
+    $(window).stellar({horizontalScrolling: false});
+    $(window).stellar('refresh');
   }
   setTimeout(function(){
     $('.parallax-wrapper').paroller({
