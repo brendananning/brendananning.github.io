@@ -178,6 +178,9 @@ img {
   display: block !important;
   left: unset !important;
 }
+.parallax.one {
+  background-image: url('../img/parallax_one.jpg')
+}
 .parallax-wrapper {
   position: relative;
   height: 60vh;

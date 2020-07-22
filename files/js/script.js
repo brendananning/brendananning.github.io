@@ -213,8 +213,6 @@ function createParallaxElements(){
     var parallaxInstance2 = new Parallax(scene2);
     var parallaxInstance3 = new Parallax(scene3);
     var parallaxInstance4 = new Parallax(scene4);
-    $(window).stellar({horizontalScrolling: false});
-    $(window).stellar('refresh');
   }
 }
 
@@ -514,21 +512,19 @@ function initialiseScrollReveal() {
   ScrollReveal().reveal(".contact h2", checkViewportContactHeaderSecond);
 }
 function createInstafeed(){
-  var userFeed = new Instafeed({
-    get: 'user',
-    userId: 4090409456,
-    // target: 'contact',
-    accessToken: '4090409456.fd0e14d.a60fa015f6ee4316837913c56a20e491',
-    resolution: 'standard_resolution',
-    template: "<div class='item'><a class='animation-container' target='_blank' href='{{link}}'><img class='instagram-img' src='{{image}}' alt='{{caption}}'><div class=\"insta-overlay\"><div class=\"img-info\"><p>{{caption}}</p></div><div class='likes'><img src=\"./files/img/icons/heart.png\" class=\"icon-sml\"/><p>{{likes}}</p></div></div></a></div>",
-    limit: '9'
+  $.instagramFeed({
+    'username': 'brendananningcelebrant',
+    'container': "#instafeed",
+    'items': 9,
+    'items_per_row': 3,
+    'display_profile':false,
+    'display_biography':false,
+    'styling': false
   });
-  userFeed.run();
   setTimeout(function(){
     $(".img-info p").each(function() {
       //Limit caption text
       var txt = $(this).text();
-      // console.log(txt.length + " txt length")
       if(txt.length > 270){
         $(this).text('Follow me on Instagram! @brendananningcelebrant');
       }
