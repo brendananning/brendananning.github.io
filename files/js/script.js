@@ -504,7 +504,7 @@ var checkViewportContactHeaderSecond = {
   afterReveal: function() {
     setTimeout(function(){
       $(".underline").css("width", $(".contact h2").width() - 20 + "px");
-    }, 2000);
+    }, 1200);
   }
 };
 function initialiseScrollReveal() {
@@ -574,16 +574,6 @@ $(document).ready(function() {
   if ((is_chrome)&&(is_safari)) {
     is_safari=false;
   }
-  $(".hamburger_slim").click(function(){
-    var $this = $(this);
-    if($this.data('clicked')) {
-        func(some, other, parameters);
-    }
-    else {
-        $this.data('clicked', true);
-        func(some, parameter);
-    }
-  });  
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());
 

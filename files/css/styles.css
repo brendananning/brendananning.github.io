@@ -80,7 +80,7 @@ img {
 .pace .pace-progress,
 .preloader-background,
 .preloader-wrap {
-  /*display: none !important;*/
+  display: none !important;
 }
 .preloader-background {
   width: 100%;
@@ -181,23 +181,20 @@ img {
   display: block !important;
   left: unset !important;
 }
-.parallax.one {
-  background-image: url('../img/parallax_one.jpg')
-}
 .parallax-wrapper {
   position: relative;
   height: 60vh;
   min-height: 300px;
   z-index: 1;
 }
-.parallax.fix {
+/*.parallax.fix {
   background-attachment: scroll !important;
   height: 60vh;
   position: relative;
   min-height: 300px;
   background-size: cover !important;
   background-color: unset !important;
-}
+}*/
 .parallax .overlay {
   display: block;
   position: absolute;
@@ -1537,15 +1534,11 @@ footer {
 .opaque {
   opacity: 1 !important;
 }
-.hamburger-slim {
-  background: transparent;
-  /* margin: 60px auto 40px; */
-  position: absolute;
-  top: 6px;
-  height: 20px;
-  width: 30px;
-}
-.hamburger-slim:before, .hamburger-slim:after {
+
+.navbar-toggle .hamburger-slim:before, 
+.navbar-toggle .hamburger-slim:after,
+.navbar-toggle.collapsed .hamburger-slim:before, 
+.navbar-toggle.collapsed .hamburger-slim:after {
   background: #3b3b3b;
   backface-visibility: hidden;
   content: "";
@@ -1554,25 +1547,38 @@ footer {
   transition: 0.44s;
   width: 30px;
 }
-.hamburger-slim:before {
+.navbar-toggle.collapsed .hamburger-slim:before, 
+.navbar-toggle.collapsed .hamburger-slim:after {
+  transform: none;
+}
+.navbar-toggle .hamburger-slim:before,
+.navbar-toggle.collapsed .hamburger-slim:before {
   box-shadow: #3b3b3b 0 9px 0 0;
   position: absolute;
   top: 0;
 }
-.hamburger-slim:after {
+.navbar-toggle .hamburger-slim:after,
+.navbar-toggle.collapsed .hamburger-slim:after {
   position: absolute;
   top: calc(100% - 2px);
 }
-.hamburger-slim:hover:before {
+.navbar-toggle .hamburger-slim:before {
   box-shadow: transparent 0 0 0 0;
   top: 50%;
   transform: rotate(225deg);
 }
-.hamburger-slim:hover:after {
+.navbar-toggle .hamburger-slim:after {
   top: 50%;
   transform: rotate(315deg);
 }
-
+.navbar-toggle .hamburger-slim {
+  background: transparent;
+  /* margin: 60px auto 40px; */
+  position: absolute;
+  top: 6px;
+  height: 20px;
+  width: 30px;
+}
 /*----------------------------------------------
 -------------------BOOKING PAGE-----------------
 ------------------------------------------------*/
