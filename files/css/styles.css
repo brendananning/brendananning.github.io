@@ -1291,7 +1291,7 @@ footer {
 .social-item {
   position: relative;
   display: inline-block;
-  min-width: 160px;
+  min-width: 170px;
   height: 70px;
   padding: 20px 30px 20px 30px;
   transition: all 0.5s ease;
