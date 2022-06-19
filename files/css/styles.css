@@ -1463,9 +1463,6 @@ footer {
   width: max-content;
   font-size: 12px;
 }
-.navbar-header .call-btn img {
-  display: none;
-}
 .phone {
   width: 12px;
   height: 12px;
