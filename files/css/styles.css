@@ -571,7 +571,7 @@ img {
   margin-top: 0 !important;
 }
 /*----------------------------------------------
------------------INSTAFEED SECTION--------------
+-----------------INSTAGRAM FEED SECTION--------------
 ------------------------------------------------*/
 .instagram.block {
   padding-bottom: 80px;
@@ -582,95 +582,102 @@ img {
   padding: 30px 0 20px 0;
   transition: all 1s ease-in-out;
 }
-#instafeed {
-  margin: 0 auto;
-  margin-bottom: 0px; 
-  opacity: 0;
-  width: 750px;
-  border-radius: 6px;
-  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
-  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
-  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
-  transition: opacity 0.8s ease-in-out, margin 0.7s ease;
-  overflow: hidden; 
-  -webkit-mask-image: -webkit-radial-gradient(white, white);
+.juicer-feed .referral {
+  display: none !important;
 }
-.item {
-  height: 250px;
-  width: 250px;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.4s ease;
-  display: inline-block;
-  margin-bottom: -10px;
-}
-.item:hover .insta-overlay {
-  opacity: 1;
-  transform: scale(1.04, 1.04);
-}
-.img-info {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  width: 100%;
-  top: 40%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  padding-right: 25px;  
-  padding-left: 25px;  
-}
-.img-info p {
-  display: inline-block;
-  font-size: 12px;
-  color: #fff;
-  word-break: break-word;
-}
-.animation-container {
-  overflow: hidden;
-  display: inline-block;
-}
-.instagram-img {
-  filter: sepia(20%);
-  height: 250px;
-  width: auto;
-  min-width: 250px;
-}
-.likes {
-  position: absolute;
-  overflow: hidden;
-  width: 100%;
-  height: 30px;
-  bottom: 25px;
-  left: 27px;
-}
-.likes p {
-  margin-top: 2px;
-  margin-left: 6px;
-  float: left;
-  color: white;
-  font-size: 13px;
-}
-.likes img {
-  width: 22px !important;
-  min-width: 22px !important;
-  height: auto !important;
-  float: left;
-}
-.insta-overlay {
-  position: absolute;
-  padding: 0px 25px 0px 25px;  
-  bottom: 100%;
-  right: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: all 0.7s ease;
+.juicer-feed.modern li.feed-item,
+.juicer-feed.modern li.feed-item * {
+  transform: translateZ(0) perspective(999px);
   backface-visibility: hidden;
+  user-select: none;
+}
+.juicer-feed.modern li.feed-item {
+  cursor: pointer;
+  border-width: 0 !important;
+  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+}
+.j-overlay-content,
+.j-post-overlay.juicer-feed,
+.juicer-feed.modern li.feed-item {
+  transition: all 0.5s ease;
+  background: #fff !important;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.juicer-feed {
+  overflow-y: unset !important;
+  overflow-x: unset !important;
+}
+.j-post-overlay.juicer-feed .image img {
+  border-radius: 7px;
+}
+/*Hover effects*/
+.j-post-overlay.juicer-feed a.juicer-button,
+.juicer-feed .j-paginate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e65ae !important;
+  border: unset !important;
+  color: #fff !important;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 300;
+  padding: 0px !important;
+  position: static !important;
+  transform: none !important;
+}
+.juicer-feed.modern li.feed-item:hover,
+.instagram .juicer-feed .j-paginate:hover {
+  transform: scale3d(0.98, 0.98, 1) translateZ(0) perspective(999px) !important;
+}
+.j-post-overlay.juicer-feed .j-navigate {
+  width: 100%;
+  left: 0;
+  right: unset;
+  display: flex;
+  justify-content: space-between;
+  bottom: 10px !important;
+}
+.j-post-overlay.juicer-feed .j-navigate .j-previous {
+  margin-left: 10px;
+}
+.j-post-overlay.juicer-feed .j-navigate .j-next {
+  margin-right: 10px;
+}
+.is-not-youTube .j-poster .j-date {
+  display: none
+}
+.juicer-feed a {
+  overflow: hidden;
+  display: block;
+}
+.j-gallery .j-image img,
+.juicer-feed.modern .j-image img {
+  transition: all 0.5s ease;
+}
+.j-post-overlay .j-image {
+  margin: 10px;
+}
+.j-overlay .j-close {
+  padding: 0 !important;
+}
+.j-post-overlay.juicer-feed .j-bottom {
+  position: absolute;
+  bottom: 40px;
+}
+.j-overlay .j-close {
+  height: 16px;
+  width: 16px;
+  background-size: 16px 16px;
+}
+.juicer-feed.modern .j-poster {
+  display: none;
+}
+.juicer-feed .feed-item .j-message, .juicer-feed .feed-item .j-message p {
+  font-size: 16px;
+}
+.j-post-overlay.juicer-feed {
+  padding-bottom: 40px;
 }
 
 /*----------------------------------------------
@@ -706,8 +713,6 @@ img {
   border-radius: 6px;
   min-width: 300px;
   width: 30%;
-  -webkit-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
-  -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   margin-bottom: 40px;
   opacity: 0;
@@ -1042,7 +1047,7 @@ form .col-md-12 textarea {
 }
 label {
   position: absolute;
-  top: -7px;
+  top: -8px;
   left: 13px;
   font-size: 12px;
   color: #555;
@@ -1227,7 +1232,7 @@ th.next, th.prev {
   justify-content: center;
   align-items: center;
 }
-.btn-animated {
+.btn-animated, .juicer-button {
   color: #fff;
   line-height: 50px;
   height: 50px;
@@ -1241,7 +1246,7 @@ th.next, th.prev {
   font-weight: 300; 
   border-radius: 6px;
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   padding: 0;
   left: 50%;
   transform: translate(-50%);
@@ -1251,7 +1256,7 @@ th.next, th.prev {
   -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
   box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
 }
-.btn-animated:hover {
+.btn-animated:hover, .juicer-button:hover {
   color: #fff;
   transform: translate(-50%) scale(0.95);
   box-shadow: none;
@@ -1278,6 +1283,10 @@ footer {
   font-weight: 300;
   transition: all 0.3s ease;
 }
+.call-btn.footer-call {
+  margin: 30px auto 0;
+  background: #1e65ae;
+}
 .contact-links {
   display: block;
   width: fit-content;
@@ -1303,6 +1312,9 @@ footer {
   margin-right: 5px;
   backface-visibility: hidden;
 }
+.social-item:hover {
+  background: #fff;
+}
 .contact-links a,
 .contact-links a:hover {
   color: #3b3b3b;
@@ -1315,8 +1327,8 @@ footer {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  bottom: -50px;
   transition: all 0.4s ease;
+  bottom: -5px;
 }
 .social-item img {
   width: 20px;
@@ -1386,10 +1398,12 @@ footer {
   display: inline-block;
 }
 .navbar-right {
-  right: 300px;;
-  margin-top: -35px;
   position: absolute;
+  right: 300px;
+  top: 10px;
   float: none;
+  align-items: center;
+  transition: top 0.5s ease;
 }
 .navbar-right a:hover {
   text-decoration: none;
@@ -1404,6 +1418,53 @@ footer {
 }
 .contact-icon-footer {
   margin: 0px;
+}
+.call-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #1e65ae;
+  color: #fff;
+  height: 30px;
+  padding: 0px 16px;
+  transition: all 0.3s ease;
+  box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
+  margin-right: 16px;
+  font-family: 'Mulish Bold';
+  font-weight: bold;
+  border: 0;
+}
+.call-btn img {
+  height: 12px;
+  width: 12px;
+  margin-right: 10px;
+}
+.call-btn:hover {
+  color: #fff;
+  transform: scale(0.95);
+  box-shadow: none;
+}
+.navbar-default.transparent .call-btn {
+  background: transparent;
+  color: #fff;
+  box-shadow: unset;
+  border: 1px solid white;
+}
+.navbar-default.transparent .call-btn:hover {
+  background: transparent;
+}
+.navbar-header .call-btn {
+  display: none;
+  position: absolute;
+  right: 190px;
+  top: 11px;
+  height: 28px;
+  width: max-content;
+  font-size: 12px;
+}
+.navbar-header .call-btn img {
+  display: none;
 }
 .phone {
   width: 12px;
@@ -1910,6 +1971,11 @@ hr {
     min-width: 194px;
   }
 }
+@media only screen and (max-width: 1120px) {
+  .navbar-right {
+    display: none !important;
+  }
+}
 @media only screen and (max-width: 991px) {
   .booking .container form div {
     margin-top: 0;
@@ -1966,9 +2032,6 @@ hr {
   }
   .main-background {
     background-position: 53% 0% !important;
-  }
-  .navbar-right {
-    display: none !important;
   }
   form .col-md-12 textarea {
     margin-top: 0px;
@@ -2042,7 +2105,7 @@ hr {
      margin-bottom: 20px; 
   }
   .contact .container form .btn-animated {
-    bottom: 55px;
+    bottom: 10px;
   }
   .booking .container form .btn-animated {
     bottom: 35px;
@@ -2087,6 +2150,12 @@ hr {
     padding-top: 10px;
     padding-left: 10px;
     margin: 0 auto;
+  }
+  .navbar-toggle {
+    margin-left: 13px;
+  }
+  .navbar-header .call-btn {
+    display: flex;
   }
   .navbar-default .navbar-nav li a {
     font-size: 18px;
@@ -2163,6 +2232,9 @@ hr {
   }
   .contact-links {
     height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .social-item {
     width: 47%;
@@ -2375,7 +2447,28 @@ hr {
     padding-bottom: 80px;
   }
 }
+@media only screen and (max-width: 560px) {
+  .contact-links {
+    height: auto;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 @media only screen and (max-width: 479px) {
+  a.navbar-left {
+    display: none;
+  }
+  .navbar-toggle {
+    margin-left: 19px;
+  }
+  .navbar-header .call-btn {
+    right: 20px;
+  }
+  .nav>li>a {
+    padding-left: 22px;
+  }
   .main .title-text h1 {
     font-size: 45px;
   }
@@ -2400,9 +2493,6 @@ hr {
   }
   .about .right-container .image-container {
     margin-bottom: 40px;
-  }
-  .package-item {
-    height: 510px;
   }
   .block h1 {
     font-size: 28px; 
@@ -2445,9 +2535,14 @@ hr {
   .packages .container {
     margin-bottom: 10px; 
   }
+  .package-item.one {
+    height: 575px;
+  }
   .package-item {
     margin-bottom: 0px;
     margin-top: 60px;
+    min-width: 100%;
+    height: 515px;
   }
   .contact .container {
     padding-left: 15px;
@@ -2460,11 +2555,6 @@ hr {
   }
   .col-md-12 {
     margin-top: 35px;
-  }
-  .contact-links {
-    height: auto;
-    padding-top: 35px;
-    padding-bottom: 20px;
   }
   .social-item {
     min-width: 300px;
@@ -2482,9 +2572,6 @@ hr {
     -moz-box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
     box-shadow: 2px 2px 22px -4px rgba(0,0,0,0.44);
     -webkit-mask-image: -webkit-radial-gradient(white, white);
-  }
-  #instafeed {
-    width: 300px;
   }
   .img-info {
     display: none;
@@ -2520,7 +2607,7 @@ hr {
     padding-right: 3px !important;
   }
   .contact .container form .btn-animated {
-    bottom: 30px;
+    bottom: 10px;
   }
   .booking .container form #wedding-datepicker {
     padding-right: 0;
@@ -2541,6 +2628,11 @@ hr {
     margin-top: 5px !important;
   }
 } 
+@media only screen and (max-width: 375px) {
+  .contact h2 .underline {
+    display: none;
+  }
+}
 @media only screen and (max-width: 300px) {
   .too-small-message {
     display: block;  
