@@ -393,6 +393,10 @@ Pace.on("done", function () {
             $(".preloader-background").fadeOut(1500)
             $(".preloader-wrap").fadeOut(1500)
         }, 800)
+        setTimeout(function () {
+            $(".preloader-wrap").css("display", "none")
+            $(".preloader-background").css("display", "none")
+        }, 800)
         var counter = 0
 
         //Only activate once
